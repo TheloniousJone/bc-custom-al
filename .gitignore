@@ -1,0 +1,43 @@
+# Repo-wide ignore rules for this multi-app AL repository (AL-Go for GitHub).
+#
+# Built .app files are no longer committed: CI/CD stamps versions and
+# publishes builds as workflow artifacts / GitHub Releases.
+# Third-party dependency apps needed only for compilation live in
+# dependencies/ and ARE committed (see the exception below).
+
+# --- Build output / packages ---
+*.app
+!dependencies/*.app
+*.flf
+*.bclicense
+*.g.xlf
+BuildOutput.txt
+.output/
+.dependencies/
+.buildartifacts/
+.packages/
+cache_*
+
+# --- AL symbol cache (re-downloadable via "AL: Download Symbols") ---
+.alpackages/
+
+# --- AL tooling local state ---
+rad.json
+.snapshots/
+.alcache/
+.altemplates/
+
+# --- AL Test Runner: keep the checked-in config, drop local results ---
+.altestrunner/*
+!.altestrunner/config.json
+TestResults*.xml
+bcptTestResults*.json
+
+# --- Windows / editor / Office noise ---
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+*.lnk
+~$*
+CLAUDE.md
