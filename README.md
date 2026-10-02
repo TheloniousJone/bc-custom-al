@@ -126,3 +126,4 @@ There are no automated test apps in this repository.
 - **Permissions:** when you add objects, add matching entries to the app's `extensionsPermissionSet.xml` (ObjectType 0 = TableData, 8 = Page, …). A few newer apps use `.permissionset.al` instead.
 - **Report layouts:** Word report layouts (`.docx`) are stored under folders such as `PMP-SG-Reports/ReportExtLayouts/`.
 - **Git-ignored files:** built `.app` files, `.alpackages/` and `rad.json` aren't committed. The one exception is `dependencies/*.app`. Release builds are in CI artifacts and GitHub Releases.
+# bc-custom-al
