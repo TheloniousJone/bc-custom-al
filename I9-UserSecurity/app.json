@@ -1,0 +1,25 @@
+{
+  "id": "54bd6f3f-b237-4b21-96d4-747b5c540458",
+  "name": "I9-UserSecurity",
+  "publisher": "Illum (9) Pte Ltd",
+  "version": "1.0.0.4",
+  "runtime": "14.0",
+  "target": "Cloud",
+  "application": "25.0.0.0",
+  "platform": "25.0.0.0",
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true,
+    "applyToDevExtension": false
+  },
+  "features": [
+    "NoImplicitWith"
+  ],
+  "idRanges": [
+    {
+      "from": 59100,
+      "to": 59149
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "1a74559a-405b-4fac-b428-2b1d2051df67",
+  "name": "PMP-SG-NovemBase",
+  "publisher": "Illum (9) Pte Ltd",
+  "version": "1.0.0.31",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+     "id": "7a083581-30a8-408a-ae5b-37dd5db4f4cd",
+    "name": "PMP-SG-Implementation",
+    "publisher": "Illum (9) Pte Ltd",
+    "version": "1.0.0.325"
+    }
+  ],
+  "screenshots": [],
+ "platform": "1.0.0.0",
+  "application": "24.4.0.0",
+  "idRanges": [
+    {
+      "from": 70000,
+      "to": 71999
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": false,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "runtime": "13.1",
+  "features": [
+    "NoImplicitWith"
+  ]
+}

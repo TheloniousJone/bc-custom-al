@@ -1,0 +1,56 @@
+{
+  "id": "9dda35ec-aded-4e96-ab30-448389663cfa",
+  "name": "PMP-SG-Reports",
+  "publisher": "Illum (9) Pte Ltd",
+  "version": "1.0.0.223",
+  "brief": "Extension reports",
+  "description": "Extension to contain the various reports",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+      "id": "7ed8c7a6-21f7-4aa9-b3d5-7051f2f29d3c",
+      "publisher": "Illum (9) Pte Ltd",
+      "name": "PMP-SG-Base",
+      "version": "1.0.0.72"
+    },
+    {
+      "id": "7a083581-30a8-408a-ae5b-37dd5db4f4cd",
+      "publisher": "Illum (9) Pte Ltd",
+      "name": "PMP-SG-Implementation",
+      "version": "1.0.0.217"
+    },
+    {
+      "id": "318a187c-69cd-4d87-badd-3919b80b24fd",
+      "publisher": "Illum (9) Pte Ltd",
+      "name": "Hyphens Base",
+      "version": "1.0.0.7"
+    },
+    {
+      "id": "1732e878-cee4-4787-9456-05f25f4118da",
+      "publisher": "Microsoft",
+      "name": "English language (Australia)",
+      "version": "21.2.49946.50300"
+    }
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "20.0.0.0",
+  "idRanges": [
+    {
+      "from": 57000,
+      "to": 57999
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "propagateDependencies": true,
+  "runtime": "11.0"
+  
+}

@@ -1,0 +1,42 @@
+{
+  "id": "939d8565-300d-4bf1-bc68-ea64075ad6b0",
+  "name": "PMP-SG-DKSH",
+  "publisher": "Illum (9) Pte Ltd",
+  "version": "1.0.0.2",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+      "id": "7a083581-30a8-408a-ae5b-37dd5db4f4cd",
+      "publisher": "Illum (9) Pte Ltd",
+      "name": "PMP-SG-Implementation",
+      "version": "1.0.0.163"
+    },
+    {
+      "id": "9dda35ec-aded-4e96-ab30-448389663cfa",
+      "publisher": "Illum (9) Pte Ltd",
+      "name": "PMP-SG-Reports",
+      "version": "1.0.0.138"
+    }
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "20.0.0.0",
+  "idRanges": [
+    {
+      "from": 52100,
+      "to": 52149
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "runtime": "9.0"
+}

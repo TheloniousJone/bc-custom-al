@@ -1,0 +1,42 @@
+{
+  "id": "fa104fbb-1309-422d-979a-a4b316913223",
+  "name": "PMP-SG-Integration-VersaFleet",
+  "publisher": "Illum (9) Pte Ltd",
+  "version": "1.0.0.66",
+  "brief": "Extension for VersaFleet Integration",
+  "description": "Extension for VersaFleet Integration.",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "illum9logo.png",
+  "dependencies": [
+    {
+      "id": "7a083581-30a8-408a-ae5b-37dd5db4f4cd",
+      "publisher": "Illum (9) Pte Ltd",
+      "name": "PMP-SG-Implementation",
+      "version": "1.0.0.195"
+    },
+    {
+      "id": "56597f4a-0c29-4881-9d8d-1a5eca2db060",
+      "publisher": "Illum (9) Pte. Ltd.",
+      "name": "Novem_PMP",
+      "version": "1.0.0.27"
+    }
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "20.0.0.0",
+  "idRanges": [
+    {
+      "from": 69000,
+      "to": 69099
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "runtime": "9.0"
+}

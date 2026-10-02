@@ -1,0 +1,157 @@
+report 60104 "Wellaway SO Creation"
+{
+
+    Caption = 'Wellaway SO Creation';
+    // ProcessingOnly = true;
+
+    dataset
+    {
+        dataitem(StagingPOHeader; "Incoming Wellaway PO Header")
+        {
+            trigger OnPreDataItem()
+            begin
+                StagingPOHeader.SetRange("SO Created", false);
+            end;
+
+            trigger OnAfterGetRecord()
+            var
+                StagingPOLine: Record "Incoming Wellaway PO Line";
+                SalesHeader: Record "Sales Header";
+                SalesLine: Record "Sales Line";
+                CanCreateSO: Boolean;
+                LineNo: Integer;
+            begin
+                CanCreateSO := false;
+
+                // Look for Staging PO Lines
+                StagingPOLine.Reset();
+                StagingPOLine.SetRange("Purchase Order ID", StagingPOHeader."Purchase Order ID");
+                StagingPOLine.SetRange("SO Created", false);
+                if StagingPOLine.FindFirst() then
+                    CanCreateSO := true;
+
+                if CanCreateSO then begin
+
+                    // ##### SAMPLE #####
+                    // Create Header
+                    SalesHeader.Init;
+                    SalesHeader.Validate("Document Type", SalesHeader."Document Type"::Order);
+                    SalesHeader.Validate("Sell-to Customer No.", '115');
+                    SalesHeader.Validate("Document Date", WorkDate());
+                    SalesHeader.Validate("Posting Date", WorkDate());
+                    SalesHeader.Validate("External Document No.", 'I9 INT TEST');
+                    SalesHeader.Insert(true); // must be true to trigger auto number
+
+                    Commit();
+
+                    // Create Lines
+                    SalesLine.Init();
+                    SalesLine.Validate("Document Type", SalesHeader."Document Type");
+                    SalesLine.Validate("Document No.", SalesHeader."No.");
+                    SalesLine.Validate("Line No.", 10000);
+                    SalesLine.Validate(Type, SalesLine.Type::Item);
+                    SalesLine.Validate("No.", 'CER04C');
+                    SalesLine.Insert();
+
+                    // Debug Message Flag
+                    Message('SO Created = ' + SalesHeader."No.");
+                    // ##### SAMPLE #####
+
+
+                    /*
+                    // ##### ACTUAL TO BE WORKED ON #####
+                    // Create Header
+                    SalesHeader.Init;
+                    SalesHeader.Validate("Document Type", SalesHeader."Document Type"::Order);
+                    SalesHeader.Validate("Sell-to Customer No.", StagingPOHeader."Customer Code");
+                    SalesHeader.Validate("Document Date", StagingPOHeader."Order Date ");
+                    SalesHeader.Validate("Posting Date", StagingPOHeader."Order Date ");
+                    SalesHeader.Validate("External Document No.", StagingPOHeader."Purchase Order ID");
+
+                    if SalesHeader.Insert(true) then // must be true to trigger auto number
+                        begin 
+
+                            Commit();
+
+                            // Update Staging PO Header Status
+                            StagingPOHeader."Sales Order No." := SalesHeader."No.";
+                            StagingPOHeader."SO Created" := true;
+                            StagingPOHeader."SO Error " := false;
+                            StagingPOHeader.Modify();
+
+                            LineNo := 10000;
+
+                            if StagingPOLine.FindSet() then
+                                repeat
+                                    // Create Lines
+                                    SalesLine.Init();
+                                    SalesLine.Validate("Document Type", SalesHeader."Document Type");
+                                    SalesLine.Validate("Document No.", SalesHeader."No.");
+                                    SalesLine.Validate("Line No.", LineNo);
+                                    SalesLine.Validate(Type, SalesLine.Type::Item);
+                                    SalesLine.Validate("No.", StagingPOLine."Product Code");
+                                    SalesLine.Validate("Order Qty", StagingPOLine."Quantity Ordered");
+                                    SalesLine.Validate("FOC Qty", StagingPOLine."Bonus Quantity ");
+                                    SalesLine.Validate("Unit Price", StagingPOLine."Unit Price");
+
+                                    if SalesLine.Insert(true) then
+                                        begin 
+                                            // Update Staging PO Line Status
+                                            StagingPOLine."Sales Order No." := SalesHeader."No.";
+                                            StagingPOLine."Sales Line No. " := LineNo;
+                                            StagingPOLine."SO Created" := true;
+                                            StagingPOLine."SO Error " := false;
+                                            StagingPOLine.Modify();
+                                        end
+                                    else
+                                        begin 
+                                            // Update Staging PO Line Status
+                                            StagingPOLine."Sales Order No." := SalesHeader."No.";
+                                            StagingPOLine."Sales Line No. " := LineNo;
+                                            StagingPOLine."SO Created" := false;
+                                            StagingPOLine."SO Error " := true;
+                                            StagingPOLine.Modify();
+                                        end;
+
+                                    LineNo += 10000;
+
+                                until StagingPOLine.Next() = 0;
+
+                        end
+                    else
+                        begin 
+                            // Update Staging PO Header Status
+                            StagingPOHeader."Sales Order No." := '';
+                            StagingPOHeader."SO Created" := false;
+                            StagingPOHeader."SO Error " := true;
+                            StagingPOHeader.Modify();
+                        end;
+                    // ##### ACTUAL TO BE WORKED ON #####
+                    */
+                end;
+
+            end;
+        }
+
+    }
+    requestpage
+    {
+        layout
+        {
+            area(content)
+            {
+                group(GroupName)
+                {
+                }
+            }
+        }
+        actions
+        {
+            area(processing)
+            {
+            }
+        }
+    }
+
+
+}

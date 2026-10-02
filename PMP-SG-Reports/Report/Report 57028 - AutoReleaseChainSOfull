@@ -1,0 +1,228 @@
+report 57028 AutoReleaseChainSO
+{
+    ApplicationArea = All;
+    Caption = 'AutoReleaseChainSO';
+    UsageCategory = Tasks;
+    ProcessingOnly = true;
+    dataset
+    {
+        dataitem(Integer; Integer)
+        {
+            DataItemTableView = where(Number = const(1));
+            trigger OnAfterGetRecord()
+            var
+                myInt: Integer;
+                SHRec: Record "Sales Header";
+                CustRec: record Customer temporary;
+                lCustRec: record Customer temporary;
+                CustRec2: Record customer temporary;
+                TotalAmt: Decimal;
+            begin
+                SHRec.reset;
+                SHRec.SetRange("TBA Order", false);
+                if CustCode <> '' then
+                    SHRec.SetRange("Sell-to Customer No.", CustCode);
+                SHRec.SetRange("Document Type", SHRec."Document Type"::Order);
+                SHRec.SetRange("Logistics Service", false);
+                SHRec.SetRange("Chain Pharmacy", true);
+                SHRec.SetRange(Status, SHRec.Status::Open);
+                SHRec.SetRange("Order Status", SHRec."Order Status"::Open);
+                //DX		30 Sept 2021
+                SHRec.SetFilter("External Document No.", '<>%1', '');
+                //DX		30 Sept 2021
+                if SHRec.FindSet() then     //Get unique sell to customer combinations first
+                    repeat
+                        TempCustRec.reset;
+                        TempCustRec.SetRange("No.", SHRec."Sell-to Customer No.");
+                        if not (TempCustRec.FindFirst()) then begin
+                            Temp2CustRec.reset;
+                            Temp2CustRec."No." := SHRec."Sell-to Customer No.";
+                            Temp2CustRec.Insert(false);
+                            TempCustRec.Copy(Temp2CustRec);
+                            TempCustRec.Insert(FALSE);
+                        end;
+                    until SHRec.next = 0;
+                if Temp2CustRec.count <> 0 then begin
+                    if Temp2CustRec.FindSet() then
+                        repeat
+                            TotalCustAmt := 0;
+                            SHRec.reset;
+                            SHRec.SetRange("TBA Order", false);
+                            SHRec.SetRange("Sell-to Customer No.", Temp2CustRec."No.");
+                            SHRec.SetRange("Document Type", SHRec."Document Type"::Order);
+                            SHRec.SetRange("Logistics Service", false);
+                            SHRec.SetRange("Chain Pharmacy", true);
+                            SHRec.SetRange(Status, SHRec.Status::Open);
+                            //DX		30 Sept 2021
+                            SHRec.SetFilter("External Document No.", '<>%1', '');
+                            //DX		30 Sept 2021
+                            SHRec.SetRange("Order Status", SHRec."Order Status"::Open);
+                            if SHRec.FindSet() then
+                                repeat
+                                    SHRec.CalcFields(Amount);
+
+                                    TotalCustAmt += SHRec.Amount;
+                                until SHRec.next = 0;
+
+                            if TotalCustAmt > 100 then begin        //Get list of customers > $100 invoices.
+                                TempCustRec2.reset;
+                                TempCustRec2."No." := SHRec."Sell-to Customer No.";
+                                TempCustRec2.Insert(false);
+                            end;
+                        until Temp2CustRec.next = 0;
+                end;
+                if TempCustRec2.count <> 0 then begin       //Loop through correct customers that has > $100 invoices
+                    if TempCustRec2.FindSet() then
+                        repeat
+                            LessThan12 := false;
+                            SHRec.reset;
+                            SHRec.SetRange("TBA Order", false);
+                            SHRec.SetRange("Sell-to Customer No.", TempCustRec2."No.");
+                            SHRec.SetRange("Document Type", SHRec."Document Type"::Order);
+                            SHRec.SetRange("Logistics Service", false);
+                            SHRec.SetRange("Chain Pharmacy", true);
+                            SHRec.SetRange(Status, SHRec.Status::Open);
+                            SHRec.SetRange("Order Status", SHRec."Order Status"::Open);
+                            //DX		30 Sept 2021
+                            SHRec.SetFilter("External Document No.", '<>%1', '');
+                            //DX		30 Sept 2021
+                            if SHRec.FindSet() then
+                                repeat
+                                    LessThan12 := false;
+                                    SLRec.reset;
+                                    SLRec.SetRange("Document No.", SHRec."No.");
+                                    SLRec.SetRange("Document Type", SHRec."Document Type");
+                                    SLRec.SetRange(Type, SLRec.Type::Item);
+                                    SLRec.SetFilter(Quantity, '<>0');
+                                    if SLRec.FindSet() then
+                                        repeat
+                                            if RPMPCU.ExpirationLessThan12MthsWithLocForChain(SLRec."No.", SLRec."Location Code") then begin
+                                                LessThan12 := true;
+                                            end;
+                                        until SLRec.next = 0;
+                                    if LessThan12 = false then begin        //If whole sales order don't have any less than 1 year expiration, then add to list of correct orders.
+                                        Clear(ReleaseSHRec);
+                                        ReleaseSHRec."No." := SHRec."No.";
+                                        ReleaseSHRec."Sell-to Customer No." := SHRec."Sell-to Customer No.";
+                                        ReleaseSHRec.Insert(false);
+                                    end;
+                                until SHRec.Next() = 0;
+                        until TempCustRec2.Next() = 0;
+                end;
+                TotalCustAmt := 0;
+                if ReleaseSHRec.Count <> 0 then begin
+                    if ReleaseSHRec.FindSet() then
+                        repeat
+                            CustTotal.reset;
+                            CustTotal.SetRange("No.", ReleaseSHRec."Sell-to Customer No.");
+                            if not (CustTotal.FindFirst()) then begin
+                                Cust2Total.reset;
+                                Cust2Total."No." := ReleaseSHRec."Sell-to Customer No.";
+                                Cust2Total.Insert(FALSE);
+                                CustTotal.copy(Cust2Total);
+                                CustTotal.Insert(false);
+                            end;
+                        until ReleaseSHRec.next = 0;
+                    if ReleaseSHRec.FindSet() then
+                        repeat
+                            SHRec.reset;
+                            SHRec.SetRange("Document Type", SHRec."Document Type"::Order);
+                            SHRec.SetRange("No.", ReleaseSHRec."No.");
+                            if SHRec.FindSet() then
+                                repeat
+                                    SHRec.CalcFields(Amount);
+                                    TotalCustAmt += SHRec.Amount;
+                                    Cust2Total.reset;
+                                    Cust2Total.SetRange("No.", SHRec."Sell-to Customer No.");
+                                    if Cust2Total.FindFirst() then begin
+                                        Cust2Total."Credit Limit (LCY)" += TotalCustAmt;
+                                        Cust2Total.Modify(false);        //Calcualte the total invoice amount for each sell to customer                                    end;
+                                    end;
+                                until SHRec.next = 0;
+                        until ReleaseSHRec.next = 0;
+                    Cust2Total.reset;
+                    if Cust2Total.FindSet() then
+                        repeat
+                            if Cust2Total."Credit Limit (LCY)" > 100 then begin
+                                SHRec.reset;
+                                SHRec.SetRange("TBA Order", false);
+                                SHRec.SetRange("Sell-to Customer No.", Cust2Total."No.");
+                                SHRec.SetRange("Document Type", SHRec."Document Type"::Order);
+                                SHRec.SetRange("Logistics Service", false);
+                                SHRec.SetRange("Chain Pharmacy", true);
+                                SHRec.SetRange(Status, SHRec.Status::Open);
+                                SHRec.SetRange("Order Status", SHRec."Order Status"::Open);
+                                //DX		30 Sept 2021
+                                SHRec.SetFilter("External Document No.", '<>%1', '');
+                                //DX		30 Sept 2021
+                                if SHRec.FindSet() then
+                                    repeat
+                                        //diaBox.Update(1, 'Releasing to warehouse........');
+                                        SLRec.reset;
+                                        SLRec.SetRange("Document Type", SHRec."Document Type");
+                                        SLRec.SetRange("Document No.", SHRec."No.");
+                                        SLRec.SetRange(Type, SLRec.Type::Item);
+                                        SLRec.SetFilter(Quantity, '<>0');
+                                        if SLRec.Count <> 0 then begin
+                                            releaseSalesDoc.PerformManualRelease(SHRec);
+                                            GetSourceDocOutbound.CreateFromSalesOrder(SHRec);
+                                        end;
+                                    until SHRec.next = 0;
+                            end;
+                        until Cust2Total.next = 0;
+                end;
+            end;
+        }
+    }
+    //DX        20 Sept 2021
+    requestpage
+    {
+        layout
+        {
+            area(content)
+            {
+                group(GroupName)
+                {
+                    field(CustCode; CustCode)
+                    {
+                        ApplicationArea = all;
+                    }
+                }
+            }
+        }
+        actions
+        {
+            area(processing)
+            {
+            }
+        }
+    }
+
+    local procedure MyProcedure()
+    var
+        myInt: Integer;
+    begin
+
+    end;
+
+    var
+        myInt: Integer;
+        TempCustRec: Record customer temporary;
+        TempCustRec2: Record Customer temporary;
+        Temp2CustRec: Record Customer temporary;
+        TotalCustAmt: Decimal;
+        TempSHRec: Record "Sales Header" temporary;
+        ReleaseSHRec: Record "Sales Header" temporary;
+        FinalSHRec: Record "Sales Header" temporary;
+        SLRec: Record "Sales Line";
+        CustTotal: Record Customer temporary;
+        LessThan12: Boolean;
+        diaBox: Dialog;
+        GetSourceDocOutbound: Codeunit "Get Source Doc. Outbound";
+        ProgressMsg: Label 'Progress: #1#####';
+        StartProgressMsg: Text;
+        releaseSalesDoc: Codeunit "Release Sales Document";
+        RPMPCU: Codeunit "PMP-Enhancements";
+        Cust2Total: Record Customer temporary;
+        CustCode: Code[20];
+}

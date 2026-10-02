@@ -1,0 +1,33 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/AL-Go-Actions/v9.2/.Modules/settings.schema.json",
+  "country": "w1",
+  "appFolders": [
+    "PMP-SG-Base",
+    "PMP-SG-Implementation",
+    "Hyphens Base",
+    "PMP-SG-Reports",
+    "Novem_Base",
+    "Novem_Functions",
+    "Novem_PMP",
+    "PMP-SG-Integration-POM",
+    "PMP-SG-Integration-ChainPharmas",
+    "PMP-SG-Integration-Citibank",
+    "PMP-SG-Integration-DBS",
+    "PMP-SG-Integration-DKSH",
+    "PMP-SG-Integration-EPaper",
+    "PMP-SG-Integration-VersaFleet",
+    "PMP-SG-Integration-Wellaway",
+    "PMP-SG-Integration-Zuellig",
+    "PMP-SG-Maxxholo",
+    "PMP-HPPL-Patch",
+    "Hyphens-PMP-Interco",
+    "Hyphens Implementation",
+    "I9-UserSecurity"
+  ],
+  "testFolders": [],
+  "bcptTestFolders": [],
+  "installApps": [
+    "dependencies/Illum Solutions Sdn Bhd_E-Invoice Base_1.0.0.6.app",
+    "dependencies/Microsoft_English language (Australia)_27.1.41698.41831.app"
+  ]
+}

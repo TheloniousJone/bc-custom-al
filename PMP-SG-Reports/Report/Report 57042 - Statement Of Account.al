@@ -1,0 +1,1733 @@
+report 57042 "Statement Of Account - Open"
+{
+    // DefaultLayout = RDLC;
+    // RDLCLayout = './ReportLayouts/Rpt 57042 Statement Of Account.rdl';
+    DefaultRenderingLayout = "Statement of Account";
+    PreviewMode = PrintLayout;
+    UsageCategory = ReportsAndAnalysis;
+    ApplicationArea = All;
+
+    dataset
+    {
+        dataitem(Customer; Customer)
+        {
+            DataItemTableView = SORTING("No.");
+            RequestFilterFields = "No.", "Print Statements", "Date Filter";
+            column(Customer_No_; "No.")
+            {
+            }
+            column(Customer_Global_Dimension_1_Filter; "Global Dimension 1 Filter")
+            {
+            }
+            column(Customer_Global_Dimension_2_Filter; "Global Dimension 2 Filter")
+            {
+            }
+            column(ReportCaption; ReportCaptionLbl)
+            {
+            }
+            column(TelCaption; TelCaptionLbl)
+            {
+            }
+            column(FaxCaption; FaxCaptionLbl)
+            {
+            }
+            column(CustomerNoCaption; CustomerNoCaptionLbl)
+            {
+            }
+            column(AsAtCaption; AsAtCaptionLbl)
+            {
+            }
+            column(PageNoCaption; PageNoCaptionLbl)
+            {
+            }
+            column(PaymentTermsCaption; PaymentTermsCaptionLbl)
+            {
+            }
+            column(CustomerCaption; CustomerCaptionLbl)
+            {
+            }
+            column(ImportantCaption; ImportantCaptionLbl)
+            {
+            }
+            dataitem(HeaderFooter; "Integer")
+            {
+                DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
+                column(CustomerAddress_1_; CustomerAddress[1])
+                {
+                }
+                column(CustomerAddress_2_; CustomerAddress[2])
+                {
+                }
+                column(CustomerAddress_3_; CustomerAddress[3])
+                {
+                }
+                column(CustomerAddress_4_; CustomerAddress[4])
+                {
+                }
+                column(CustomerAddress_5_; CustomerAddress[5])
+                {
+                }
+                column(CustomerAddress_6_; CustomerAddress[6])
+                {
+                }
+                column(CustomerAddress_7_; CustomerAddress[7])
+                {
+                }
+                column(CustomerAddress_8_; CustomerAddress[8])
+                {
+                }
+                column(FORMAT_ToDate_; Format(ToDate, 0, '<Day,2>-<Month Text,3>-<Year,2>'))
+                {
+                }
+                column(Customer__No__; Customer."No.")
+                {
+                }
+                column(CurrencyLabel; CurrencyLabel)
+                {
+                }
+                column(CompanyAddress_4_; CompanyAddress[4])
+                {
+                }
+                column(CompanyAddress_3_; CompanyAddress[3])
+                {
+                }
+                column(CompanyAddress_2_; CompanyAddress[2])
+                {
+                }
+                column(CompanyAddress_1_; CompanyAddress[1])
+                {
+                }
+                column(CompanyAddress_5_; CompanyAddress[5])
+                {
+                }
+                column(PhoneNo; PhoneNo)
+                {
+                }
+                column(FaxNo; FaxNo)
+                {
+                }
+                column(VATRegNo; VATRegNo)
+                {
+                }
+                column(GiroNo; GiroNo)
+                {
+                }
+                column(Bank; Bank)
+                {
+                }
+                column(AccountNo; AccountNo)
+                {
+                }
+                column(CompanyInformation__Bank_Account_No__; CompanyInformation."Bank Account No.")
+                {
+                }
+                column(CompanyInformation__Bank_Name_; CompanyInformation."Bank Name")
+                {
+                }
+                column(CompanyInformation__Giro_No__; CompanyInformation."Giro No.")
+                {
+                }
+                column(CompanyInformation__VAT_Registration_No__; CompanyInformation."VAT Registration No.")
+                {
+                }
+                column(CompanyInformation__Registration_No__; CompanyInformation."Registration No.")
+                {
+                }
+                column(CompanyInformation__Fax_No__; CompanyInformation."Fax No.")
+                {
+                }
+                column(CompanyInformation__Phone_No__; CompanyInformation."Phone No.")
+                {
+                }
+                column(PrintLCY; PrintLCY)
+                {
+                }
+                column(StatementStyle; StatementStyle)
+                {
+                }
+                column(AgingMethod; AgingMethod)
+                {
+                }
+                column(DebitBalance; DebitBalance)
+                {
+                }
+                column(CreditBalance; -CreditBalance)
+                {
+                }
+                column(StatementBalance; StatementBalance)
+                {
+                }
+                column(HeaderFooter_Number; Number)
+                {
+                }
+                column(STATEMENTCaption; STATEMENTCaptionLbl)
+                {
+                }
+                column(Statement_Date_Caption; Statement_Date_CaptionLbl)
+                {
+                }
+                column(Account_Number_Caption; Account_Number_CaptionLbl)
+                {
+                }
+                column(Currency_Caption; Currency_CaptionLbl)
+                {
+                }
+                column(Page_Caption; Page_CaptionLbl)
+                {
+                }
+                column(BalanceCaption; BalanceCaptionLbl)
+                {
+                }
+                column(CreditsCaption; CreditsCaptionLbl)
+                {
+                }
+                column(DebitsCaption; DebitsCaptionLbl)
+                {
+                }
+                column(Due_DateCaption; Due_DateCaptionLbl)
+                {
+                }
+                column(No_Caption; No_CaptionLbl)
+                {
+                }
+                column(DocumentCaption; DocumentCaptionLbl)
+                {
+                }
+                column(DateCaption; DateCaptionLbl)
+                {
+                }
+                column(Statement_BalanceCaption; Statement_BalanceCaptionLbl)
+                {
+                }
+                column(CompanyInfo_Picture; CompanyInfo.Picture)
+                {
+                }
+                column(CompanyInfo_Name; CompanyInfo.Name)
+                {
+                }
+                column(CompanyInfo_Address; CompanyInfo.Address)
+                {
+                }
+                column(CompanyInfo_Address2; CompanyInfo."Address 2")
+                {
+                }
+                column(CompanyInfo_City; CompanyInfo.City)
+                {
+                }
+                column(CompanyInfo_PostCode; CompanyInfo."Post Code")
+                {
+                }
+                column(CompanyInfo_Country; CompanyInfo."Country/Region Code")
+                {
+                }
+                column(CompanyInfo_PhoneNo; CompanyInfo."Phone No.")
+                {
+                }
+                column(CompanyInfo_FaxNo; CompanyInfo."Fax No.")
+                {
+                }
+                column(CompanyInfo_EMail; CompanyInfo."E-Mail")
+                {
+                }
+                column(CompanyInfo_SGDAcctNo; CompanyInfo."Bank Account No.")
+                {
+                }
+                column(CompanyInfo_USDAcctNo; CompanyInfo."Bank Account No.")
+                {
+                }
+                column(CompanyInfo_BankName; CompanyInfo."Bank Name")
+                {
+                }
+                column(CompanyInfo_BankAddress; CompanyInfo."Bank Branch No.")
+                {
+                }
+                column(CompanyInfo_SWIFTCode; CompanyInfo."SWIFT Code")
+                {
+                }
+                // column(Customer_PaymentTerms; Customer."Payment Terms Code") // YF 03 Jan 2022
+                column(Customer_PaymentTerms; CustPaymentTermsDescr) // YF 03 Jan 2022
+                {
+                }
+                column(Customer_Name; Customer.Name)
+                {
+                }
+                column(Customer_Address; Customer.Address)
+                {
+                }
+                column(Customer_Address2; Customer."Address 2")
+                {
+                }
+                column(Customer_City; Customer.City)
+                {
+                }
+                column(Customer_PostCode; Customer."Post Code")
+                {
+                }
+                column(Customer_Country; Customer."Country/Region Code")
+                {
+                }
+                column(CompanyInfo_PaynowQr; CompanyInfo."Paynow QR")
+                {
+                }
+                column(PrintCompany; PrintCompany)
+                {
+                }
+                dataitem("Cust. Ledger Entry"; "Cust. Ledger Entry")
+                {
+                    CalcFields = "Remaining Amt. (LCY)", "Remaining Amount";
+                    DataItemLink = "Customer No." = FIELD("No."), "Global Dimension 1 Code" = FIELD("Global Dimension 1 Filter"), "Global Dimension 2 Code" = FIELD("Global Dimension 2 Filter");
+                    DataItemLinkReference = Customer;
+                    DataItemTableView = SORTING("Customer No.", Open) WHERE("Remaining Amount" = FILTER(<> 0));
+
+                    trigger OnPreDataItem()
+                    begin
+                        if (AgingMethod = AgingMethod::None) and (StatementStyle = StatementStyle::Balance) then
+                            CurrReport.Break();    // Optimization
+                        // Find ledger entries which are open and posted before the statement date.
+                        LedgEntryLast := 0;
+                        if StatementStyle = StatementStyle::"Open Item" then
+                            SetRange("Date Filter", 0D, ToDate);
+                        SetRange("Posting Date", 0D, ToDate);
+                    end;
+                }
+                dataitem("Balance Forward"; "Integer")
+                {
+                    DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
+                    column(BalanceToPrintLCY; BalanceToPrintLCY)
+                    {
+                    }
+                    column(FORMAT_FromDate___1_; Format(FromDate - 1))
+                    {
+                    }
+                    column(Balance_Forward_Number; Number)
+                    {
+                    }
+                    column(Balance_ForwardCaption; Balance_ForwardCaptionLbl)
+                    {
+                    }
+                    column(Bal_FwdCaption; Bal_FwdCaptionLbl)
+                    {
+                    }
+
+                    trigger OnAfterGetRecord()
+                    begin
+                        if StatementStyle <> StatementStyle::Balance then
+                            CurrReport.Break();
+                    end;
+                }
+                dataitem(CustLedgerEntry3; "Cust. Ledger Entry")
+                {
+                    CalcFields = Amount, "Amount (LCY)", "Remaining Amount", "Remaining Amt. (LCY)";
+                    DataItemLink = "Customer No." = FIELD("No.");
+                    DataItemLinkReference = Customer;
+                    DataItemTableView = SORTING("Customer No.", "Posting Date") WHERE("Remaining Amount" = FILTER(<> 0));
+                    column(BalanceToPrint; BalanceToPrint)
+                    {
+                    }
+                    column(FORMAT__Due_Date__; Format("Due Date", 0, '<Day,2>-<Month Text,3>-<Year,2>'))
+                    {
+                    }
+                    column(DocNo1; DocNo) // column(CustLedgerEntry3__Document_No__; "Document No.")
+                    {
+                    }
+                    column(CustLedgerEntry3__Document_Type_; "Document Type")
+                    {
+                    }
+                    column(FORMAT__Posting_Date__; Format("Posting Date", 0, '<Day,2>-<Month Text,3>-<Year,2>'))
+                    {
+                    }
+                    column(OpenDrBal; OpenDrBal)
+                    {
+                    }
+                    column(OpenCrBal; Abs(OpenCrBal))
+                    {
+                    }
+                    column(BalanceToPrintLCY_Control1500085; BalanceToPrintLCY)
+                    {
+                    }
+                    column(CustLedgerEntry3__Due_Date__Control1500088; Format("Due Date"))
+                    {
+                    }
+                    column(CustLedgerEntry3__Document_No___Control1500089; "Document No.")
+                    {
+                    }
+                    column(CustLedgerEntry3__Document_Type__Control1500090; "Document Type")
+                    {
+                    }
+                    column(FORMAT__Posting_Date___Control1500091; Format("Posting Date"))
+                    {
+                    }
+                    column(OpenDrBalLCY; OpenDrBalLCY)
+                    {
+                    }
+                    column(OpenCrBalLCY; OpenCrBalLCY)
+                    {
+                    }
+                    column(CustLedgerEntry3_Entry_No_; "Entry No.")
+                    {
+                    }
+                    column(CustLedgerEntry3_Customer_No_; "Customer No.")
+                    {
+                    }
+                    column(CustLedgerEntry3_CustPO; CLE3_CustPO)
+                    {
+                    }
+                    column(CustLedgerEntry3_CurrCode; CLE3_CurrCode)
+                    {
+                    }
+                    column(Remaining_Amt___LCY_; "Remaining Amt. (LCY)")
+                    {
+                    }
+                    column(Remaining_Amount; "Remaining Amount")
+                    {
+                    }
+                    trigger OnAfterGetRecord()
+                    begin
+                        OpenCrBal := 0;
+                        OpenDrBal := 0;
+                        OpenCrBalLCY := 0;
+                        OpenDrBalLCY := 0;
+                        if PrintLCY then begin
+                            // BalanceToPrintLCY := BalanceToPrintLCY + "Remaining Amt. (LCY)";
+                            // if "Remaining Amt. (LCY)" >= 0 then begin
+                            //     DebitBalance := DebitBalance + "Remaining Amt. (LCY)";
+                            //     OpenDrBalLCY := "Remaining Amt. (LCY)";
+                            // end
+                            // else begin
+                            //     CreditBalance := CreditBalance + "Remaining Amt. (LCY)";
+                            //     OpenCrBalLCY := "Remaining Amt. (LCY)";
+                            // end
+                            DebitBalance := DebitBalance + "Remaining Amt. (LCY)";
+                            CreditBalance := CreditBalance + "Remaining Amt. (LCY)";
+                            OpenDrBalLCY := "Amount (LCY)";
+                            OpenCrBalLCY := "Amount (LCY)" - "Remaining Amt. (LCY)";
+                        end else begin
+                            // BalanceToPrint := BalanceToPrint + "Remaining Amount";
+                            // if "Remaining Amount" >= 0 then begin
+                            //     DebitBalance := DebitBalance + "Remaining Amount";
+                            //     OpenDrBal := "Remaining Amount";
+                            // end else begin
+                            //     CreditBalance := CreditBalance + "Remaining Amount";
+                            //     OpenCrBal := "Remaining Amount";
+                            // end
+                            DebitBalance := DebitBalance + "Remaining Amount";
+                            CreditBalance := CreditBalance + "Remaining Amount";
+                            OpenDrBal := "Amount";
+                            OpenCrBal := "Amount" - "Remaining Amount";
+                        end;
+
+                        GetCustPOAndCurrCodeForCLE3(CustLedgerEntry3);
+                        Clear(DocNo);
+                        // if CustLedgerEntry3."Posting Date" < 20210501D then begin // opening invoices, apr and before
+                        // if CopyStr(CustLedgerEntry3."Document No.", StrLen(CustLedgerEntry3."Document No.")) = 'R' then begin
+                        //     DocNo := CopyStr(CustLedgerEntry3."Document No.", 1, StrLen(CustLedgerEntry3."Document No.") - 1);
+                        // end else begin
+                        DocNo := CustLedgerEntry3."Document No.";
+                        // end;
+                        //     end else
+                        // if (CustLedgerEntry3."Posting Date" > 20210430D) and (CustLedgerEntry3."Posting Date" < 20211001D) then begin // May to Sept
+                        //     DocNo := CustLedgerEntry3.Description;
+                        // end else begin // Oct onwards
+                        //     DocNo := CustLedgerEntry3."Document No.";
+                        // end;
+
+                        //LK28Aug2024 - insert to temp table for send email
+                        if G_SIH.get(DocNo) then begin
+                            Temp_SIH.Init();
+                            //Temp_SIH.TransferFields(G_SIH);
+                            Temp_SIH."No." := G_SIH."No.";
+                            Temp_SIH.Insert(false);
+                            //LK28Aug2024
+                        end else begin
+                            // insert CN for send email
+                            if G_SCNH.get(DocNo) then begin
+                                Temp_SCNH.Init();
+                                Temp_SCNH."No." := G_SCNH."No.";
+                                Temp_SCNH.Insert(false);
+                            end;
+                        end;
+                    end;
+
+                    trigger OnPreDataItem()
+                    begin
+                        if StatementStyle = StatementStyle::Balance then
+                            CurrReport.Break();
+                        SetRange("Posting Date", 0D, ToDate);
+                        SetRange("Date Filter", 0D, ToDate);
+                    end;
+                }
+                dataitem("AgingCust. Ledger Entry"; "Cust. Ledger Entry")
+                {
+                    CalcFields = "Remaining Amount", "Remaining Amt. (LCY)";
+                    DataItemLink = "Customer No." = FIELD("No.");
+                    DataItemLinkReference = Customer;
+                    DataItemTableView = SORTING("Customer No.", "Posting Date") WHERE("Remaining Amount" = FILTER(<> 0));
+
+                    trigger OnAfterGetRecord()
+                    begin
+                        case AgingMethod of
+                            AgingMethod::"Due Date":
+                                begin
+                                    if ("Due Date" >= Periodstartdate[1]) and ("Due Date" <= PeriodEndingDate[1]) then begin
+                                        TempCustLedgerEntry1.Init();
+                                        TempCustLedgerEntry1 := "AgingCust. Ledger Entry";
+                                        TempCustLedgerEntry1.Insert();
+                                    end;
+                                    if ("Due Date" >= Periodstartdate[2]) and ("Due Date" <= PeriodEndingDate[2]) then begin
+                                        TempCustLedgerEntry2.Init();
+                                        TempCustLedgerEntry2 := "AgingCust. Ledger Entry";
+                                        TempCustLedgerEntry2.Insert();
+                                    end;
+                                    if ("Due Date" >= Periodstartdate[3]) and ("Due Date" <= PeriodEndingDate[3]) then begin
+                                        TempCustLedgerEntry3.Init();
+                                        TempCustLedgerEntry3 := "AgingCust. Ledger Entry";
+                                        TempCustLedgerEntry3.Insert();
+                                    end;
+                                    if ("Due Date" >= Periodstartdate[4]) and ("Due Date" <= PeriodEndingDate[4]) then begin
+                                        TempCustLedgerEntry4.Init();
+                                        TempCustLedgerEntry4 := "AgingCust. Ledger Entry";
+                                        TempCustLedgerEntry4.Insert();
+                                    end;
+                                    if ("Due Date" >= Periodstartdate[5]) and ("Due Date" <= PeriodEndingDate[5]) then begin
+                                        TempCustLedgerEntry5.Init();
+                                        TempCustLedgerEntry5 := "AgingCust. Ledger Entry";
+                                        TempCustLedgerEntry5.Insert();
+                                    end;
+                                end;
+                            AgingMethod::"Trans Date", AgingMethod::None:
+                                begin
+                                    if ("Posting Date" >= Periodstartdate[1]) and ("Posting Date" <= PeriodEndingDate[1]) then begin
+                                        TempCustLedgerEntry1.Init();
+                                        TempCustLedgerEntry1 := "AgingCust. Ledger Entry";
+                                        TempCustLedgerEntry1.Insert();
+                                    end;
+                                    if ("Posting Date" >= Periodstartdate[2]) and ("Posting Date" <= PeriodEndingDate[2]) then begin
+                                        TempCustLedgerEntry2.Init();
+                                        TempCustLedgerEntry2 := "AgingCust. Ledger Entry";
+                                        TempCustLedgerEntry2.Insert();
+                                    end;
+                                    if ("Posting Date" >= Periodstartdate[3]) and ("Posting Date" <= PeriodEndingDate[3]) then begin
+                                        TempCustLedgerEntry3.Init();
+                                        TempCustLedgerEntry3 := "AgingCust. Ledger Entry";
+                                        TempCustLedgerEntry3.Insert();
+                                    end;
+                                    if ("Posting Date" >= Periodstartdate[4]) and ("Posting Date" <= PeriodEndingDate[4]) then begin
+                                        TempCustLedgerEntry4.Init();
+                                        TempCustLedgerEntry4 := "AgingCust. Ledger Entry";
+                                        TempCustLedgerEntry4.Insert();
+                                    end;
+                                    if ("Posting Date" >= Periodstartdate[5]) and ("Posting Date" <= PeriodEndingDate[5]) then begin
+                                        TempCustLedgerEntry5.Init();
+                                        TempCustLedgerEntry5 := "AgingCust. Ledger Entry";
+                                        TempCustLedgerEntry5.Insert();
+                                    end;
+                                end;
+                            AgingMethod::"Doc Date":
+                                begin
+                                    if ("Document Date" >= Periodstartdate[1]) and ("Document Date" <= PeriodEndingDate[1]) then begin
+                                        TempCustLedgerEntry1.Init();
+                                        TempCustLedgerEntry1 := "AgingCust. Ledger Entry";
+                                        TempCustLedgerEntry1.Insert();
+                                    end;
+                                    if ("Document Date" >= Periodstartdate[2]) and ("Document Date" <= PeriodEndingDate[2]) then begin
+                                        TempCustLedgerEntry2.Init();
+                                        TempCustLedgerEntry2 := "AgingCust. Ledger Entry";
+                                        TempCustLedgerEntry2.Insert();
+                                    end;
+                                    if ("Document Date" >= Periodstartdate[3]) and ("Document Date" <= PeriodEndingDate[3]) then begin
+                                        TempCustLedgerEntry3.Init();
+                                        TempCustLedgerEntry3 := "AgingCust. Ledger Entry";
+                                        TempCustLedgerEntry3.Insert();
+                                    end;
+                                    if ("Document Date" >= Periodstartdate[4]) and ("Document Date" <= PeriodEndingDate[4]) then begin
+                                        TempCustLedgerEntry4.Init();
+                                        TempCustLedgerEntry4 := "AgingCust. Ledger Entry";
+                                        TempCustLedgerEntry4.Insert();
+                                    end;
+                                    if ("Document Date" >= Periodstartdate[5]) and ("Document Date" <= PeriodEndingDate[5]) then begin
+                                        TempCustLedgerEntry5.Init();
+                                        TempCustLedgerEntry5 := "AgingCust. Ledger Entry";
+                                        TempCustLedgerEntry5.Insert();
+                                    end;
+                                end;
+                        end;
+                    end;
+
+                    trigger OnPreDataItem()
+                    begin
+                        SetRange("Posting Date", 0D, ToDate);
+                        SetRange("Date Filter", 0D, ToDate);
+                    end;
+                }
+                dataitem(CustLedgerEntry4; "Cust. Ledger Entry")
+                {
+                    CalcFields = Amount, "Amount (LCY)";
+                    DataItemLink = "Customer No." = FIELD("No.");
+                    DataItemLinkReference = Customer;
+                    DataItemTableView = SORTING("Customer No.", "Posting Date");
+                    column(BalanceToPrint_Control1500052; BalanceToPrint)
+                    {
+                    }
+                    column(Cust__Ledg__Entry__Credit_Amount_; "Credit Amount")
+                    {
+                    }
+                    // column(Cust__Ledg__Entry__Debit_Amount_; "Debit Amount")
+                    column(Cust__Ledg__Entry__Debit_Amount_; Amount)
+                    {
+                    }
+                    column(FORMAT_DueDate_; Format("Due Date", 0, '<Day,2>-<Month Text,3>-<Year,2>'))
+                    {
+                    }
+                    column(DocNo2; DocNo) //  column(Cust__Ledg__Entry__Document_No__; "Document No.")
+                    {
+                    }
+                    column(Cust__Ledg__Entry__Document_Type_; "Document Type")
+                    {
+                    }
+                    column(FORMAT__Posting_Date___Control1500058; Format("Posting Date", 0, '<Day,2>-<Month Text,3>-<Year,2>'))
+                    {
+                    }
+                    column(BalanceToPrintLCY_Control1500059; BalanceToPrintLCY)
+                    {
+                    }
+                    column(Cust__Ledg__Entry__Credit_Amount__LCY__; "Credit Amount (LCY)")
+                    {
+                    }
+                    // column(Cust__Ledg__Entry__Debit_Amount__LCY__; "Debit Amount (LCY)")
+                    column(Cust__Ledg__Entry__Debit_Amount__LCY__; "Amount (LCY)")
+                    {
+                    }
+                    column(FORMAT_DueDate__Control1500062; Format("Due Date"))
+                    {
+                    }
+                    column(Cust__Ledg__Entry__Document_No___Control1500063; "Document No.")
+                    {
+                    }
+                    column(Cust__Ledg__Entry__Document_Type__Control1500064; "Document Type")
+                    {
+                    }
+                    column(FORMAT__Posting_Date___Control1500065; Format("Posting Date"))
+                    {
+                    }
+                    column(StatementComplete; StatementComplete)
+                    {
+                    }
+                    column(Cust__Ledg__Entry_Entry_No_; "Entry No.")
+                    {
+                    }
+                    column(Cust__Ledg__Entry_Customer_No_; "Customer No.")
+                    {
+                    }
+                    column(Cust__Ledg__Entry_CustPO; CLE4_CustPO)
+                    {
+                    }
+                    column(Cust__Ledg__Entry_CurrCode; CLE4_CurrCode)
+                    {
+                    }
+
+                    trigger OnAfterGetRecord()
+                    begin
+                        if PrintLCY then begin
+                            BalanceToPrintLCY := BalanceToPrintLCY + "Amount (LCY)";
+                            if "Amount (LCY)" >= 0 then
+                                DebitBalance := DebitBalance + "Amount (LCY)"
+                            else
+                                CreditBalance := CreditBalance + "Amount (LCY)";
+                        end else begin
+                            BalanceToPrint := BalanceToPrint + Amount;
+                            if Amount >= 0 then
+                                DebitBalance := DebitBalance + Amount
+                            else
+                                CreditBalance := CreditBalance + Amount;
+                        end;
+
+                        GetCustPOAndCurrCodeForCLE4(CustLedgerEntry4);
+                        Clear(DocNo);
+                        // if CustLedgerEntry4."Posting Date" < 20210501D then begin // opening invoices, apr and before
+                        //     if CopyStr(CustLedgerEntry4."Document No.", StrLen(CustLedgerEntry4."Document No.")) = 'R' then begin
+                        //         DocNo := CopyStr(CustLedgerEntry4."Document No.", 1, StrLen(CustLedgerEntry4."Document No.") - 1);
+                        //     end else begin
+                        //         DocNo := CustLedgerEntry4."Document No.";
+                        //     end;
+                        // end else
+                        //     if (CustLedgerEntry4."Posting Date" > 20210430D) and (CustLedgerEntry4."Posting Date" < 20211001D) then begin // May to Sept
+                        //         DocNo := CustLedgerEntry4.Description;
+                        //     end else begin // Oct onwards
+                        DocNo := CustLedgerEntry4."Document No.";
+                        // end;
+
+                        //LK28Aug2024 - insert to temp table for send email
+                        G_SIH.Reset();
+                        if G_SIH.get(DocNo) then begin
+                            Temp_SIH.Init();
+                            //Temp_SIH.TransferFields(G_SIH);
+                            Temp_SIH."No." := G_SIH."No.";
+                            Temp_SIH.Insert(false);
+                            //LK28Aug2024
+                        end else begin
+                            // insert CN for send email
+                            if G_SCNH.get(DocNo) then begin
+                                Temp_SCNH.Init();
+                                Temp_SCNH."No." := G_SCNH."No.";
+                                Temp_SCNH.Insert(false);
+                            end;
+                        end;
+                    end;
+
+                    trigger OnPreDataItem()
+                    begin
+                        if StatementStyle <> StatementStyle::Balance then
+                            CurrReport.Break();
+                        SetRange("Posting Date", FromDate, ToDate);
+                    end;
+                }
+                dataitem(EndOfCustomer; "Integer")
+                {
+                    DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
+                    column(Just_For_Adding_One_Record_to_Dataset_; 'Just For Adding One Record to Dataset')
+                    {
+                    }
+                    column(EndOfCustomer_Number; Number)
+                    {
+                    }
+
+                    trigger OnAfterGetRecord()
+                    begin
+                        StatementComplete := true;
+                        if UpdateNumbers and (not CurrReport.Preview) then begin
+                            Customer.Modify(); // just update the Last Statement No
+                            Commit();
+                        end;
+
+                        CalcOpenLedgEntry;
+                        if AgingMethod = AgingMethod::"Due Date" then
+                            AgingDaysText := Text1500009
+                        else
+                            AgingDaysText := Text1500010;
+
+                        if PrintLCY then
+                            StatementBalance := BalanceToPrintLCY
+                        else
+                            StatementBalance := BalanceToPrint;
+                    end;
+                }
+
+                trigger OnAfterGetRecord()
+                begin
+                    if Temp_SIH.IsTemporary then
+                        Temp_SIH.DeleteAll();
+
+                    if Temp_SCNH.IsTemporary then
+                        Temp_SCNH.DeleteAll();
+                end;
+            }
+            dataitem(PrintFooter; "Integer")
+            {
+                DataItemTableView = SORTING(Number) WHERE(Number = CONST(1));
+                column(AgingAmount_5; AgingAmount[5])
+                {
+                }
+                column(Testdec_Control1000000001; AgingAmount[4])
+                {
+                }
+                column(AgingAmount_3__Control1000000000; AgingAmount[3])
+                {
+                }
+                column(AgingAmount_2__Control1000000002; AgingAmount[2])
+                {
+                }
+                column(AgingAmount_1__Control1000000003; AgingAmount[1])
+                {
+                }
+                column(StatementBalance_Control1000000004; StatementBalance)
+                {
+                }
+                column(CreditBalance_Control1000000005; -CreditBalance)
+                {
+                }
+                column(DebitBalance_Control1000000006; DebitBalance)
+                {
+                }
+                column(AgingDaysText_Control1000000010; AgingDaysText)
+                {
+                }
+                column(AgingHead_5; AgingHead[5])
+                {
+                }
+                column(AgingHead_4__Control1000000008; AgingHead[4])
+                {
+                }
+                column(AgingHead_3__Control1000000011; AgingHead[3])
+                {
+                }
+                column(AgingHead_2__Control1000000013; AgingHead[2])
+                {
+                }
+                column(AgingHead_1__Control1000000014; AgingHead[1])
+                {
+                }
+                column(test2_test2_Number; Number)
+                {
+                }
+                column(StatementComplete_Control1000000016; StatementComplete)
+                {
+                }
+                column(AgingMethod_Control1000000017; AgingMethod)
+                {
+                }
+                column(Statement_BalanceCaption_Control1000000007; Statement_BalanceCaption_Control1000000007Lbl)
+                {
+                }
+                column(Statement_Aging_Caption_Control1000000009; Statement_Aging_Caption_Control1000000009Lbl)
+                {
+                }
+                column(Aged_Amounts_Caption_Control1000000012; Aged_Amounts_Caption_Control1000000012Lbl)
+                {
+                }
+                column(Customer_Currency; CurrencyCode)
+                {
+                }
+
+                trigger OnPostDataItem()
+                var
+                begin
+                    // YF 14 Jan 2022 //LK28Aug2024 ++ change send email function to before loop next customer
+                    if SendEmailBool then begin
+                        SendEmail(Customer);//test
+                                            // SendEmail(Customer); // YF 18 Jan 2022 // Testing // YF 19 Jan 2002 // Disabled
+                                            // YF 19 Jan 2022 // Enabled
+                        if Customer."E-Mail" <> '' then begin
+                            //SendEmail(Customer);
+                            // EmailMsg := StrSubstNo(EmailMsg + '\%1 - %2', Customer.Name, Customer."E-Mail");
+                            EmailMsg := StrSubstNo(EmailMsg + '\%1 - %2', Customer.Name, Customer."E-Mail");
+                        end;
+                        // YF 19 Jan 2022 // Enabled
+
+                    end;
+                    // YF 14 Jan 2022 //LK28Aug2024 ++
+                end;
+            }
+
+            trigger OnAfterGetRecord()
+
+            begin
+                DebitBalance := 0;
+                CreditBalance := 0;
+                Clear(AmountDue);
+                Print := false;
+                if AllHavingBalance then begin
+                    SetRange("Date Filter", 0D, ToDate);
+                    CalcFields("Net Change");
+                    Print := "Net Change" <> 0;
+                end;
+                if (not Print) and AllHavingEntries then begin
+                    "Cust. Ledger Entry".Reset();
+                    if StatementStyle = StatementStyle::Balance then begin
+                        "Cust. Ledger Entry".SetCurrentKey("Customer No.", "Posting Date");
+                        "Cust. Ledger Entry".SetRange("Posting Date", FromDate, ToDate);
+                    end else begin
+                        "Cust. Ledger Entry".SetCurrentKey("Customer No.", "Posting Date");
+                        "Cust. Ledger Entry".SetRange("Posting Date", FromDate, ToDate);
+                        "Cust. Ledger Entry".SetRange(Open, true);
+                    end;
+                    "Cust. Ledger Entry".SetRange("Customer No.", "No.");
+                    Print := "Cust. Ledger Entry".Find('-');
+                end;
+
+                if not Print then
+                    CurrReport.Skip();
+                if StatementStyle = StatementStyle::Balance then begin
+                    SetRange("Date Filter", 0D, FromDate - 1);
+                    CalcFields("Net Change", "Net Change (LCY)");
+                    BalanceToPrint := "Net Change";
+                    SetRange("Date Filter");
+                    if PrintLCY then
+                        BalanceToPrintLCY := "Net Change (LCY)"
+                    else
+                        BalanceToPrintLCY := "Net Change";
+                end else begin
+                    BalanceToPrint := 0;
+                    BalanceToPrintLCY := 0;
+                end;
+
+                /* Update Statement Number so it can be printed on the document. However,
+                  defer actually updating the customer file until the statement is complete. */
+                if "Last Statement No." >= 9999 then
+                    "Last Statement No." := 1
+                else
+                    "Last Statement No." := "Last Statement No." + 1;
+
+                FormatAddress.Customer(CustomerAddress, Customer);
+                LedgEntryLast := 0;
+                StatementComplete := false;
+
+                Clear(CurrencyCode);
+
+                if "Currency Code" = '' then begin
+                    GLSetup.Get();
+                    GLSetup.TestField("LCY Code");
+                    CurrencyCode := GLSetup."LCY Code";
+                end else
+                    CurrencyCode := "Currency Code";
+
+                if Customer."Bill Name" <> '' then
+                    CustomerAddress[1] := Customer."Bill Name";
+                if Customer."Bill Address" <> '' then // YF 08 Sep 2023 // remove trailing spaces
+                    CustomerAddress[2] := Customer."Bill Address"; // YF 08 Sep 2023 // remove trailing spaces
+                if Customer."Bill Address 2" <> '' then
+                    CustomerAddress[3] := Customer."Bill Address 2";
+                if Customer."Bill Post Code" <> '' then begin
+                    if Customer."Bill City" = '' then
+                        CustomerAddress[4] := 'SINGAPORE ' + customer."Bill Post Code"
+                    else
+                        CustomerAddress[4] := Customer."Bill City" + ' ' + customer."Bill Post Code"
+                end;
+
+                CustPaymentTermsDescr := ''; // YF 03 Jan 2022
+
+                if Customer."Payment Terms Code" <> '' then
+                    if PaymentTerms.Get(Customer."Payment Terms Code") then begin
+                        if PaymentTerms.Description <> '' then
+                            CustPaymentTermsDescr := PaymentTerms.Description; // YF 03 Jan 2022
+                                                                               // Customer."Payment Terms Code" := PaymentTerms.Description; // YF 03 Jan 2022
+                    end;
+
+                // // YF 14 Jan 2022 //LK28Aug2024 --
+                // if SendEmailBool then begin
+                //     SendEmail(Customer);//test
+                //     // SendEmail(Customer); // YF 18 Jan 2022 // Testing // YF 19 Jan 2002 // Disabled
+                //     // YF 19 Jan 2022 // Enabled
+                //     if Customer."E-Mail" <> '' then begin
+                //         //SendEmail(Customer);
+                //         // EmailMsg := StrSubstNo(EmailMsg + '\%1 - %2', Customer.Name, Customer."E-Mail");
+                //         EmailMsg := StrSubstNo(EmailMsg + '\%1 - %2', Customer.Name, Customer."E-Mail");
+                //     end;
+                //     // YF 19 Jan 2022 // Enabled
+
+                // end;
+                // // YF 14 Jan 2022  //LK28Aug2024 --
+
+            end;
+
+            trigger OnPreDataItem()
+            begin
+                // IF STRPOS(OSVERSION,'NT') = 0 THEN
+                // OSSystem := OSSystem::Windows
+                // ELSE
+                // OSSystem := OSSystem::NT;
+
+                /* remove user-entered date filter; info now in FromDate & ToDate */
+                // YF 18 Jan 2022
+                if Not IsFromEmail then
+                    SetRange("Date Filter")
+                else begin
+                    SetFilter("Date Filter", '%1..%2', FromDate, ToDate);
+                    SetFilter("No.", '%1', CustCode);
+                end;
+                // YF 18 Jan 2022
+
+                CalcAging;
+            end;
+        }
+    }
+
+    requestpage
+    {
+        SaveValues = true;
+
+        layout
+        {
+            area(content)
+            {
+                group(Options)
+                {
+                    Caption = 'Options';
+                    field(PrintAllWithEntries; AllHavingEntries)
+                    {
+                        ApplicationArea = Basic, Suite;
+                        Caption = 'Print All with Entries';
+                        ToolTip = 'Specifies that you want to include all accounts with entries.';
+                    }
+                    field(PrintAllWithBalance; AllHavingBalance)
+                    {
+                        ApplicationArea = Basic, Suite;
+                        Caption = 'Print All with Balance';
+                        ToolTip = 'Specifies that you want to include all accounts with a balance.';
+                    }
+                    field(UpdateStatementNo; UpdateNumbers)
+                    {
+                        ApplicationArea = Basic, Suite;
+                        Caption = 'Update Statement No.';
+                        ToolTip = 'Specifies that this is an update of an existing statement.';
+                    }
+                    field(PrintCompanyAddress; PrintCompany)
+                    {
+                        ApplicationArea = Basic, Suite;
+                        Caption = 'Print Company Address';
+                        ToolTip = 'Specifies that you want to include the company address.';
+                    }
+                    field(PrintInLCY; PrintLCY)
+                    {
+                        ApplicationArea = Basic, Suite;
+                        Caption = 'Print in LCY';
+                        ToolTip = 'Specifies that you want to print amounts in your currency.';
+                    }
+                    field(StatementStyle; StatementStyle)
+                    {
+                        ApplicationArea = Basic, Suite;
+                        Caption = 'Statement Style';
+                        OptionCaption = 'Open Item,Balance';
+                        ToolTip = 'Specifies the style of the statement as based on open items or the balance.';
+                    }
+                    field(AgedBy; AgingMethod)
+                    {
+                        ApplicationArea = Basic, Suite;
+                        Caption = 'Aged By';
+                        OptionCaption = 'None,Due Date,Trans Date,Doc Date';
+                        ToolTip = 'Specifies what you want to use as the aging method. Use Due Date to age by the number of days that the transaction is overdue. Use Trans Date to age documents by the number of days since the transaction posting date. use Document Date to age documents by the number of days since the document date.';
+                    }
+                    field(LengthOfAgingPeriods; PeriodCalculation)
+                    {
+                        ApplicationArea = Basic, Suite;
+                        Caption = 'Length of Aging Periods';
+                        ToolTip = 'Specifies how long the aging periods must be.';
+
+                        trigger OnValidate()
+                        begin
+                            if (AgingMethod <> AgingMethod::None) and (PeriodCalculation = '') then
+                                Error('You must enter a Length of Aging Periods if you select aging.');
+                        end;
+                    }
+                    // YF 14 Jan 2022
+                    field(SendEmailBool; SendEmailBool)
+                    {
+                        Caption = 'Send Emails';
+                        Style = AttentionAccent;
+                        StyleExpr = true;
+                        Visible = true;
+                        ApplicationArea = All;
+                    }
+                    // YF 14 Jan 2022                 
+                }
+            }
+        }
+
+        actions
+        {
+        }
+
+        trigger OnOpenPage()
+        begin
+            if (not AllHavingEntries) and (not AllHavingBalance) then
+                AllHavingBalance := true;
+        end;
+    }
+    rendering
+    {
+        layout("Statement of Account no Due date")
+        {
+            Type = RDLC;
+            LayoutFile = './ReportLayouts/Rpt 57042 Statement Of Account no duedate.rdl';
+        }
+        layout("Statement of Account")
+        {
+            Type = RDLC;
+            LayoutFile = './ReportLayouts/Rpt 57042 Statement Of Account.rdl';
+        }
+    }
+    labels
+    {
+    }
+
+    trigger OnPreReport()
+    begin
+        if PrintLCY then
+            CurrencyLabel := 'Local (LCY)'
+        else
+            CurrencyLabel := 'Customer';
+
+        // if (not AllHavingEntries) and (not AllHavingBalance) then
+        //     Error(Text1500001);
+        if UpdateNumbers and CurrReport.Preview then
+            Error(Text1500002);
+
+        // YF 18 Jan 2022
+        if not IsFromEmail then begin
+            FromDate := Customer.GetRangeMin("Date Filter");
+            ToDate := Customer.GetRangeMax("Date Filter");
+            // Message('Not Email Triggered ' + Format(FromDate) + ' ' + Format(ToDate));
+        end
+        else begin
+            // Message('Email Triggered ' + Format(FromDate) + ' ' + Format(ToDate));
+            SendEmailBool := false;
+        end;
+        // YF 18 Jan 2022
+
+        /*
+        FromDate := Customer.GetRangeMin("Date Filter");
+        ToDate := Customer.GetRangeMax("Date Filter");
+        */
+
+        if (StatementStyle = StatementStyle::Balance) and (FromDate = ToDate) then
+            Error(Text1500003);
+
+        if (AgingMethod <> AgingMethod::None) and (PeriodCalculation = '') then
+            Error(Text1500004);
+
+        CompanyInformation.Get('');
+
+        if PrintCompany then begin
+            FormatAddress.Company(CompanyAddress, CompanyInformation);
+            PhoneNo := 'Phone No.';
+            FaxNo := 'Fax No.';
+            VATRegNo := 'GST Reg. No.';
+            GiroNo := 'GIRO No.';
+            Bank := 'Bank';
+            AccountNo := 'Account No.';
+        end else
+            Clear(CompanyAddress);
+        //LK28Aug2024
+        G_SIH.Reset();
+        Temp_SIH.Reset();
+        //LK28Aug2024
+        G_SCNH.Reset();
+        Temp_SCNH.Reset();
+    end;
+
+    trigger OnInitReport()
+    begin
+        CompanyInfo.Get();
+        CompanyInfo.CalcFields(Picture);
+        CompanyInfo.CalcFields("Paynow QR");
+        EmailMsg := 'Email sent to the customers.'; // YF 14 Jan 2022
+        if CompanyInfo.Name = 'TechMed Sdn Bhd' then
+            IsTechMedCompany := true
+        else
+            IsTechMedCompany := false;
+    end;
+
+    // YF 14 Jan 2022
+    trigger OnPostReport()
+    begin
+        if SendEmailBool then
+            Message(EmailMsg);
+    end;
+
+    local procedure SendEmail(var CustomerRec: Record Customer)
+    var
+        XMLParameter: Text;
+        EmailInStream: InStream;
+        EmailOutStream: OutStream;
+        TempBlob: Codeunit "Temp Blob";
+        Email: Codeunit Email;
+        EmailMessage: Codeunit "Email Message";
+
+        CompInfo: Record "Company Information";
+        EmailToList: List of [Text];
+        EmailBody: Text;
+        ToFile: Text;
+        LCustRec: Record Customer;
+        MailReport: Report 57042;
+        EmailScenario: Enum "Email Scenario";
+        SSetup: Record "Sales & Receivables Setup";
+
+        //LK28Aug2024
+        InvoiceReport: report 57001;
+        CNReport: report 57002;
+        TxtB64: Text;
+        CnvB64: Codeunit "Base64 Convert";
+        i: Integer;
+        EmailSent: Boolean;
+        EmailSubject: Text;
+    //LK28Aug2024
+
+    begin
+        // Reference Materials
+        // https://marcellusnav.wordpress.com/2018/06/19/email-documents-as-pdf-using-streams/
+        // https://community.dynamics.com/nav/b/dynamicsnavcloudfronts/posts/workaround-to-report-saveaspdf-in-nav-2018
+        // https://docs.microsoft.com/en-us/previous-versions/dynamicsnav-2016/dn762343(v=nav.90)
+        // https://github.com/Microsoft/AL/issues/1686
+        // http://www.mynavblog.com/2019/12/17/sending-mails-in-the-cloud/
+
+        CompInfo.Get;
+        SSetup.Get;
+        Clear(EmailToList);
+        EmailToList.Add(CustomerRec."E-Mail"); // YF 19 Jan 2022
+        // EmailToList.Add('yfpang@9itgroup.com'); // for testing // YF 19 Jan 2022
+
+        // EmailBody := 'Dear Sir/Madam <br><br> Here is your Statement of Accounts.<br><br>';
+        EmailBody := SSetup."SOA Email Body";
+        // EmailBody := 'This is an automatically generated notification.' +
+        //              '<br><br>Please do not reply to this email. Please contact us at pmpfinance@pom.com.sg, for any enquiries.' +
+        //              '<br><br>Yours sincerely,' +
+        //              '<br> PMP Finance Team';
+        /*
+        body += '<br> TimeSheet Code: ' + CTCTSH."TimeSheet Code" +
+                '<br> User Name: ' + CTCTSH."User ID" +
+                '<br> Start Date: ' + Format(CTCTSH."Start Date") +
+                '<br> End Date: ' + Format(CTCTSH."End Date") +
+                '<br> Total Hours: ' + Format(CTCTSH."Total Hours") +
+                '<br> Header Remarks: ' + CTCTSH."Header Remarks" +
+                '<br>';
+        */
+
+        //EmailMessage.Create(EmailToList, 'Statement of Account ' + CustomerRec."No." + ' ' + CustomerRec.Name, EmailBody, true);
+        EmailMessage.Create(CustomerRec."E-Mail", 'Statement of Account ' + CustomerRec."No." + ' ' + CustomerRec.Name, EmailBody, true);//LK25July2024 Change to Customer.Email instead using EmailToList
+        //EmailMessage.Create('lkchen@9itgroup.com', 'Statement of Account ' + CustomerRec."No." + ' ' + CustomerRec.Name, EmailBody, true);
+        EmailSubject := 'Statement of Account ' + CustomerRec."No." + ' ' + CustomerRec.Name; //LK28Aug2024
+        ToFile := STRSUBSTNO('%1 - %2 Statement.pdf', CustomerRec."No.", CustomerRec.Name);
+
+        // XMLParameter := Report.RunRequestPage(50004);
+
+        LCustRec.RESET;
+        LCustRec.Get(CustomerRec."No.");
+        Clear(MailReport);
+        MailReport.SETTABLEVIEW(LCustRec);
+        MailReport.SetParam(PrintCompany, FromDate, ToDate, PrintLCY, SendEmailBool, CustomerRec."No.", AgingMethod, PeriodCalculation, AllHavingBalance, AllHavingEntries); // YF 19 Jan 2022 // Add aging parameter
+
+        // XMLParameter := MailReport.RunRequestPage();
+        // TempBlob.Blob.CreateOutStream(EmailOutStream);
+        Clear(TempBlob);
+        TempBlob.CreateOutStream(EmailOutStream);
+        // Report.SaveAs(50004, '', ReportFormat::Pdf, EmailOutStream);
+        MailReport.SaveAs('', ReportFormat::Pdf, EmailOutStream);
+
+        // MailReport.SaveAs(CustomerRec.GetFilters, ReportFormat::Pdf, EmailOutStream);
+        // Report.SaveAs(50004, XMLParameter, ReportFormat::Pdf, EmailOutStream);
+        // Report.SaveAs(50004, '', ReportFormat::Pdf, OutStr, RecRef);
+        // TempBlob.Blob.CreateInStream(EmailInStream);
+        TempBlob.CreateInStream(EmailInStream);
+        TxtB64 := CnvB64.ToBase64(EmailInStream, true);
+        EmailMessage.AddAttachment(ToFile, 'application/pdf', TxtB64);
+
+        //LK28Aug2024 - add invoices as attachment in send email
+        EmailSent := false;
+        i := 0;
+        if (LCustRec."Customer Group" <> 'PH-CHAIN') then begin
+            if (Temp_SIH.FindSet()) then
+                repeat
+                    G_SIH.reset;
+                    if G_SIH.get(Temp_SIH."No.") then begin
+                        EmailSent := false;
+                        clear(InvoiceReport);
+                        Clear(TempBlob);
+                        Clear(EmailInStream);
+                        Clear(EmailOutStream);
+                        Clear(TempBlob);
+                        Clear(CnvB64);
+                        ToFile := Temp_SIH."No." + '.pdf';
+                        TempBlob.CreateOutStream(EmailOutStream);
+                        InvoiceReport.SetParamSendEmail(G_SIH);
+                        InvoiceReport.SaveAs('', ReportFormat::Pdf, EmailOutStream);
+                        TempBlob.CreateInStream(EmailInStream);
+                        TxtB64 := CnvB64.ToBase64(EmailInStream, true);
+                        EmailMessage.AddAttachment(ToFile, 'application/pdf', TxtB64);
+                        i += 1;
+                    end;
+                    if i = 20 then begin //control attach 20 invoices per email due to email attachment size limitation
+                        i := 0;
+                        //send email
+                        Email.Send(EmailMessage, EmailScenario::"Customer Statement");
+                        EmailSent := true;
+                        Clear(Email);
+                        Clear(EmailMessage);
+                        EmailMessage.Create(CustomerRec."E-Mail", EmailSubject, EmailBody, true);//LK25July2024 Change to 
+                        //EmailMessage.Create('lkchen@9itgroup.com', EmailSubject, EmailBody, true);//LK25July2024 Change to 
+
+                        //send email
+                    end
+
+                until (Temp_SIH.Next() = 0) or (i = 20);
+
+            // add CN
+            if (Temp_SCNH.FindSet()) then
+                repeat
+                    G_SCNH.reset;
+                    if G_SCNH.get(Temp_SCNH."No.") then begin
+                        EmailSent := false;
+                        clear(CNReport);
+                        Clear(TempBlob);
+                        Clear(EmailInStream);
+                        Clear(EmailOutStream);
+                        Clear(TempBlob);
+                        Clear(CnvB64);
+                        ToFile := Temp_SCNH."No." + '.pdf';
+                        TempBlob.CreateOutStream(EmailOutStream);
+                        CNReport.SetParamSendEmail(G_SCNH);
+                        CNReport.SaveAs('', ReportFormat::Pdf, EmailOutStream);
+                        TempBlob.CreateInStream(EmailInStream);
+                        TxtB64 := CnvB64.ToBase64(EmailInStream, true);
+                        EmailMessage.AddAttachment(ToFile, 'application/pdf', TxtB64);
+                        i += 1;
+                    end;
+                    if i = 20 then begin //control attach 20 invoices per email due to email attachment size limitation
+                        i := 0;
+                        //send email
+                        Email.Send(EmailMessage, EmailScenario::"Customer Statement");
+                        EmailSent := true;
+                        Clear(Email);
+                        Clear(EmailMessage);
+                        EmailMessage.Create(CustomerRec."E-Mail", EmailSubject, EmailBody, true);//LK25July2024 Change to 
+                        //EmailMessage.Create('lkchen@9itgroup.com', EmailSubject, EmailBody, true);//LK25July2024 Change to 
+
+                        //send email
+                    end
+                until (Temp_SCNH.Next() = 0) or (i = 20);
+            // add CN
+
+            if EmailSent = false then begin //check last email been sent
+                Email.Send(EmailMessage, EmailScenario::"Customer Statement");
+                EmailSent := true;
+            end;
+        end
+        //LK28Aug2024 - add invoices as attachment in send email
+        else begin
+            if Not Email.Send(EmailMessage, EmailScenario::"Customer Statement") then
+                Message('Failed to send email for ' + CustomerRec."No." + '.');
+        end;
+        EmailBody := '';
+
+    end;
+
+    procedure SetParam(PrintCompanyPara: Boolean;
+                        FromDatePara: Date;
+                        ToDatePara: Date;
+                        PrintLCYPara: Boolean;
+                        IsFromEmailPara: Boolean;
+                        CustCodePara: Code[20];
+                        AgingMethodPara: Option "None","Due Date","Trans Date","Doc Date";
+                        PeriodCalcPara: Code[10];
+                        AllHavingBalancePara: Boolean;
+                        AllHavingEntriesPara: Boolean) // YF 19 Jan 2022 // Update with Aging Parameters
+    begin
+        PrintCompany := PrintCompanyPara;
+        FromDate := FromDatePara;
+        ToDate := ToDatePara;
+        PrintLCY := PrintLCYPara;
+        IsFromEmail := IsFromEmailPara;
+        CustCode := CustCodePara;
+        AgingMethod := AgingMethodPara; // YF 19 Jan 2022
+        PeriodCalculation := PeriodCalcPara; // YF 19 Jan 2022
+        AllHavingBalance := AllHavingBalancePara;
+        AllHavingEntries := AllHavingEntriesPara;
+    end;
+    // YF 14 Jan 2022    
+
+    var
+        OpenDrBal: Decimal;
+        OpenDrBalLCY: Decimal;
+        OpenCrBal: Decimal;
+        OpenCrBalLCY: Decimal;
+        Periodstartdate: array[6] of Date;
+        StatementBalance: Decimal;
+        PeriodLength2: DateFormula;
+        FaxNo: Text[50];
+        VATRegNo: Text[50];
+        GiroNo: Text[50];
+        Bank: Text[50];
+        AccountNo: Text[50];
+        CompanyInformation: Record "Company Information";
+        FormatAddress: Codeunit "Format Address";
+        StatementStyle: Option "Open Item",Balance;
+        AllHavingEntries: Boolean;
+        AllHavingBalance: Boolean;
+        UpdateNumbers: Boolean;
+        PhoneNo: Text[50];
+        AgingMethod: Option "None","Due Date","Trans Date","Doc Date";
+        PrintCompany: Boolean;
+        PeriodCalculation: Code[10];
+        Print: Boolean;
+        FromDate: Date;
+        ToDate: Date;
+        CustomerAddress: array[8] of Text[100];
+        CompanyAddress: array[8] of Text[100];
+        BalanceToPrint: Decimal;
+        BalanceToPrintLCY: Decimal;
+        DebitBalance: Decimal;
+        CreditBalance: Decimal;
+        AgingHead: array[5] of Text[14];
+        CurrencyLabel: Text[30];
+        AmountDue: array[4] of Decimal;
+        AgingDaysText: Text[16];
+        PeriodEndingDate: array[6] of Date;
+        StatementComplete: Boolean;
+        PrintLCY: Boolean;
+        i: Integer;
+        LedgEntryLast: Integer;
+        Text1500001: Label 'You must select either All with Entries or All with Balance.';
+        Text1500002: Label 'You must print statements if you want to update statement numbers.';
+        Text1500003: Label 'You must enter a range of dates (not just one date) in the Date Filter if you want to print Balance Forward Statements.';
+        Text1500004: Label 'You must enter a Length of Aging Periods if you select aging.';
+        Text1500005: Label 'DAYS';
+        Text1500006: Label 'Over';
+        Text1500007: Label 'Upto';
+        Text1500008: Label 'The Date Formula %1 cannot be used. Try to restate it. E.g. 1M+CM instead of CM+1M.';
+        TempCustLedgerEntry1: Record "Cust. Ledger Entry" temporary;
+        TempCustLedgerEntry2: Record "Cust. Ledger Entry" temporary;
+        TempCustLedgerEntry3: Record "Cust. Ledger Entry" temporary;
+        TempCustLedgerEntry4: Record "Cust. Ledger Entry" temporary;
+        TempCustLedgerEntry5: Record "Cust. Ledger Entry" temporary;
+        AgingAmount: array[5] of Decimal;
+        CustLedEntry: Record "Cust. Ledger Entry";
+        Text1500009: Label 'Days overdue:';
+        Text1500010: Label 'Days old:';
+        STATEMENTCaptionLbl: Label 'STATEMENT';
+        Statement_Date_CaptionLbl: Label 'Statement Date:';
+        Account_Number_CaptionLbl: Label 'Account Number:';
+        Currency_CaptionLbl: Label 'Currency:';
+        Page_CaptionLbl: Label 'Page:';
+        BalanceCaptionLbl: Label 'Balance';
+        CreditsCaptionLbl: Label 'Credits';
+        DebitsCaptionLbl: Label 'Debits';
+        Due_DateCaptionLbl: Label 'Due Date';
+        No_CaptionLbl: Label 'No.';
+        DocumentCaptionLbl: Label 'Document';
+        DateCaptionLbl: Label 'Date';
+        Statement_BalanceCaptionLbl: Label 'Statement Balance';
+        Balance_ForwardCaptionLbl: Label 'Balance Forward';
+        Bal_FwdCaptionLbl: Label 'Bal Fwd';
+        Statement_BalanceCaption_Control1000000007Lbl: Label 'Statement Balance';
+        Statement_Aging_Caption_Control1000000009Lbl: Label 'Statement Aging:';
+        Aged_Amounts_Caption_Control1000000012Lbl: Label 'Aged Amounts:';
+        ReportCaptionLbl: Label 'Statement Of Account';
+        TelCaptionLbl: Label 'Tel';
+        FaxCaptionLbl: Label 'Fax';
+        CustomerNoCaptionLbl: Label 'Customer No.';
+        AsAtCaptionLbl: Label 'As At';
+        PageNoCaptionLbl: Label 'Page No.';
+        PaymentTermsCaptionLbl: Label 'Payment Terms';
+        CustomerCaptionLbl: Label 'Customer';
+        ImportantCaptionLbl: Label 'Important';
+        CompanyInfo: Record "Company Information";
+        CLE3_CustPO: Code[200];
+        CLE3_CurrCode: Code[10];
+        CLE4_CustPO: Code[200];
+        CLE4_CurrCode: Code[10];
+        GLSetup: Record "General Ledger Setup";
+        CurrencyCode: Code[10];
+        AgingDateStart: array[5] of Integer;
+        AgingDateEnd: array[5] of Integer;
+        int: Integer;
+        DocNo: Text[200];
+        PaymentTerms: Record "Payment Terms";
+        CustPaymentTermsDescr: Text[100]; // YF 03 Jan 2022
+        SendEmailBool: Boolean; // YF 14 Jan 2022
+        EmailMsg: Text[1024]; // YF 14 Jan 2022
+        IsFromEmail: Boolean; // YF 18 Jan 2022
+        CustCode: Code[20]; // YF 18 Jan 2022
+        Temp_SIH: Record "Sales Invoice Header" temporary;//LK28Aug2024
+        G_SIH: Record "Sales Invoice Header";//LK28Aug2024
+        IsTechMedCompany: Boolean;
+        Temp_SCNH: Record "Sales Cr.Memo Header" temporary;
+        G_SCNH: Record "Sales Cr.Memo Header";
+
+    [Scope('OnPrem')]
+    procedure GetTermsString(var CustLedgerEntry: Record "Cust. Ledger Entry"): Text[250]
+    var
+        InvoiceHeader: Record "Sales Invoice Header";
+        PaymentTerms: Record "Payment Terms";
+    begin
+        if (CustLedgerEntry."Document No." = '') or (CustLedgerEntry."Document Type" <> CustLedgerEntry."Document Type"::Invoice) then
+            exit('');
+
+        if InvoiceHeader.ReadPermission then
+            if InvoiceHeader.Get(CustLedgerEntry."Document No.") then
+                if PaymentTerms.Get(InvoiceHeader."Payment Terms Code") then begin
+                    if PaymentTerms.Description <> '' then
+                        exit(PaymentTerms.Description);
+
+                    exit(InvoiceHeader."Payment Terms Code");
+                end else
+                    exit(InvoiceHeader."Payment Terms Code");
+
+        if Customer."Payment Terms Code" <> '' then
+            if PaymentTerms.Get(Customer."Payment Terms Code") then begin
+                if PaymentTerms.Description <> '' then
+                    exit(PaymentTerms.Description);
+
+                exit(Customer."Payment Terms Code");
+            end else
+                exit(Customer."Payment Terms Code");
+
+        exit('');
+    end;
+
+    // [Obsolete('Function scope will be changed to OnPrem', '15.1')] // YF 06 Aug 2024
+    procedure CalcAging()
+    begin
+        if AgingMethod = AgingMethod::None then
+            exit;
+        AgingDaysText := '';
+        Evaluate(PeriodLength2, '-' + Format(PeriodCalculation));
+        if AgingMethod = AgingMethod::"Due Date" then begin
+            PeriodEndingDate[1] := 99991231D;
+            Periodstartdate[1] := ToDate + 1;
+        end else begin
+            PeriodEndingDate[1] := ToDate;
+            Periodstartdate[1] := CalcDate(PeriodLength2, ToDate + 1);
+        end;
+        for i := 2 to 5 do begin
+            PeriodEndingDate[i] := Periodstartdate[i - 1] - 1;
+            Periodstartdate[i] := CalcDate(PeriodLength2, PeriodEndingDate[i] + 1);
+        end;
+        Periodstartdate[i] := 0D;
+        for i := 1 to 5 do
+            if PeriodEndingDate[i] < Periodstartdate[i] then
+                Error(Text1500008, PeriodCalculation);
+
+        int := 2;
+        while int < 5 do begin
+            if int = 2 then begin
+                AgingDateStart[int] := 1;
+                AgingDateEnd[int] := ToDate - Periodstartdate[1] + 1;
+            end else begin
+                AgingDateStart[int] := AgingDateEnd[int - 1] + 1;
+                AgingDateEnd[int] := AgingDateEnd[int - 1] + (ToDate - Periodstartdate[1] + 1);
+            end;
+            int += 1;
+        end;
+
+        if AgingMethod = AgingMethod::"Due Date" then begin
+            i := 2;
+            while i < 5 do begin
+                AgingHead[i] := StrSubstNo('%1 to %2 %3', ToDate - PeriodEndingDate[i] + 1, ToDate - Periodstartdate[i] + 1, Text1500005);
+                i := i + 1;
+            end;
+            AgingHead[1] := 'CURRENT';
+            AgingHead[2] := StrSubstNo('%1 %2 %3', Text1500007, ToDate - Periodstartdate[2] + 1, Text1500005);
+            AgingHead[i] := StrSubstNo('%1 %2 %3', Text1500006, ToDate - Periodstartdate[i - 1] + 1, Text1500005);
+        end else
+            i := 1;
+
+        while i < 5 do begin
+            AgingHead[1] := 'CURRENT';
+            if i <> 1 then
+                AgingHead[i] := StrSubstNo('%1 to %2 %3', AgingDateStart[i], AgingDateEnd[i], Text1500005);
+            //AgingHead[i] := StrSubstNo('%1 to %2 %3', ToDate - PeriodEndingDate[i] + 1, ToDate - Periodstartdate[i] + 1, Text1500005);
+            i := i + 1;
+        end;
+        if AgingMethod <> AgingMethod::"Due Date" then
+            AgingHead[i] := StrSubstNo('%1 %2 %3', Text1500006, AgingDateEnd[i - 1], Text1500005);
+    end;
+
+    // [Obsolete('Function scope will be changed to OnPrem', '15.1')] // YF 06 Aug 2024
+    procedure CalcOpenLedgEntry()
+    begin
+        Clear(AgingAmount);
+        if not PrintLCY then begin
+            TempCustLedgerEntry1.Reset();
+            TempCustLedgerEntry1.SetRange("Customer No.", "AgingCust. Ledger Entry"."Customer No.");
+            TempCustLedgerEntry1.SetRange("Date Filter", 0D, ToDate);
+            TempCustLedgerEntry1.SetRange("Posting Date", 0D, ToDate);
+            if TempCustLedgerEntry1.Find('-') then
+                repeat
+                    TempCustLedgerEntry1.CalcFields("Remaining Amount");
+                    AgingAmount[1] += TempCustLedgerEntry1."Remaining Amount";
+                until TempCustLedgerEntry1.Next() = 0;
+        end else begin
+            TempCustLedgerEntry1.Reset();
+            TempCustLedgerEntry1.SetRange("Customer No.", "AgingCust. Ledger Entry"."Customer No.");
+            TempCustLedgerEntry1.SetRange("Date Filter", 0D, ToDate);
+            TempCustLedgerEntry1.SetRange("Posting Date", 0D, ToDate);
+            if TempCustLedgerEntry1.Find('-') then
+                repeat
+                    TempCustLedgerEntry1.CalcFields("Remaining Amt. (LCY)");
+                    AgingAmount[1] += TempCustLedgerEntry1."Remaining Amt. (LCY)";
+                until TempCustLedgerEntry1.Next() = 0;
+        end;
+        if not PrintLCY then begin
+            TempCustLedgerEntry2.Reset();
+            TempCustLedgerEntry2.SetRange("Customer No.", "AgingCust. Ledger Entry"."Customer No.");
+            TempCustLedgerEntry2.SetRange("Date Filter", 0D, ToDate);
+            TempCustLedgerEntry2.SetRange("Posting Date", 0D, ToDate);
+            if TempCustLedgerEntry2.Find('-') then
+                repeat
+                    TempCustLedgerEntry2.CalcFields("Remaining Amount");
+                    AgingAmount[2] += TempCustLedgerEntry2."Remaining Amount";
+                until TempCustLedgerEntry2.Next() = 0;
+        end else begin
+            TempCustLedgerEntry2.Reset();
+            TempCustLedgerEntry2.SetRange("Customer No.", "AgingCust. Ledger Entry"."Customer No.");
+            TempCustLedgerEntry2.SetRange("Date Filter", 0D, ToDate);
+            TempCustLedgerEntry2.SetRange("Posting Date", 0D, ToDate);
+            if TempCustLedgerEntry2.Find('-') then
+                repeat
+                    TempCustLedgerEntry2.CalcFields("Remaining Amt. (LCY)");
+                    AgingAmount[2] += TempCustLedgerEntry2."Remaining Amt. (LCY)";
+                until TempCustLedgerEntry2.Next() = 0;
+        end;
+        if not PrintLCY then begin
+            TempCustLedgerEntry3.Reset();
+            TempCustLedgerEntry3.SetRange("Customer No.", "AgingCust. Ledger Entry"."Customer No.");
+            TempCustLedgerEntry3.SetRange("Date Filter", 0D, ToDate);
+            TempCustLedgerEntry3.SetRange("Posting Date", 0D, ToDate);
+            if TempCustLedgerEntry3.Find('-') then
+                repeat
+                    TempCustLedgerEntry3.CalcFields("Remaining Amount");
+                    AgingAmount[3] += TempCustLedgerEntry3."Remaining Amount";
+                until TempCustLedgerEntry3.Next() = 0;
+        end else begin
+            TempCustLedgerEntry3.Reset();
+            TempCustLedgerEntry3.SetRange("Customer No.", "AgingCust. Ledger Entry"."Customer No.");
+            TempCustLedgerEntry3.SetRange("Date Filter", 0D, ToDate);
+            TempCustLedgerEntry3.SetRange("Posting Date", 0D, ToDate);
+            if TempCustLedgerEntry3.Find('-') then
+                repeat
+                    TempCustLedgerEntry3.CalcFields("Remaining Amount");
+                    AgingAmount[3] += TempCustLedgerEntry3."Remaining Amount";
+                until TempCustLedgerEntry3.Next() = 0;
+        end;
+        if not PrintLCY then begin
+            TempCustLedgerEntry4.Reset();
+            TempCustLedgerEntry4.SetRange("Customer No.", "AgingCust. Ledger Entry"."Customer No.");
+            TempCustLedgerEntry4.SetRange("Date Filter", 0D, ToDate);
+            TempCustLedgerEntry4.SetRange("Posting Date", 0D, ToDate);
+            if TempCustLedgerEntry4.Find('-') then
+                repeat
+                    TempCustLedgerEntry4.CalcFields("Remaining Amount");
+                    AgingAmount[4] += TempCustLedgerEntry4."Remaining Amount";
+                until TempCustLedgerEntry4.Next() = 0;
+        end else begin
+            TempCustLedgerEntry4.Reset();
+            TempCustLedgerEntry4.SetRange("Customer No.", "AgingCust. Ledger Entry"."Customer No.");
+            TempCustLedgerEntry4.SetRange("Date Filter", 0D, ToDate);
+            TempCustLedgerEntry4.SetRange("Posting Date", 0D, ToDate);
+            if TempCustLedgerEntry4.Find('-') then
+                repeat
+                    TempCustLedgerEntry4.CalcFields("Remaining Amount");
+                    AgingAmount[4] += TempCustLedgerEntry4."Remaining Amount";
+                until TempCustLedgerEntry4.Next() = 0;
+        end;
+        if not PrintLCY then begin
+            TempCustLedgerEntry5.Reset();
+            TempCustLedgerEntry5.SetRange("Customer No.", "AgingCust. Ledger Entry"."Customer No.");
+            TempCustLedgerEntry5.SetRange("Date Filter", 0D, ToDate);
+            TempCustLedgerEntry5.SetRange("Posting Date", 0D, ToDate);
+            if TempCustLedgerEntry5.Find('-') then
+                repeat
+                    TempCustLedgerEntry5.CalcFields("Remaining Amount");
+                    AgingAmount[5] += TempCustLedgerEntry5."Remaining Amount";
+                until TempCustLedgerEntry5.Next() = 0;
+        end else begin
+            TempCustLedgerEntry5.Reset();
+            TempCustLedgerEntry5.SetRange("Customer No.", "AgingCust. Ledger Entry"."Customer No.");
+            TempCustLedgerEntry5.SetRange("Date Filter", 0D, ToDate);
+            TempCustLedgerEntry5.SetRange("Posting Date", 0D, ToDate);
+            if TempCustLedgerEntry5.Find('-') then
+                repeat
+                    TempCustLedgerEntry5.CalcFields("Remaining Amount");
+                    AgingAmount[5] += TempCustLedgerEntry5."Remaining Amount";
+                until TempCustLedgerEntry5.Next() = 0;
+        end;
+    end;
+
+    local procedure GetCustPOAndCurrCodeForCLE3(par_CLE: Record "Cust. Ledger Entry")
+    var
+        lcl_SIH: Record "Sales Invoice Header";
+        lcl_SCMH: Record "Sales Cr.Memo Header";
+        lrec_CLE: Record "Cust. Ledger Entry";
+    begin
+        Clear(CLE3_CustPO);
+        Clear(CLE3_CurrCode);
+
+        if par_CLE."Document Type" = par_CLE."Document Type"::Invoice then begin
+            lcl_SIH.Reset();
+            lcl_SIH.SetRange("No.", par_CLE."Document No.");
+            if lcl_SIH.FindFirst() then begin
+                if lcl_SIH."External Document No." <> '' then
+                    CLE3_CustPO := lcl_SIH."External Document No."
+                // else
+                //     CLE3_CustPO := lcl_SIH."Customer PO-1";
+            end else begin
+                lrec_CLE.Reset();
+                lrec_CLE.SetRange("Document No.", par_CLE."Document No.");
+                if lrec_CLE.FindSet() then begin
+                    CLE3_CustPO := lrec_CLE."External Document No.";
+                end;
+            end;
+        end else
+            if par_CLE."Document Type" = par_CLE."Document Type"::"Credit Memo" then begin
+                lcl_SCMH.Reset();
+                lcl_SCMH.SetRange("No.", par_CLE."Document No.");
+                if lcl_SCMH.FindFirst() then begin
+                    if lcl_SCMH."External Document No." <> '' then
+                        CLE3_CustPO := lcl_SCMH."External Document No."
+                    // else
+                    //     CLE3_CustPO := lcl_SCMH."Customer PO-1";
+                end else begin
+                    lrec_CLE.Reset();
+                    lrec_CLE.SetRange("Document No.", par_CLE."Document No.");
+                    if lrec_CLE.FindSet() then begin
+                        CLE3_CustPO := lrec_CLE."External Document No.";
+                    end;
+                end;
+            end;
+
+        if par_CLE."Currency Code" <> '' then
+            CLE3_CurrCode := par_CLE."Currency Code"
+        else begin
+            GLSetup.Get();
+            GLSetup.TestField("LCY Code");
+            CLE3_CurrCode := GLSetup."LCY Code";
+        end;
+
+        if IsTechMedCompany then
+            CurrencyCode := CLE3_CurrCode;
+    end;
+
+    local procedure GetCustPOAndCurrCodeForCLE4(par_CLE: Record "Cust. Ledger Entry")
+    var
+        lcl_SIH: Record "Sales Invoice Header";
+        lcl_SCMH: Record "Sales Cr.Memo Header";
+        lrec_CLE: Record "Cust. Ledger Entry";
+    begin
+        Clear(CLE4_CustPO);
+        Clear(CLE4_CurrCode);
+
+        if par_CLE."Document Type" = par_CLE."Document Type"::Invoice then begin
+            lcl_SIH.Reset();
+            lcl_SIH.SetRange("No.", par_CLE."Document No.");
+            if lcl_SIH.FindFirst() then begin
+                if lcl_SIH."External Document No." <> '' then
+                    CLE4_CustPO := lcl_SIH."External Document No."
+                // else
+                //     CLE4_CustPO := lcl_SIH."Customer PO-1";
+            end else begin
+                lrec_CLE.Reset();
+                lrec_CLE.SetRange("Document No.", par_CLE."Document No.");
+                if lrec_CLE.FindSet() then begin
+                    CLE4_CustPO := lrec_CLE."External Document No.";
+                end;
+            end;
+        end else
+            if par_CLE."Document Type" = par_CLE."Document Type"::"Credit Memo" then begin
+                lcl_SCMH.Reset();
+                lcl_SCMH.SetRange("No.", par_CLE."Document No.");
+                if lcl_SCMH.FindFirst() then begin
+                    if lcl_SCMH."External Document No." <> '' then
+                        CLE4_CustPO := lcl_SCMH."External Document No."
+                    // else
+                    //     CLE4_CustPO := lcl_SCMH."Customer PO-1";
+                end else begin
+                    lrec_CLE.Reset();
+                    lrec_CLE.SetRange("Document No.", par_CLE."Document No.");
+                    if lrec_CLE.FindSet() then begin
+                        CLE4_CustPO := lrec_CLE."External Document No.";
+                    end;
+                end;
+            end;
+
+        if par_CLE."Currency Code" <> '' then
+            CLE4_CurrCode := par_CLE."Currency Code"
+        else begin
+            GLSetup.Get();
+            GLSetup.TestField("LCY Code");
+            CLE4_CurrCode := GLSetup."LCY Code";
+        end;
+
+        if IsTechMedCompany then
+            CurrencyCode := CLE3_CurrCode;
+    end;
+
+
+}

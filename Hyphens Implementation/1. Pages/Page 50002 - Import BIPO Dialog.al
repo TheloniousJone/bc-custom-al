@@ -1,0 +1,38 @@
+page 50002 ImportBIPO
+{
+    PageType = StandardDialog;
+    ApplicationArea = All;
+    UsageCategory = Administration;
+    SourceTable = "Gen. Journal Line";
+
+    layout
+    {
+        area(Content)
+        {
+            group(GroupName)
+            {
+                field(gdt_PostingDate; gdt_PostingDate)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Posting Date';
+                }
+            }
+        }
+    }
+
+
+    var
+        gdt_PostingDate: Date;
+        gcdu_Hyphens: Codeunit "Hyphens CU";
+
+    trigger OnQueryClosePage(CloseAction: Action): Boolean
+    begin
+        if CloseAction = CloseAction::OK then begin
+            clear(gcdu_Hyphens);
+            gcdu_Hyphens.ImportBIPO(Rec."Journal Template Name", Rec."Journal Batch Name", gdt_PostingDate);
+            // Message('%1 --- %2 --- %3 ', Rec."Journal Template Name", Rec."Journal Batch Name", gdt_PostingDate);
+        end;
+    end;
+
+
+}
