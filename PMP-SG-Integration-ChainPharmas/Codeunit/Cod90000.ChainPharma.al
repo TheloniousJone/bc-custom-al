@@ -765,7 +765,7 @@ codeunit 90000 ChainPharmaCU
 
                 // Document Type
                 if (XMLBuffer.Type = XMLBuffer.Type::Element) And (XMLBuffer.Name = 'typedEntityIdentification') And (XMLBuffer.Path = '/sanc:order/typedEntityIdentification') then begin
-                    TempIncomingPOHeader."Document Type" := XMLBuffer.GetAttributeValue('entityType');
+                    TempIncomingPOHeader."Document Type" := XMLBuffer.GetAttributeValueAsText('entityType');
                 end;
 
                 // PO Number
@@ -805,7 +805,7 @@ codeunit 90000 ChainPharmaCU
                 if (XMLBuffer.Type = XMLBuffer.Type::Element) And (XMLBuffer.Name = 'lineItem') then begin
 
                     // Set current item line no.
-                    if not Evaluate(CurrentItemLine, XMLBuffer.GetAttributeValue('number')) then
+                    if not Evaluate(CurrentItemLine, XMLBuffer.GetAttributeValueAsText('number')) then
                         CurrentItemLine := 0
                     else begin
                         // Setup line record
@@ -1043,7 +1043,7 @@ codeunit 90000 ChainPharmaCU
 
                 // Document Type
                 if (XMLBuffer.Type = XMLBuffer.Type::Element) And (XMLBuffer.Name = 'typedEntityIdentification') And (XMLBuffer.Path = '/sanc:order/typedEntityIdentification') then begin
-                    TempIncomingPOHeader."Document Type" := XMLBuffer.GetAttributeValue('entityType');
+                    TempIncomingPOHeader."Document Type" := XMLBuffer.GetAttributeValueAsText('entityType');
                 end;
 
                 // PO Number
@@ -1083,7 +1083,7 @@ codeunit 90000 ChainPharmaCU
                 if (XMLBuffer.Type = XMLBuffer.Type::Element) And (XMLBuffer.Name = 'lineItem') then begin
 
                     // Set current item line no.
-                    if not Evaluate(CurrentItemLine, XMLBuffer.GetAttributeValue('number')) then
+                    if not Evaluate(CurrentItemLine, XMLBuffer.GetAttributeValueAsText('number')) then
                         CurrentItemLine := 0
                     else begin
                         // Setup line record
@@ -1321,7 +1321,7 @@ codeunit 90000 ChainPharmaCU
 
                 // Document Type
                 if (XMLBuffer.Type = XMLBuffer.Type::Element) And (XMLBuffer.Name = 'typedEntityIdentification') And (XMLBuffer.Path = '/sanc:order/typedEntityIdentification') then begin
-                    TempIncomingPOHeader."Document Type" := XMLBuffer.GetAttributeValue('entityType');
+                    TempIncomingPOHeader."Document Type" := XMLBuffer.GetAttributeValueAsText('entityType');
                 end;
 
                 // PO Number
@@ -1361,7 +1361,7 @@ codeunit 90000 ChainPharmaCU
                 if (XMLBuffer.Type = XMLBuffer.Type::Element) And (XMLBuffer.Name = 'lineItem') then begin
 
                     // Set current item line no.
-                    if not Evaluate(CurrentItemLine, XMLBuffer.GetAttributeValue('number')) then
+                    if not Evaluate(CurrentItemLine, XMLBuffer.GetAttributeValueAsText('number')) then
                         CurrentItemLine := 0
                     else begin
                         // Setup line record
@@ -1420,7 +1420,7 @@ codeunit 90000 ChainPharmaCU
 
                     // Line UOM
                     if (XMLBuffer.Type = XMLBuffer.Type::Element) And (XMLBuffer.Name = 'measurementValue') And (XMLBuffer.Path = '/sanc:order/lineItem/itemInformation/tradingPartnerNeutralTradeItemInformation/tradeItemMeasurements/netContent/measurementValue') then
-                        TempIncomingPOLine.UOM := XMLBuffer.GetAttributeValue('unitOfMeasure');
+                        TempIncomingPOLine.UOM := XMLBuffer.GetAttributeValueAsText('unitOfMeasure');
 
                     // Line Pack Size
                     // if (XMLBuffer.Type = XMLBuffer.Type::Element) And (XMLBuffer.Name = 'quantityOfNextLevelTradeItemWithinInnerPack') And (XMLBuffer.Path = '/sanc:order/lineItem/itemInformation/tradingPartnerNeutralTradeItemInformation/tradeItemHierarchy/quantityOfNextLevelTradeItemWithinInnerPack') then begin
@@ -1602,7 +1602,7 @@ codeunit 90000 ChainPharmaCU
 
                 // Document Type
                 if (XMLBuffer.Type = XMLBuffer.Type::Element) And (XMLBuffer.Name = 'typedEntityIdentification') And (XMLBuffer.Path = '/sanc:order/typedEntityIdentification') then begin
-                    TempIncomingPOHeader."Document Type" := XMLBuffer.GetAttributeValue('entityType');
+                    TempIncomingPOHeader."Document Type" := XMLBuffer.GetAttributeValueAsText('entityType');
                 end;
 
                 // PO Number
@@ -1648,7 +1648,7 @@ codeunit 90000 ChainPharmaCU
                 if (XMLBuffer.Type = XMLBuffer.Type::Element) And (XMLBuffer.Name = 'lineItem') then begin
 
                     // Set current item line no.
-                    if not Evaluate(CurrentItemLine, XMLBuffer.GetAttributeValue('number')) then
+                    if not Evaluate(CurrentItemLine, XMLBuffer.GetAttributeValueAsText('number')) then
                         CurrentItemLine := 0
                     else begin
                         // Setup line record
@@ -1711,7 +1711,7 @@ codeunit 90000 ChainPharmaCU
                     // Line UOM
                     // if (XMLBuffer.Type = XMLBuffer.Type::Element) And (XMLBuffer.Name = 'measurementValue') And (XMLBuffer.Path = '/sanc:order/lineItem/itemInformation/tradingPartnerNeutralTradeItemInformation/tradeItemMeasurements/netContent/measurementValue') then
                     if (XMLBuffer.Type = XMLBuffer.Type::Element) And (XMLBuffer.Name = 'packagingTypeCode') And (XMLBuffer.Path = '/sanc:order/lineItem/itemInformation/tradingPartnerNeutralTradeItemInformation/packagingType/packagingTypeCode') then
-                        TempIncomingPOLine.UOM := XMLBuffer.GetAttributeValue('unitOfMeasure');
+                        TempIncomingPOLine.UOM := XMLBuffer.GetAttributeValueAsText('unitOfMeasure');
 
                     // Line Pack Size
                     if (XMLBuffer.Type = XMLBuffer.Type::Element) And (XMLBuffer.Name = 'quantityOfNextLevelTradeItemWithinInnerPack') And (XMLBuffer.Path = '/sanc:order/lineItem/itemInformation/tradingPartnerNeutralTradeItemInformation/tradeItemHierarchy/quantityOfNextLevelTradeItemWithinInnerPack') then begin
