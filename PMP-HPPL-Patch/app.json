@@ -1,0 +1,49 @@
+{
+  "id": "ae105170-6b7b-4cb4-8ba0-1fa48afaddc6",
+  "name": "PMP-HPPL-Patch",
+  "publisher": "Illum (9) Pte Ltd",
+  "version": "1.0.0.8",
+  "brief": "Extension Patch",
+  "description": "Extension for Patching",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+      "id": "7a083581-30a8-408a-ae5b-37dd5db4f4cd",
+      "publisher": "Illum (9) Pte Ltd",
+      "name": "PMP-SG-Implementation",
+      "version": "1.0.0.156"
+    },
+    {
+      "id": "318a187c-69cd-4d87-badd-3919b80b24fd",
+      "publisher": "Illum (9) Pte Ltd",
+      "name": "Hyphens Base",
+      "version": "1.0.0.7"
+    },
+    {
+      "id": "5d62514e-9b36-4eb9-8564-9e2d2701d94a",
+      "publisher": "Illum (9) Pte Ltd",
+      "name": "POM",
+      "version": "1.0.0.34"
+    }
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "20.0.0.0",
+  "idRanges": [
+    {
+      "from": 99000,
+      "to": 99999
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "propagateDependencies": true,
+  "runtime": "9.0"
+}

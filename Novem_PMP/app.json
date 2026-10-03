@@ -1,0 +1,63 @@
+{
+  "id": "56597f4a-0c29-4881-9d8d-1a5eca2db060",
+  "name": "Novem_PMP",
+  "publisher": "Illum (9) Pte. Ltd.",
+  "version": "1.0.0.64",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+     "id": "1a74559a-405b-4fac-b428-2b1d2051df67",
+     "name":"PMP-SG-NovemBase",
+     "publisher": "Illum (9) Pte Ltd",
+     "version": "1.0.0.0"
+    },
+    {
+     "id": "de263e87-3a02-4df3-b559-b54afe9adeda",
+     "name":"PMP-SG-NovemFunctions",
+     "publisher": "Illum (9) Pte Ltd",
+     "version": "1.0.0.75"
+    },
+    {
+      "id": "7a083581-30a8-408a-ae5b-37dd5db4f4cd",
+      "publisher": "Illum (9) Pte Ltd",
+      "name": "PMP-SG-Implementation",
+      "version": "1.0.0.267"
+    },
+    {
+      "id": "318a187c-69cd-4d87-badd-3919b80b24fd",
+      "publisher": "Illum (9) Pte Ltd",
+      "name": "Hyphens Base",
+      "version": "1.0.0.12"
+    },
+    {
+      "id": "7ed8c7a6-21f7-4aa9-b3d5-7051f2f29d3c",
+      "publisher": "Illum (9) Pte Ltd",
+      "name": "PMP-SG-Base",
+      "version": "1.0.0.95"
+    }
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "25.0.0.0",
+  "idRanges": [
+    {
+      "from": 80130,
+      "to": 80160
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "runtime": "14.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}

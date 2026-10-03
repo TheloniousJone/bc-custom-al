@@ -1,0 +1,51 @@
+pageextension 50034 HPPLUserGroupList extends "User Groups"
+{
+    layout
+    {
+        // Add changes to page layout here
+        addafter(YourProfileID)
+        {
+            field("HPPL Limit Access"; Rec."HPPL Limit Access")
+            {
+                ApplicationArea = All;
+            }
+        }
+    }
+
+    actions
+    {
+        addafter(ImportUserGroups)
+        {
+            action("Test - List Query Result")
+            {
+                ApplicationArea = All;
+                Image = TestReport;
+                Visible = false;
+
+                trigger OnAction()
+                var
+                    TestQuery: Query "Limited Group List Query";
+                    TestFilterString: Text;
+                begin
+                    Clear(TestQuery);
+                    Clear(TestFilterString);
+
+                    TestQuery.SetRange(User_Name_Filter, 'MAYA');
+                    TestQuery.SetRange(HPPL_Limit_Access_Filter, true);
+                    TestQuery.Open();
+                    while TestQuery.Read() do begin
+                        Message(TestQuery.User_Name + '|' + TestQuery.Company_Name + '|' + TestQuery.Group_Code + '|' + Format(TestQuery.HPPL_Limit_Access));
+                        TestFilterString += TestQuery.Group_Code + '|';
+                    end;
+
+                    if (StrLen(TestFilterString) = TestFilterString.LastIndexOf('|')) And (StrLen(TestFilterString) > 0) then begin
+                        TestFilterString := CopyStr(TestFilterString, 1, StrLen(TestFilterString) - 1);
+                    end;
+
+                    Message(TestFilterString);
+                end;
+            }
+        }
+    }
+
+}

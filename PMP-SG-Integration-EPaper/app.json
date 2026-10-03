@@ -1,0 +1,36 @@
+{
+  "id": "682177b7-09df-4a84-8308-a33e03d6e47e",
+  "name": "PMP-SG-Integration-EPaper",
+  "publisher": "Illum (9) Pte Ltd",
+  "version": "1.0.0.11",
+  "brief": "Extension for EPaper Integration",
+  "description": "Extension for EPaper Integration.",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "illum9logo.png",
+  "dependencies": [
+    {
+      "id": "7a083581-30a8-408a-ae5b-37dd5db4f4cd",
+      "publisher": "Illum (9) Pte Ltd",
+      "name": "PMP-SG-Implementation",
+      "version": "1.0.0.151"
+    }
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "20.0.0.0",
+  "idRanges": [
+    {
+      "from": 56000,
+      "to": 56099
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "runtime": "9.0"
+}

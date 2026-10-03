@@ -1,0 +1,37 @@
+{
+    "id": "7a083581-30a8-408a-ae5b-37dd5db4f4cd",
+    "name": "PMP-SG-Implementation",
+    "publisher": "Illum (9) Pte Ltd",
+    "version": "1.0.0.342",
+    "brief": "Extension functions and interface",
+    "description": "Extension to contain the various functions and interfaces.",
+    "privacyStatement": "",
+    "EULA": "",
+    "help": "",
+    "url": "",
+    "logo": "",
+    "dependencies": [
+        {
+            "id": "7ED8C7A6-21F7-4AA9-B3D5-7051F2F29D3C",
+            "name": "PMP-SG-Base",
+            "publisher": "Illum (9) Pte Ltd",
+            "version": "1.0.1.30"
+        }
+    ],
+    "screenshots": [],
+    "platform": "1.0.0.0",
+    "application": "20.0.0.0",
+    "idRanges": [
+        {
+            "from": 55000,
+            "to": 55999
+        }
+    ],
+    "resourceExposurePolicy": {
+        "allowDebugging": true,
+        "allowDownloadingSource": false,
+        "includeSourceInSymbolFile": false
+    },
+    "propagateDependencies": true,
+    "runtime": "11.0"
+}

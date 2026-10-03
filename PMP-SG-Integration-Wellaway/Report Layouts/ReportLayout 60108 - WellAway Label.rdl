@@ -1,0 +1,556 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>0abf4235-45a7-4d00-ab8d-cea86cd1922d</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="Tablix2">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>6.91813cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>2.1523cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle1">
+                          <ReportItems>
+                            <Textbox Name="Description">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!Description.Value</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Description</rd:DefaultName>
+                              <Height>0.42262cm</Height>
+                              <Width>5.6283cm</Width>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Description2">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!PresDesc.Value &amp; vbcrlf &amp; Fields!PresDesc2.Value</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Normal</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Description</rd:DefaultName>
+                              <Top>0.4579cm</Top>
+                              <Left>0.00756cm</Left>
+                              <Height>1.6944cm</Height>
+                              <Width>6.91057cm</Width>
+                              <ZIndex>1</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Description3">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!Qty.Value</Value>
+                                      <Style>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>Normal</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style>
+                                    <TextAlign>Left</TextAlign>
+                                  </Style>
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Description</rd:DefaultName>
+                              <Left>5.66358cm</Left>
+                              <Height>0.42262cm</Height>
+                              <Width>1.25455cm</Width>
+                              <ZIndex>2</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Textbox>
+                            <Textbox Name="Textbox7">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Code.SetData(Cstr(Fields!No_.Value) + Chr(177) + 
+Cstr(Fields!PatientName.Value)+Chr(177)+
+Cstr(Fields!PatientNRIC.Value)
+, 1)</Value>
+                                      <Style>
+                                        <FontSize>7pt</FontSize>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox7</rd:DefaultName>
+                              <Top>1.7833cm</Top>
+                              <Left>6.31427cm</Left>
+                              <Height>0.18061cm</Height>
+                              <Width>0.60386cm</Width>
+                              <ZIndex>3</ZIndex>
+                              <Visibility>
+                                <Hidden>=Code.SetData(Cstr(Fields!No_.Value) + Chr(177) + 
+Cstr(Fields!PatientName.Value)+Chr(177)+
+Cstr(Fields!PatientNRIC.Value)+Chr(177)+
+Cstr(Fields!Posting_Date.Value)+Chr(177)+
+Cstr(Fields!Basket.Value)
+, 1)</Hidden>
+                              </Visibility>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </ReportItems>
+                          <PageBreak>
+                            <BreakLocation>End</BreakLocation>
+                          </PageBreak>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Details">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!LoopCount.Value</GroupExpression>
+                      <GroupExpression>=Fields!No_.Value</GroupExpression>
+                    </GroupExpressions>
+                    <PageBreak>
+                      <BreakLocation>Between</BreakLocation>
+                    </PageBreak>
+                  </Group>
+                  <Visibility>
+                    <Hidden>=Fields!Qty.Value=0</Hidden>
+                  </Visibility>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet_Result</DataSetName>
+            <Height>2.1523cm</Height>
+            <Width>6.91813cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Height>2.1523cm</Height>
+        <Style />
+      </Body>
+      <Width>6.91813cm</Width>
+      <Page>
+        <PageHeader>
+          <Height>1.06697cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox1">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>WellAway Pharmacy</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Height>0.54299cm</Height>
+              <Width>6.30209cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>16 Tai Seng Street #04-01 Singapore 534138</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>0.543cm</Top>
+              <Height>0.45889cm</Height>
+              <Width>6.91813cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Textbox>
+            <Line Name="Line1">
+              <Top>1.05889cm</Top>
+              <Height>0cm</Height>
+              <Width>6.91813cm</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageFooter>
+          <Height>1.28651cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox4">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=code.getdata(2,1)</Value>
+                      <Style>
+                        <FontSize>7pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox4</rd:DefaultName>
+              <Left>0.00756cm</Left>
+              <Height>0.84429cm</Height>
+              <Width>5.01472cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox5">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=code.getdata(1,1)</Value>
+                      <Style>
+                        <FontSize>7pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox4</rd:DefaultName>
+              <Left>5.03558cm</Left>
+              <Height>0.40238cm</Height>
+              <Width>1.88255cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox6">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=code.getdata(3,1)</Value>
+                      <Style>
+                        <FontSize>7pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox4</rd:DefaultName>
+              <Top>0.84429cm</Top>
+              <Height>0.44222cm</Height>
+              <Width>5.03558cm</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox13">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=code.getdata(4,1)</Value>
+                      <Style>
+                        <FontSize>7pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox13</rd:DefaultName>
+              <Top>0.84429cm</Top>
+              <Left>5.03558cm</Left>
+              <Height>0.44222cm</Height>
+              <Width>1.87499cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox8">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="BKT - " + code.getdata(5,1)</Value>
+                      <Style>
+                        <FontSize>7pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox4</rd:DefaultName>
+              <Top>0.40663cm</Top>
+              <Left>5.03558cm</Left>
+              <Height>0.43766cm</Height>
+              <Width>1.88255cm</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <PageHeight>5cm</PageHeight>
+        <PageWidth>7cm</PageWidth>
+        <ColumnSpacing>1.27cm</ColumnSpacing>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+Shared Data1 as Object
+Public Function GetData(Num as Integer, Group as integer) as Object
+if Group = 1 then
+   Return Cstr(Choose(Num, Split(Cstr(Data1),Chr(177))))
+End If
+End Function
+
+Public Function SetData(NewData as Object,Group as integer)
+  If Group = 1 and NewData &gt; "" Then
+      Data1 = NewData
+  End If
+  Return True
+End Function</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="Basket">
+          <DataField>Basket</DataField>
+        </Field>
+        <Field Name="PresDesc">
+          <DataField>PresDesc</DataField>
+        </Field>
+        <Field Name="PresDesc2">
+          <DataField>PresDesc2</DataField>
+        </Field>
+        <Field Name="LoopCount">
+          <DataField>LoopCount</DataField>
+        </Field>
+        <Field Name="Qty">
+          <DataField>Qty</DataField>
+        </Field>
+        <Field Name="QtyFormat">
+          <DataField>QtyFormat</DataField>
+        </Field>
+        <Field Name="UOM">
+          <DataField>UOM</DataField>
+        </Field>
+        <Field Name="No_">
+          <DataField>No_</DataField>
+        </Field>
+        <Field Name="ExternalDocNo_">
+          <DataField>ExternalDocNo_</DataField>
+        </Field>
+        <Field Name="Posting_Date">
+          <DataField>Posting_Date</DataField>
+        </Field>
+        <Field Name="Order_Date">
+          <DataField>Order_Date</DataField>
+        </Field>
+        <Field Name="PatientName">
+          <DataField>PatientName</DataField>
+        </Field>
+        <Field Name="PatientNRIC">
+          <DataField>PatientNRIC</DataField>
+        </Field>
+        <Field Name="ShelfNo">
+          <DataField>ShelfNo</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

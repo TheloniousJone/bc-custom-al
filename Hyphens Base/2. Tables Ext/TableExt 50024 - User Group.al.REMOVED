@@ -1,0 +1,16 @@
+tableextension 50024 HyphensUserGroupExt extends "User Group"
+{
+    fields
+    {
+        field(50000; "HPPL Limit Access"; Boolean)
+        {
+            Caption = 'HPPL Limit Access';
+            DataClassification = ToBeClassified;
+            InitValue = false;
+
+            // ObsoleteState = Removed;
+            // ObsoleteReason = 'User Group Table marked for removal';
+        }
+
+    }
+}

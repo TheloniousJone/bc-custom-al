@@ -1,0 +1,36 @@
+{
+  "id": "b424b52a-7842-419e-b0fd-30da2743c20b",
+  "name": "Hyphens-PMP-Interco",
+  "publisher": "Illum (9) Pte Ltd",
+  "version": "1.0.0.9",
+  "brief": "Hyphens and PMP Intercompany Customization",
+  "description": "Hyphens and PMP Intercompany Customization",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "illum9logo.png",
+  "dependencies": [
+    {
+      "id": "7a083581-30a8-408a-ae5b-37dd5db4f4cd",
+      "publisher": "Illum (9) Pte Ltd",
+      "name": "PMP-SG-Implementation",
+      "version": "1.0.0.190"
+    }
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "20.0.0.0",
+  "idRanges": [
+    {
+      "from": 56200,
+      "to": 56349
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "runtime": "9.0"
+}

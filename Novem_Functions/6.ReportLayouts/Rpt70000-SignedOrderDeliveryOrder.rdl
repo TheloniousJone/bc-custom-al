@@ -1,0 +1,3015 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>d5978557-22c1-4119-8512-67f1f9f9790c</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="Tablix12">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>19.98184cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>3.90586cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle5">
+                          <ReportItems>
+                            <Tablix Name="Tablix13">
+                              <TablixBody>
+                                <TablixColumns>
+                                  <TablixColumn>
+                                    <Width>1.13117cm</Width>
+                                  </TablixColumn>
+                                  <TablixColumn>
+                                    <Width>2.5cm</Width>
+                                  </TablixColumn>
+                                  <TablixColumn>
+                                    <Width>6.87945cm</Width>
+                                  </TablixColumn>
+                                  <TablixColumn>
+                                    <Width>2.20127cm</Width>
+                                  </TablixColumn>
+                                  <TablixColumn>
+                                    <Width>2.15736cm</Width>
+                                  </TablixColumn>
+                                  <TablixColumn>
+                                    <Width>2.3095cm</Width>
+                                  </TablixColumn>
+                                  <TablixColumn>
+                                    <Width>2.79633cm</Width>
+                                  </TablixColumn>
+                                </TablixColumns>
+                                <TablixRows>
+                                  <TablixRow>
+                                    <Height>0.95983cm</Height>
+                                    <TablixCells>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox49">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>S/N</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox1</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox51">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>ITEM CODE</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox3</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox62">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>ITEM DESCRIPTION / PACK SIZE</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>BATCH NO. / EXP. DATE</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox5</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox63">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>QTY</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox35</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox64">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>UOM</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox37</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox65">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>QTY PICKED</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox39</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox66">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>REMARKS</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>(FOR STAFF USE)</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox41</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                    </TablixCells>
+                                  </TablixRow>
+                                  <TablixRow>
+                                    <Height>0.6cm</Height>
+                                    <TablixCells>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="SNNo5">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=iif(Fields!ItemType.Value ="Item",Fields!SNNo.Value," ")</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>SNNo</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <VerticalAlign>Top</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="ItemCode5">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!ItemCode.Value</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>ItemCode</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <VerticalAlign>Top</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="ItemDescription5">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!ItemDescription.Value</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                    </Style>
+                                                  </TextRun>
+                                                  <TextRun>
+                                                    <Label>RegNo&amp;ProdClassCode</Label>
+                                                    <Value>=IIf((Fields!HSARegistrationNo.Value &lt;&gt; "") And (Fields!HSARegistrationNo.Value &lt;&gt; "") , (vbcrlf +Fields!HSARegistrationNo.Value + " / " + Fields!ProdClassificationCode.Value), "")</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Left</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!ItemDescription2.Value</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Left</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>ItemDescription</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <VerticalAlign>Top</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Quantity7">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!Quantity.Value</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                      <Format>#,0;(#,0);'-'</Format>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Quantity</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <VerticalAlign>Top</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="UOMCode5">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!UOMCode.Value</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>UOMCode</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <VerticalAlign>Top</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Quantity8">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value />
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                      <Format>#,0;(#,0);'-'</Format>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Quantity</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <VerticalAlign>Top</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox74">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value />
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Left</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox42</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <VerticalAlign>Top</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                    </TablixCells>
+                                  </TablixRow>
+                                  <TablixRow>
+                                    <Height>0.25cm</Height>
+                                    <TablixCells>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox173">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value />
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox173</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <VerticalAlign>Top</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                          <ColSpan>7</ColSpan>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell />
+                                      <TablixCell />
+                                      <TablixCell />
+                                      <TablixCell />
+                                      <TablixCell />
+                                      <TablixCell />
+                                    </TablixCells>
+                                  </TablixRow>
+                                </TablixRows>
+                              </TablixBody>
+                              <TablixColumnHierarchy>
+                                <TablixMembers>
+                                  <TablixMember />
+                                  <TablixMember />
+                                  <TablixMember />
+                                  <TablixMember />
+                                  <TablixMember />
+                                  <TablixMember />
+                                  <TablixMember />
+                                </TablixMembers>
+                              </TablixColumnHierarchy>
+                              <TablixRowHierarchy>
+                                <TablixMembers>
+                                  <TablixMember>
+                                    <KeepWithGroup>After</KeepWithGroup>
+                                    <RepeatOnNewPage>true</RepeatOnNewPage>
+                                  </TablixMember>
+                                  <TablixMember>
+                                    <Group Name="Details1" />
+                                    <TablixMembers>
+                                      <TablixMember />
+                                      <TablixMember />
+                                    </TablixMembers>
+                                  </TablixMember>
+                                </TablixMembers>
+                              </TablixRowHierarchy>
+                              <Top>0.04807cm</Top>
+                              <Left>0.00225cm</Left>
+                              <Height>1.80983cm</Height>
+                              <Width>19.97508cm</Width>
+                              <Visibility>
+                                <Hidden>=iif(Fields!DeliveryOrder.Value = True, True, False)</Hidden>
+                              </Visibility>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Tablix>
+                            <Tablix Name="Tablix14">
+                              <TablixBody>
+                                <TablixColumns>
+                                  <TablixColumn>
+                                    <Width>1.11605cm</Width>
+                                  </TablixColumn>
+                                  <TablixColumn>
+                                    <Width>2.50504cm</Width>
+                                  </TablixColumn>
+                                  <TablixColumn>
+                                    <Width>6.88449cm</Width>
+                                  </TablixColumn>
+                                  <TablixColumn>
+                                    <Width>2.20631cm</Width>
+                                  </TablixColumn>
+                                  <TablixColumn>
+                                    <Width>2.1624cm</Width>
+                                  </TablixColumn>
+                                  <TablixColumn>
+                                    <Width>2.31454cm</Width>
+                                  </TablixColumn>
+                                  <TablixColumn>
+                                    <Width>2.78623cm</Width>
+                                  </TablixColumn>
+                                </TablixColumns>
+                                <TablixRows>
+                                  <TablixRow>
+                                    <Height>0.95983cm</Height>
+                                    <TablixCells>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox67">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>S/N</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox1</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox68">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>ITEM CODE</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox3</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox69">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>ITEM DESCRIPTION / PACK SIZE</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>BATCH NO. / EXP. DATE</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox5</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                          <ColSpan>3</ColSpan>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell />
+                                      <TablixCell />
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox79">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>QTY</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox35</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox80">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>UOM</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                      <FontWeight>Bold</FontWeight>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox37</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <TopBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </TopBorder>
+                                              <BottomBorder>
+                                                <Color>Black</Color>
+                                                <Style>Solid</Style>
+                                                <Width>1pt</Width>
+                                              </BottomBorder>
+                                              <VerticalAlign>Middle</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                    </TablixCells>
+                                  </TablixRow>
+                                  <TablixRow>
+                                    <Height>0.6cm</Height>
+                                    <TablixCells>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="SNNo6">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!SNNo.Value</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>SNNo</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <VerticalAlign>Top</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="ItemCode6">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!ItemCode.Value</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>ItemCode</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <VerticalAlign>Top</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="ItemDescription6">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!ItemDescription.Value</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                    </Style>
+                                                  </TextRun>
+                                                  <TextRun>
+                                                    <Label>RegNo&amp;ProdClassCode</Label>
+                                                    <Value>=IIf((Fields!HSARegistrationNo.Value &lt;&gt; "") And (Fields!HSARegistrationNo.Value &lt;&gt; "") , (vbcrlf +Fields!HSARegistrationNo.Value + " / " + Fields!ProdClassificationCode.Value), "")</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Left</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!ItemDescription2.Value</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Left</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>ItemDescription</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <VerticalAlign>Top</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                          <ColSpan>3</ColSpan>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell />
+                                      <TablixCell />
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Quantity11">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!Quantity.Value</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                      <Format>#,0;(#,0);'-'</Format>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Quantity</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <VerticalAlign>Top</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="UOMCode7">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!UOMCode.Value</Value>
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>UOMCode</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <VerticalAlign>Top</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                    </TablixCells>
+                                  </TablixRow>
+                                  <TablixRow>
+                                    <Height>0.25cm</Height>
+                                    <TablixCells>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox174">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value />
+                                                    <Style>
+                                                      <FontFamily>Segoe UI</FontFamily>
+                                                      <FontSize>9pt</FontSize>
+                                                    </Style>
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style>
+                                                  <TextAlign>Center</TextAlign>
+                                                </Style>
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox173</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Style>None</Style>
+                                              </Border>
+                                              <VerticalAlign>Top</VerticalAlign>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                          <ColSpan>7</ColSpan>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell />
+                                      <TablixCell />
+                                      <TablixCell />
+                                      <TablixCell />
+                                      <TablixCell />
+                                      <TablixCell />
+                                    </TablixCells>
+                                  </TablixRow>
+                                </TablixRows>
+                              </TablixBody>
+                              <TablixColumnHierarchy>
+                                <TablixMembers>
+                                  <TablixMember />
+                                  <TablixMember />
+                                  <TablixMember />
+                                  <TablixMember />
+                                  <TablixMember />
+                                  <TablixMember />
+                                  <TablixMember />
+                                </TablixMembers>
+                              </TablixColumnHierarchy>
+                              <TablixRowHierarchy>
+                                <TablixMembers>
+                                  <TablixMember>
+                                    <KeepWithGroup>After</KeepWithGroup>
+                                    <RepeatOnNewPage>true</RepeatOnNewPage>
+                                  </TablixMember>
+                                  <TablixMember>
+                                    <Group Name="Details2" />
+                                    <TablixMembers>
+                                      <TablixMember />
+                                      <TablixMember />
+                                    </TablixMembers>
+                                  </TablixMember>
+                                </TablixMembers>
+                              </TablixRowHierarchy>
+                              <Top>1.89318cm</Top>
+                              <Left>0.00225cm</Left>
+                              <Height>1.80983cm</Height>
+                              <Width>19.97506cm</Width>
+                              <ZIndex>1</ZIndex>
+                              <Visibility>
+                                <Hidden>=iif(Fields!SignedOrder.Value = True, True, False)</Hidden>
+                              </Visibility>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Tablix>
+                            <Textbox Name="Textbox71">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value />
+                                      <Style />
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox7</rd:DefaultName>
+                              <Top>3.77357cm</Top>
+                              <Left>0.00225cm</Left>
+                              <Height>0.13229cm</Height>
+                              <Width>0.25917cm</Width>
+                              <ZIndex>2</ZIndex>
+                              <Visibility>
+                                <Hidden>=Code.SetData(Cstr(Fields!CompanyName.Value) + 
+Chr(177) + Cstr(Fields!CompanyAddress.Value) + 
+Chr(177) + Cstr(Fields!CompanyAddress2.Value) +
+Chr(177) + Cstr(Fields!CompanyRegNo.Value) + 
+Chr(177) + Cstr(Fields!CompanyGSTRegNo.Value) + 
+Chr(177) + Cstr(Fields!CompanyTelePhone.Value) + 
+Chr(177) + Cstr(Fields!CompanyFaxNo.Value) +  
+Chr(177) + Cstr(Fields!DocumentNo.Value) + 
+Chr(177) + Cstr(Fields!DocumentDate.Value) + 
+Chr(177) + Cstr(Fields!SelltoCustomerNo.Value) + 
+Chr(177) + Cstr(Fields!SelltoCustomerName.Value) + 
+Chr(177) + Cstr(Fields!SelltoCustomerName2.Value) + 
+Chr(177) + Cstr(Fields!SelltoAddress.Value) + 
+Chr(177) + Cstr(Fields!SelltoAddress2.Value) + 
+Chr(177) + Cstr(Fields!SelltoAddress3.Value) + 
+Chr(177) + Cstr(Fields!ShiptoName.Value) + 
+Chr(177) + Cstr(Fields!ShiptoName2.Value) + 
+Chr(177) + Cstr(Fields!ShiptoAddress.Value) + 
+Chr(177) + Cstr(Fields!ShiptoAddress2.Value) + 
+Chr(177) + Cstr(Fields!ShiptoAddress3.Value) + 
+Chr(177) + Cstr(Fields!Purchaser.Value) + 
+Chr(177) + Cstr(Fields!DRIC.Value) +
+Chr(177) + Cstr(Fields!Remarks.Value) + 
+Chr(177) + Cstr(Fields!PaymentTermsCode.Value) + 
+Chr(177) + Cstr(Fields!ExternalDocNo.Value) + 
+Chr(177) + Cstr(Fields!Salesperson.Value) + 
+Chr(177) + Cstr(Fields!Admin.Value) + 
+Chr(177) + Cstr(Fields!CaseNumber.Value) + 
+Chr(177) + Cstr(Fields!ShipmentDate.Value) + 
+Chr(177) + Cstr(Fields!SignedOrder.Value) + 
+Chr(177) + Cstr(Fields!DeliveryOrder.Value) +
+Chr(177) + Cstr(Fields!ReportHeader.Value) +
+Chr(177) + Cstr(Fields!ReportHeader2.Value) +
+Chr(177) + Cstr(Fields!ReportHeader3.Value) +
+Chr(177) + Cstr(Fields!ReportFooter.Value) +
+Chr(177) + Cstr(Fields!ReportFooter2.Value) +
+Chr(177) + Cstr(Fields!ReportFooter3.Value) +
+Chr(177) + Cstr(Fields!ReportFooter4.Value) +
+Chr(177) + Cstr(Fields!ReportFooter5.Value)+
+Chr(177) + Cstr(Fields!ShipToTel.Value)+
+Chr(177) + Cstr(Fields!ShipToFax.Value) +
+Chr(177) + Cstr(Fields!CustName.Value),1)</Hidden>
+                              </Visibility>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Details">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!DocumentNo.Value</GroupExpression>
+                    </GroupExpressions>
+                    <PageBreak>
+                      <BreakLocation>Between</BreakLocation>
+                    </PageBreak>
+                  </Group>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <RepeatColumnHeaders>true</RepeatColumnHeaders>
+            <RepeatRowHeaders>true</RepeatRowHeaders>
+            <FixedColumnHeaders>true</FixedColumnHeaders>
+            <FixedRowHeaders>true</FixedRowHeaders>
+            <KeepTogether>true</KeepTogether>
+            <DataSetName>DataSet_Result</DataSetName>
+            <Left>0.00449cm</Left>
+            <Height>3.90586cm</Height>
+            <Width>19.98184cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Height>3.90586cm</Height>
+        <Style />
+      </Body>
+      <Width>19.98633cm</Width>
+      <Page>
+        <PageHeader>
+          <Height>10.6375cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Image Name="Image1">
+              <Source>Database</Source>
+              <Value>=First(Fields!CompanyLogo.Value, "DataSet_Result")</Value>
+              <MIMEType>image/jpeg</MIMEType>
+              <Sizing>Fit</Sizing>
+              <Height>2.73444cm</Height>
+              <Width>5.67133cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+            <Textbox Name="Textbox8">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.getdata(1,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.getdata(2,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.getdata(3,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="Tel:" + Code.getdata(6,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value xml:space="preserve"> </Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>="Fax:" + Code.getdata(7,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="UEN/GST Reg. No. " + Code.getdata(4,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>2.73444cm</Top>
+              <Height>2.3198cm</Height>
+              <Width>13.5672cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox9">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=code.getdata(32,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>12pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox3</rd:DefaultName>
+              <Top>0.55512cm</Top>
+              <Left>14.15908cm</Left>
+              <Height>0.7138cm</Height>
+              <Width>5.75278cm</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox10">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>DATE :</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox4</rd:DefaultName>
+              <Top>1.86086cm</Top>
+              <Left>14.15908cm</Left>
+              <Height>0.6cm</Height>
+              <Width>2.01635cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox11">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.getdata(9,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox4</rd:DefaultName>
+              <Top>2.46086cm</Top>
+              <Left>14.15908cm</Left>
+              <Height>0.6cm</Height>
+              <Width>2.01635cm</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox12">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=code.getdata(32,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox4</rd:DefaultName>
+              <Top>1.86086cm</Top>
+              <Left>16.17543cm</Left>
+              <Height>0.6cm</Height>
+              <Width>3.80416cm</Width>
+              <ZIndex>5</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox13">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.getdata(8,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox4</rd:DefaultName>
+              <Top>2.46086cm</Top>
+              <Left>16.17543cm</Left>
+              <Height>0.6cm</Height>
+              <Width>3.80416cm</Width>
+              <ZIndex>6</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox14">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.getdata(34,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.getdata(11,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.getdata(12,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.getdata(13,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.getdata(14,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.getdata(15,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value />
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox8</rd:DefaultName>
+              <Top>5.12479cm</Top>
+              <Height>3.99521cm</Height>
+              <Width>6.64081cm</Width>
+              <ZIndex>7</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox15">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>DELIVER TO :</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.GetData(42,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.getdata(16,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.getdata(17,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.getdata(18,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.getdata(19,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.getdata(20,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.getdata(40,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox8</rd:DefaultName>
+              <Top>5.12479cm</Top>
+              <Left>6.75449cm</Left>
+              <Height>3.99521cm</Height>
+              <Width>6.81271cm</Width>
+              <ZIndex>8</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox16">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>PURCHASER : </Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>=Code.getdata(21,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>DR I/C : </Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>=Code.getdata(22,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>REMARKS : </Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>=Code.getdata(23,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value />
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value />
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox8</rd:DefaultName>
+              <Top>5.12479cm</Top>
+              <Left>13.66949cm</Left>
+              <Height>3.99521cm</Height>
+              <Width>6.3101cm</Width>
+              <ZIndex>9</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox17">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>TERMS</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox17</rd:DefaultName>
+              <Top>9.29639cm</Top>
+              <Height>0.6cm</Height>
+              <Width>2.22225cm</Width>
+              <ZIndex>10</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox18">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=code.getdata(24,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox17</rd:DefaultName>
+              <Top>9.89639cm</Top>
+              <Height>0.6cm</Height>
+              <Width>2.22225cm</Width>
+              <ZIndex>11</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox19">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>PO NUMBER</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox17</rd:DefaultName>
+              <Top>9.29639cm</Top>
+              <Left>2.22225cm</Left>
+              <Height>0.6cm</Height>
+              <Width>3.15802cm</Width>
+              <ZIndex>12</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox20">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=code.getdata(25,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox17</rd:DefaultName>
+              <Top>9.89639cm</Top>
+              <Left>2.22225cm</Left>
+              <Height>0.6cm</Height>
+              <Width>3.15802cm</Width>
+              <ZIndex>13</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox21">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>SALES PERSON</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox17</rd:DefaultName>
+              <Top>9.29639cm</Top>
+              <Left>5.38027cm</Left>
+              <Height>0.6cm</Height>
+              <Width>3.8283cm</Width>
+              <ZIndex>14</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox22">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=code.getdata(26,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox17</rd:DefaultName>
+              <Top>9.89639cm</Top>
+              <Left>5.38027cm</Left>
+              <Height>0.6cm</Height>
+              <Width>3.8283cm</Width>
+              <ZIndex>15</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox23">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>ADMIN</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox17</rd:DefaultName>
+              <Top>9.29639cm</Top>
+              <Left>9.20856cm</Left>
+              <Height>0.6cm</Height>
+              <Width>2.48774cm</Width>
+              <ZIndex>16</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox24">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=code.getdata(27,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox17</rd:DefaultName>
+              <Top>9.89639cm</Top>
+              <Left>9.20856cm</Left>
+              <Height>0.6cm</Height>
+              <Width>2.48774cm</Width>
+              <ZIndex>17</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox25">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>CUSTOMER CODE</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox17</rd:DefaultName>
+              <Top>9.29639cm</Top>
+              <Left>11.69631cm</Left>
+              <Height>0.6cm</Height>
+              <Width>2.99927cm</Width>
+              <ZIndex>18</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox26">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=code.getdata(10,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox17</rd:DefaultName>
+              <Top>9.89639cm</Top>
+              <Left>11.69631cm</Left>
+              <Height>0.6cm</Height>
+              <Width>2.99927cm</Width>
+              <ZIndex>19</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox27">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>CASE NUMBER</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox17</rd:DefaultName>
+              <Top>9.29639cm</Top>
+              <Left>14.69557cm</Left>
+              <Height>0.6cm</Height>
+              <Width>2.94635cm</Width>
+              <ZIndex>20</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox28">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=code.getdata(28,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox17</rd:DefaultName>
+              <Top>9.89639cm</Top>
+              <Left>14.69557cm</Left>
+              <Height>0.6cm</Height>
+              <Width>2.94635cm</Width>
+              <ZIndex>21</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox29">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>SHIP DATE</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox17</rd:DefaultName>
+              <Top>9.29639cm</Top>
+              <Left>17.64193cm</Left>
+              <Height>0.6cm</Height>
+              <Width>2.33764cm</Width>
+              <ZIndex>22</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox30">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=code.getdata(29,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox17</rd:DefaultName>
+              <Top>9.89639cm</Top>
+              <Left>17.64193cm</Left>
+              <Height>0.6cm</Height>
+              <Width>2.33764cm</Width>
+              <ZIndex>23</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageFooter>
+          <Height>5.5cm</Height>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox31">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=code.getdata(36,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox31</rd:DefaultName>
+              <Top>1.75765cm</Top>
+              <Left>0.00562cm</Left>
+              <Height>0.67938cm</Height>
+              <Width>7.84078cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox32">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=code.getdata(37,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox31</rd:DefaultName>
+              <Top>3.95531cm</Top>
+              <Left>0.00562cm</Left>
+              <Height>0.70583cm</Height>
+              <Width>7.84078cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <TopBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </TopBorder>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox33">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=code.getdata(38,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox31</rd:DefaultName>
+              <Top>1.75765cm</Top>
+              <Left>12.19568cm</Left>
+              <Height>0.67938cm</Height>
+              <Width>7.78502cm</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox34">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=code.getdata(39,1)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox31</rd:DefaultName>
+              <Top>3.95531cm</Top>
+              <Left>12.19568cm</Left>
+              <Height>0.70583cm</Height>
+              <Width>7.78502cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <TopBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </TopBorder>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox75">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>TERMS &amp; CONDITIONS : </Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Fields!ReportFooter.Value</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox51</rd:DefaultName>
+              <Top>0.10583cm</Top>
+              <Left>0.00133in</Left>
+              <Height>1.12564cm</Height>
+              <Width>19.97959cm</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <TopBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </TopBorder>
+                <BottomBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </BottomBorder>
+                <LeftBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </LeftBorder>
+                <RightBorder>
+                  <Color>Black</Color>
+                  <Style>Solid</Style>
+                  <Width>1pt</Width>
+                </RightBorder>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <PageHeight>29.7cm</PageHeight>
+        <PageWidth>21cm</PageWidth>
+        <LeftMargin>0.5cm</LeftMargin>
+        <RightMargin>0.5cm</RightMargin>
+        <TopMargin>0.25cm</TopMargin>
+        <BottomMargin>0.25cm</BottomMargin>
+        <ColumnSpacing>1.27cm</ColumnSpacing>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Shared Data1 as Object
+
+Public Function GetData(Num as Integer, Group as integer) as Object
+if Group = 1 then
+   Return Cstr(Choose(Num, Split(Cstr(Data1),Chr(177))))
+End If
+End Function
+
+Public Function SetData(NewData as Object,Group as integer)
+  If Group = 1 and NewData &lt;&gt; "" Then
+      Data1 = NewData
+  End If
+  Return True
+End Function
+
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CompanyLogo">
+          <DataField>CompanyLogo</DataField>
+        </Field>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
+        <Field Name="CompanyAddress">
+          <DataField>CompanyAddress</DataField>
+        </Field>
+        <Field Name="CompanyAddress2">
+          <DataField>CompanyAddress2</DataField>
+        </Field>
+        <Field Name="CompanyTelePhone">
+          <DataField>CompanyTelePhone</DataField>
+        </Field>
+        <Field Name="CompanyFaxNo">
+          <DataField>CompanyFaxNo</DataField>
+        </Field>
+        <Field Name="CompanyRegNo">
+          <DataField>CompanyRegNo</DataField>
+        </Field>
+        <Field Name="CompanyGSTRegNo">
+          <DataField>CompanyGSTRegNo</DataField>
+        </Field>
+        <Field Name="DocumentNo">
+          <DataField>DocumentNo</DataField>
+        </Field>
+        <Field Name="DocumentDate">
+          <DataField>DocumentDate</DataField>
+        </Field>
+        <Field Name="SelltoCustomerNo">
+          <DataField>SelltoCustomerNo</DataField>
+        </Field>
+        <Field Name="SelltoCustomerName">
+          <DataField>SelltoCustomerName</DataField>
+        </Field>
+        <Field Name="SelltoCustomerName2">
+          <DataField>SelltoCustomerName2</DataField>
+        </Field>
+        <Field Name="SelltoAddress">
+          <DataField>SelltoAddress</DataField>
+        </Field>
+        <Field Name="SelltoAddress2">
+          <DataField>SelltoAddress2</DataField>
+        </Field>
+        <Field Name="SelltoAddress3">
+          <DataField>SelltoAddress3</DataField>
+        </Field>
+        <Field Name="CustName">
+          <DataField>CustName</DataField>
+        </Field>
+        <Field Name="ShiptoName">
+          <DataField>ShiptoName</DataField>
+        </Field>
+        <Field Name="ShiptoName2">
+          <DataField>ShiptoName2</DataField>
+        </Field>
+        <Field Name="ShiptoAddress">
+          <DataField>ShiptoAddress</DataField>
+        </Field>
+        <Field Name="ShiptoAddress2">
+          <DataField>ShiptoAddress2</DataField>
+        </Field>
+        <Field Name="ShiptoAddress3">
+          <DataField>ShiptoAddress3</DataField>
+        </Field>
+        <Field Name="ShipToTel">
+          <DataField>ShipToTel</DataField>
+        </Field>
+        <Field Name="ShipToFax">
+          <DataField>ShipToFax</DataField>
+        </Field>
+        <Field Name="ShipToEmail">
+          <DataField>ShipToEmail</DataField>
+        </Field>
+        <Field Name="Purchaser">
+          <DataField>Purchaser</DataField>
+        </Field>
+        <Field Name="DRIC">
+          <DataField>DRIC</DataField>
+        </Field>
+        <Field Name="Remarks">
+          <DataField>Remarks</DataField>
+        </Field>
+        <Field Name="PaymentTermsCode">
+          <DataField>PaymentTermsCode</DataField>
+        </Field>
+        <Field Name="ExternalDocNo">
+          <DataField>ExternalDocNo</DataField>
+        </Field>
+        <Field Name="Salesperson">
+          <DataField>Salesperson</DataField>
+        </Field>
+        <Field Name="Admin">
+          <DataField>Admin</DataField>
+        </Field>
+        <Field Name="CaseNumber">
+          <DataField>CaseNumber</DataField>
+        </Field>
+        <Field Name="ShipmentDate">
+          <DataField>ShipmentDate</DataField>
+        </Field>
+        <Field Name="SignedOrder">
+          <DataField>SignedOrder</DataField>
+        </Field>
+        <Field Name="DeliveryOrder">
+          <DataField>DeliveryOrder</DataField>
+        </Field>
+        <Field Name="ReportHeader">
+          <DataField>ReportHeader</DataField>
+        </Field>
+        <Field Name="ReportHeader2">
+          <DataField>ReportHeader2</DataField>
+        </Field>
+        <Field Name="ReportHeader3">
+          <DataField>ReportHeader3</DataField>
+        </Field>
+        <Field Name="ReportFooter">
+          <DataField>ReportFooter</DataField>
+        </Field>
+        <Field Name="ReportFooter2">
+          <DataField>ReportFooter2</DataField>
+        </Field>
+        <Field Name="ReportFooter3">
+          <DataField>ReportFooter3</DataField>
+        </Field>
+        <Field Name="ReportFooter4">
+          <DataField>ReportFooter4</DataField>
+        </Field>
+        <Field Name="ReportFooter5">
+          <DataField>ReportFooter5</DataField>
+        </Field>
+        <Field Name="SNNo">
+          <DataField>SNNo</DataField>
+        </Field>
+        <Field Name="ItemType">
+          <DataField>ItemType</DataField>
+        </Field>
+        <Field Name="ItemCode">
+          <DataField>ItemCode</DataField>
+        </Field>
+        <Field Name="ItemDescription">
+          <DataField>ItemDescription</DataField>
+        </Field>
+        <Field Name="ItemDescription2">
+          <DataField>ItemDescription2</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="QuantityFormat">
+          <DataField>QuantityFormat</DataField>
+        </Field>
+        <Field Name="UOMCode">
+          <DataField>UOMCode</DataField>
+        </Field>
+        <Field Name="HSARegistrationNo">
+          <DataField>HSARegistrationNo</DataField>
+        </Field>
+        <Field Name="ProdClassificationCode">
+          <DataField>ProdClassificationCode</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

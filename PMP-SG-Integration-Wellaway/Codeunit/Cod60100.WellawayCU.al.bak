@@ -1,0 +1,1237 @@
+codeunit 60100 "Wellaway CU"
+{
+    Permissions = TableData "Sales Shipment Header" = rimd;
+    //DX        25 July 2021
+    [EventSubscriber(ObjectType::Codeunit, codeunit::"TransferOrder-Post Receipt", 'OnAfterTransferOrderPostReceipt', '', true, true)]
+    procedure OnAfterTransferOrderPostReceipt(var TransferReceiptHeader: Record "Transfer Receipt Header")
+    var
+        ILERec: Record "Item Ledger Entry";
+        SSSetup: Record "Sales & Receivables Setup";
+        IJRec: Record "Item Journal Line";
+        ResEntry: Record "Reservation Entry";
+        ResEntry2: Record "Reservation Entry";
+        EntryNo: integer;
+        CompInfo: Record "Company Information";
+
+    begin
+
+        if IsPMPCompany() then begin
+            SSSetup.reset;
+            SSSetup.ChangeCompany(GetWellawayCompany());
+            SSSetup.get;
+            CompInfo.reset;
+            CompInfo.ChangeCompany(GetWellawayCompany());
+            CompInfo.get;
+
+            ILERec.reset;
+            ILERec.SetRange("Document No.", TransferReceiptHeader."No.");
+            ILERec.SetRange("Entry Type", ILERec."Entry Type"::Transfer);
+            ILERec.SetRange("Location Code", GetWellLocCode());
+            ILERec.SetRange("Posting Date", TransferReceiptHeader."Posting Date");
+            if ILERec.FindSet() then
+                repeat
+                    ResEntry2.reset;
+                    ResEntry2.ChangeCompany(GetWellawayCompany());
+                    if ResEntry2.FindLast() then begin
+                        EntryNo := ResEntry2."Entry No." + 1;
+                    end else begin
+                        EntryNo := 1;
+                    end;
+
+                    ResEntry.reset;
+                    ResEntry.ChangeCompany(GetWellawayCompany());
+                    ResEntry.init;
+                    ResEntry."Entry No." := EntryNo;
+                    ResEntry."Item No." := ILERec."Item No.";
+                    ResEntry."Location Code" := CompInfo."Location Code";
+                    ResEntry."Quantity (Base)" := ILERec.Quantity;
+                    ResEntry."Reservation Status" := ResEntry."Reservation Status"::Prospect;
+                    ResEntry."Creation Date" := today;
+                    ResEntry."Source Type" := 83;
+                    ResEntry."Source Subtype" := 2;
+                    ResEntry."Source ID" := 'ITEM';
+                    ResEntry."Source Batch Name" := SSSetup."Def Item. Journal Batch";
+                    ResEntry."Source Ref. No." := GetSourceLineNo(ILERec."Item No.", TransferReceiptHeader."Transfer Order No.");
+                    ResEntry."Expected Receipt Date" := Today;
+                    ResEntry."Created By" := UserId;
+                    ResEntry.Positive := true;
+                    ResEntry."Qty. per Unit of Measure" := 1;
+                    ResEntry.Quantity := ILERec.Quantity;
+                    ResEntry."Expiration Date" := ILERec."Expiration Date";
+                    ResEntry."Qty. to Handle (Base)" := ILERec.Quantity;
+                    ResEntry."Qty. to Invoice (Base)" := ILERec.Quantity;
+                    ResEntry."Lot No." := ILERec."Lot No.";
+                    ResEntry."Item Tracking" := ResEntry."Item Tracking"::"Lot No.";
+                    ResEntry.Insert(FALSE);
+
+                until ILERec.next = 0;
+        end;
+    end;
+
+    procedure GetSourceLineNo(ItemNo: Code[20]; DocNo: Code[20]): integer
+    var
+        IJRec: Record "Item Journal Line";
+        SSSetup: Record "Sales & Receivables Setup";
+        myInt: Integer;
+    begin
+        SSSetup.Reset();
+        SSSetup.ChangeCompany(GetWellawayCompany());
+        SSSetup.get;
+        IJRec.reset;
+        IJRec.ChangeCompany(GetWellawayCompany());
+        IJRec.SetRange("Journal Template Name", 'ITEM');
+        IJRec.SetRange("Journal Batch Name", SSSetup."Def Item. Journal Batch");
+        IJRec.SetRange("Document No.", DocNo);
+        IJRec.SetRange("Item No.", ItemNo);
+        if IJRec.FindFirst() then
+            exit(IJRec."Line No.")
+        else
+            exit(0);
+    end;
+    //DX        25 July 2021
+    procedure CheckWellAwayCompany()
+    var
+        myInt: Integer;
+        CompRec: Record Company;
+        CompInfoRec: Record "Company Information";
+    begin
+        CompRec.reset;
+        myInt := 0;
+        if CompRec.FindSet() then
+            repeat
+                CompInfoRec.reset;
+                CompInfoRec.ChangeCompany(CompRec.Name);
+                if CompInfoRec.FindFirst() then begin
+                    if CompInfoRec."Wellaway Company" = true then
+                        myInt += 1;
+                end;
+            until CompRec.next = 0;
+        if myInt > 1 then
+            Message('There can only be one Wellaway company enabled, please check again.');
+    end;
+
+    procedure GetWellawayCompany(): Text[250]
+    var
+        myInt: Integer;
+        CompRec: Record Company;
+        CompInfoRec: Record "Company Information";
+    begin
+        /*
+        CompRec.reset;        
+        if CompRec.FindSet() then
+            repeat
+
+                
+                CompInfoRec.reset;
+                CompInfoRec.ChangeCompany(CompRec.Name);
+                CompInfoRec.SetRange("Wellaway Company", true);
+                
+                if CompInfoRec.FindFirst() then
+                    exit(CompRec.Name);
+            until CompRec.next = 0;
+            */
+        exit('WELLAWAY');
+    end;
+
+    procedure CheckPMPCompany()
+    var
+        myInt: Integer;
+        CompRec: Record Company;
+        CompInfoRec: Record "Company Information";
+    begin
+        CompRec.reset;
+        myInt := 0;
+        if CompRec.FindSet() then
+            repeat
+                CompInfoRec.reset;
+                CompInfoRec.ChangeCompany(CompRec.Name);
+                if CompInfoRec.FindFirst() then begin
+                    if CompInfoRec."PMP Company" = true then
+                        myInt += 1;
+                end;
+            until CompRec.next = 0;
+        if myInt > 1 then
+            Message('There can only be one PMP company enabled, please check again.');
+    end;
+
+    procedure GetPMPCompanyName(): Text[250]
+    var
+        myInt: Integer;
+        CompRec: Record company;
+        CompInfoRec: Record "Company Information";
+    begin
+        /*
+        CompRec.reset;
+        if CompRec.FindSet() then
+            repeat
+
+                CompInfoRec.reset;
+                CompInfoRec.ChangeCompany(CompRec.Name);
+                CompInfoRec.SetRange("PMP Company", true);
+                if CompInfoRec.FindFirst() then
+                    exit(compRec.Name);
+            until CompRec.next = 0;
+        */
+        exit('PMP');
+    end;
+
+    procedure IsWellawayCompany(): Boolean
+    var
+        myInt: Integer;
+        CompInfoRec: Record "Company Information";
+    begin
+        if CompanyName = 'WELLAWAY'
+        then
+            exit(true)
+        else
+            exit(false);
+    end;
+
+    procedure GetWellLocCode(): Code[20]
+    var
+        myInt: Integer;
+        LocRec: Record Location;
+    begin
+        LocRec.Reset();
+        LocRec.ChangeCompany(GetPMPCompanyName());
+        LocRec.SetRange("Wellaway Location", true);
+        if LocRec.FindFirst() then
+            exit(LocRec.Code)
+        else
+            exit('');
+    end;
+
+    procedure IsPMPCompany(): Boolean
+    var
+        myInt: Integer;
+        CompInfoRec: Record "Company Information";
+    begin
+        /*
+        CompInfoRec.reset;
+        CompInfoRec.get;      
+        if CompInfoRec."PMP Company" = true
+        */
+        if CompanyName = 'PMP'
+        then
+            exit(true)
+        else
+            exit(false);
+    end;
+
+
+    procedure CreateOrder()
+    var
+        myInt: Integer;
+        TOHdr: Code[20];
+        TORec: Record "Transfer Header";
+        IJRec: Record "Item Journal Line";
+        SSSetup: Record "Sales & Receivables Setup";
+    begin
+        //CheckCustRec(SHrec."Sell-to Customer No.");
+        SSSetup.reset;
+        SSSetup.get;
+        CreateTOHeader(TORec);
+        UpdateIJDocNoWithTORec(TORec."No.");
+    end;
+
+    local procedure CheckCustRec(CustNo: Code[20])
+    var
+        myInt: Integer;
+        PMPCustRec: Record Customer;
+        CustRec: Record customer;
+        GenBusPG: Record "Gen. Business Posting Group";
+        VATBusPG: Record "VAT Business Posting Group";
+        CustPG: Record "Customer Posting Group";
+
+    begin
+        CustRec.reset;
+        CustRec.SetRange("No.", CustNo);
+        If Custrec.FindFirst() then begin
+            GenBusPG.reset;
+            GenBusPG.ChangeCompany(GetPMPCompanyName());
+            GenBusPG.SetRange(Code, CustRec."Gen. Bus. Posting Group");
+            if not GenBusPG.FindFirst() then begin
+                GenBusPG.reset;
+                GenBusPG.Init();
+                GenBusPG.Validate(Code, CustRec."Gen. Bus. Posting Group");
+                GenBusPG.Insert(TRUE);
+            end;
+
+            VATBusPG.reset;
+            VATBusPG.ChangeCompany(GetPMPCompanyName());
+            VATBusPG.SetRange(Code, CustRec."VAT Bus. Posting Group");
+            if not VATBusPG.FindFirst() then begin
+                VATBusPG.reset;
+                VATBusPG.Init();
+                VATBusPG.Validate(Code, CustRec."VAT Bus. Posting Group");
+                VATBusPG.Insert(TRUE);
+            end;
+
+            CustPG.reset;
+            CustPG.ChangeCompany(GetPMPCompanyName());
+            CustPG.SetRange(Code, CustRec."Customer Posting Group");
+            if not CustPG.FindFirst() then begin
+                CustPG.reset;
+                CustPG.Init();
+                CustPG.Validate(Code, CustRec."Customer Posting Group");
+                CustPG.Insert(TRUE);
+            end;
+
+            PMPCustRec.reset;
+            PMPCustRec.ChangeCompany(GetPMPCompanyName());
+            PMPCustRec.SetRange("No.", CustRec."No.");
+            if not (PMPCustRec.FindFirst()) then begin
+                PMPCustRec.Reset();
+                PMPCustRec.Init();
+                PMPCustRec.copy(CustRec);
+                PMPCustRec.Insert(TRUE);
+            end;
+        end;
+    end;
+
+    procedure CreateTOHeader(Var TORec: Record "Transfer Header")
+    var
+        myInt: Integer;
+        LocRec: Record Location;
+        CompInfo: Record "Company Information";
+    begin
+
+        CompInfo.reset;
+        CompInfo.ChangeCompany(GetPMPCompanyName());
+        CompInfo.get;
+
+        clear(TORec);
+        TORec.ChangeCompany(GetPMPCompanyName());
+        TORec.Init();
+        TORec.Validate("Transfer-from Code", CompInfo."Location Code");
+        TORec.validate("Transfer-to Code", GetWellLocCode());
+        TORec.Validate("In-Transit Code", 'TRANSIT');
+        //TORec.Validate("External Document No.", SORec);
+        TORec.Insert(true);
+    end;
+
+    procedure CreateTOLineByItemCode(ItemCode: code[20]; ItemQty: Decimal; TORec: Record "Transfer Header")
+    var
+        myInt: Integer;
+        TLRec: Record "Transfer Line";
+        SLrec: Record "Sales Line";
+        LTLrec: Record "Transfer Line";
+        LocRec: Record Location;
+        CompInfo: Record "Company Information";
+        LLineNo: Integer;
+        Item: Record item;
+        DimMgt: Codeunit DimensionManagement;
+    begin
+
+
+        LTLrec.reset;
+        LTLrec.SetRange("Document No.", TORec."No.");
+        if LTLrec.FindLast() then
+            LLineNo := LTLrec."Line No." + 10000
+        else
+            LLineNo := 10000;
+
+        // if StockIsEnoughInPMP(SLRec) <> 0 then begin        //Check if got enough stock first.
+        TLRec.reset;
+        TLRec.init();
+        TLRec.Validate("Document No.", TORec."No.");
+        TLRec.Validate("Line No.", LLineNo);
+        TLRec."Item No." := ItemCode;
+        Item.reset;
+        Item.get(ItemCode);
+        TLRec.Description := Item.Description;
+        TLRec."Description 2" := Item."Description 2";
+        TLRec.VALIDATE("Gen. Prod. Posting Group", Item."Gen. Prod. Posting Group");
+        TLRec.VALIDATE("Inventory Posting Group", Item."Inventory Posting Group");
+        TLRec.VALIDATE("Quantity (Base)", ItemQty);
+        TLRec.VALIDATE("Unit of Measure Code", Item."Base Unit of Measure");
+        TLRec.VALIDATE("Gross Weight", Item."Gross Weight");
+        TLRec.VALIDATE("Net Weight", Item."Net Weight");
+        TLRec.VALIDATE("Unit Volume", Item."Unit Volume");
+        TLRec.VALIDATE("Units per Parcel", Item."Units per Parcel");
+        TLRec."Item Category Code" := Item."Item Category Code";
+        //                    TLRec.Validate(Quantity, StockIsEnoughInPMP(SLRec));        //Return the difference in stock required then create the TO based on stock difference
+        //              TLRec.Validate(Quantity, SLRec.Quantity);
+        TLRec."Dimension Set ID" := TORec."Dimension Set ID";
+        TLRec.Insert(true);
+    end;
+
+    //DX        15 July 2021
+    procedure CreateTOLineFromIJ(var TORec: Record "Transfer Header")   //DX        15 July 2021    Supposed to perform this action in PMP Entity
+    var
+        myInt: Integer;
+        TLRec: Record "Transfer Line";
+        IJRec: Record "Item Journal Line";
+        SLRec: Record "Sales Line";
+        LocRec: Record Location;
+        CompInfo: Record "Company Information";
+        LineNo: Integer;
+        Item: Record item;
+        DimMgt: Codeunit DimensionManagement;
+        SSSetup: Record "Sales & Receivables Setup";
+    begin
+        LineNo := 10000;
+        SSSetup.reset;
+        SSSetup.ChangeCompany(GetWellawayCompany());
+        SSSetup.Get();
+        IJRec.reset;
+        IJRec.ChangeCompany(GetWellawayCompany());
+        IJRec.SetRange("Journal Template Name", 'ITEM');
+        IJRec.SetRange("Journal Batch Name", SSSetup."Def Item. Journal Batch");
+        IJRec.SetRange("Document No.", TORec."No.");
+        if IJRec.FindSet() then
+            repeat
+                TLRec.Validate("Document No.", TORec."No.");
+                TLRec.Validate("Line No.", LineNo);
+                TLRec.Validate("Item No.", IJRec."Item No.");
+                //TLRec.Validate("Unit of Measure Code", IJRec."Unit of Measure Code");
+                //Item.reset;
+                //if IJRec."Item No." <> '' then
+                //    Item.get(IJRec."Item No.");
+                //TLRec.Validate(Description, Item.Description);
+                //TLRec.Validate("Description 2", Item."Description 2");
+                //TLRec.VALIDATE("Gen. Prod. Posting Group", Item."Gen. Prod. Posting Group");
+                //TLRec.VALIDATE("Inventory Posting Group", Item."Inventory Posting Group");
+                tlrec.Validate(Quantity, IJRec.Quantity);
+                //TLRec.VALIDATE("Unit of Measure Code", item."Base Unit of Measure");        //Get base UOM at PMP warehouse.
+                //TLRec.VALIDATE("Gross Weight", Item."Gross Weight");
+                //TLRec.VALIDATE("Net Weight", Item."Net Weight");
+                //TLRec.VALIDATE("Unit Volume", Item."Unit Volume");
+                //TLRec.VALIDATE("Units per Parcel", Item."Units per Parcel");
+                //TLRec."Item Category Code" := Item."Item Category Code";
+                //TLRec."Dimension Set ID" := TORec."Dimension Set ID";
+                TLRec.Insert(true);
+                LineNo += 10000;
+            until IJRec.next = 0;
+        TORec."Retrieved SO from Wellaway" := true;
+        TORec.Modify(false);
+
+    end;
+    //DX        15 July 2021
+
+    procedure GetStockDiff(ItemCode: code[20]; QtyCalc: Decimal): Decimal
+    var
+        WellQtyBal: Decimal;
+        PMPItemRec: Record item;
+        WellItemRec: Record item;
+        QtyBal: Decimal;
+        SLRec: Record "Sales Line";
+        PMPItemUOM: Record "Item Unit of Measure";
+    begin
+        PMPItemRec.reset;
+        PMPItemRec.ChangeCompany(GetPMPCompanyName());
+        PMPItemRec.SetRange("No.", ItemCode);
+        PMPItemRec.SetFilter("Location Filter", GetWellLocCode());
+        PMPItemRec.CalcFields(Inventory);
+        QtyBal := PMPItemRec.Inventory;
+        exit(ROUND(QtyCalc - QtyBal, 1, '>'));
+    end;
+
+    local procedure StockIsEnoughInPMP(LSLRec: Record "Sales Line"): Decimal
+    var
+        WellQtyBal: Decimal;
+        PMPItemRec: Record item;
+        WellItemRec: Record item;
+        QtyBal: Decimal;
+        SLRec: Record "Sales Line";
+        PMPItemUOM: Record "Item Unit of Measure";
+    begin
+        PMPItemRec.reset;
+        PMPItemRec.ChangeCompany(GetPMPCompanyName());
+        PMPItemRec.SetRange("No.", LSLRec."No.");
+        PMPItemRec.CalcFields(Inventory);
+        QtyBal := PMPItemRec.Inventory;
+        SLRec.Reset();
+        SLRec.SetRange(Type, SLRec.Type::Item);
+        SLRec.SetRange("No.", LSLRec."No.");
+        SLRec.SetFilter(Quantity, '<>0');
+        SLRec.CalcSums(SLRec."Quantity (Base)");
+        WellQtyBal := SLRec."Quantity (Base)";
+
+
+        PMPItemUOM.reset;
+        PMPItemUOM.ChangeCompany(GetPMPCompanyName());
+        PMPItemUOM.SetRange("Item No.", LSLRec."No.");
+        PMPItemUOM.SetRange(Code, LSLRec."Unit of Measure Code");
+        if PMPItemUOM.FindFirst() then begin
+            WellQtyBal := Round(WellQtyBal * PMPItemUOM."Qty. per Unit of Measure", 1, '>');
+        end;
+
+        if (QtyBal > WellQtyBal) then begin     //if PMP stock is 10 > 6
+            exit(0);
+        end else begin                          //if PMP stock is 6 < 10
+            exit(WellQtyBal - QtyBal);          //Return the difference and create transfer order for this item line.
+        end;
+    end;
+
+
+    procedure AllStockisSufficient(SHRec: Record "Sales Header"): Boolean
+    var
+        WellQtyBal: Decimal;
+        PMPItemRec: Record item;
+        WellItemRec: Record item;
+        QtyBal: Decimal;
+        SLRec: Record "Sales Line";
+        PMPItemUOM: Record "Item Unit of Measure";
+        SLRecLoop: Record "Sales Line";
+    begin
+
+        SLRecLoop.reset;
+        SLRecLoop.SetRange("Document Type", SHRec."Document Type");
+        SLRecLoop.SetRange("Document No.", SHRec."No.");
+        SLRecLoop.SetRange(Type, SLRec.Type::Item);
+        SLRecLoop.SetFilter("No.", '<>%1', '');
+        SLRecLoop.SetFilter(Quantity, '<>0');
+        if SLRecLoop.FindSet() then
+            repeat
+                PMPItemRec.reset;
+                PMPItemRec.ChangeCompany(GetPMPCompanyName());
+                PMPItemRec.SetRange("No.", SLRecLoop."No.");
+                PMPItemRec.CalcFields(Inventory);
+                QtyBal := PMPItemRec.Inventory;
+                SLRec.Reset();
+                SLRec.SetRange(Type, SLRec.Type::Item);
+                SLRec.SetRange("No.", SLRecLoop."No.");
+                SLRec.SetFilter(Quantity, '<>0');
+                SLRec.CalcSums(SLRec."Quantity (Base)");
+                WellQtyBal := SLRec."Quantity (Base)";
+
+
+                PMPItemUOM.reset;
+                PMPItemUOM.ChangeCompany(GetPMPCompanyName());
+                PMPItemUOM.SetRange("Item No.", SLRecLoop."No.");
+                PMPItemUOM.SetRange(Code, SLRecLoop."Unit of Measure Code");
+                if PMPItemUOM.FindFirst() then begin
+                    WellQtyBal := Round(WellQtyBal * PMPItemUOM."Qty. per Unit of Measure", 1, '>');
+                end;
+
+                if (QtyBal < WellQtyBal) then begin     //if PMP stock is 10 > 6                
+                    exit(false);          //Return the difference and create transfer order for this item line.
+                end;
+            until SLRecLoop.next = 0;
+
+
+
+    end;
+
+    //DX    18 Aug 2021
+    procedure UpdateInvoicedStatus(DoNo: code[20])
+    var
+        myInt: Integer;
+        SHRec: Record "Sales Shipment Header";
+    begin
+        SHRec.reset;
+        SHRec.ChangeCompany(GetWellawayCompany());
+        SHRec.SetRange("No.", DoNo);
+        if SHRec.FindFirst() then begin
+            SHRec."Order Invoiced in PMP" := false;
+            SHRec.Modify(FALSE);
+        end;
+    end;
+
+    procedure GenConsolidatedInv(CustCode: code[20])
+    var
+        LineNo: Integer;
+        SLRec: Record "Sales Shipment Line";
+        WellSORec: Record "Sales Header";
+        PMPSLRec: Record "Sales Line";
+        CurrDocNo: code[20];
+        PMPSHRec: Record "Sales Header";
+        WellSHRec: Record "Sales Shipment Header";
+
+    begin
+        LineNo := 10000;
+        //DX        18 Aug 2021     Create sales invoice headers by customer codes
+        //DX        18 Aug 2021     Create consolidated invoices by sales shipment header instead of unposted sales orders
+
+        PMPSHRec.reset;
+        PMPSHRec.init;
+        PMPSHRec.validate("Document Type", PMPSHRec."Document Type"::Invoice);
+        PMPSHRec.Validate("Sell-to Customer No.", CustCode);
+        PMPSHRec.Insert(true);
+
+        WellSHRec.reset;
+        WellSHRec.ChangeCompany(GetWellawayCompany());
+
+        WellSHRec.SetRange("Order Invoiced in PMP", false);
+        WellSHRec.SetRange("Sell-to Customer No.", CustCode);
+        if WellSHRec.FindSet() then
+            repeat
+                SLRec.reset;
+                SLRec.ChangeCompany(GetWellawayCompany());      //Get all the wellaway transactions                
+                SLRec.SetRange("Document No.", WellSHRec."No.");
+                SLRec.SetRange(Type, SLRec.Type::Item);
+                if SLRec.FindSet() then
+                    repeat
+                        if LineNo = 10000 then begin
+                            //Insert DO Advice No.
+                            PMPSLRec.reset;
+                            PMPSLRec.init;
+                            PMPSLRec.Validate("Document Type", PMPSLRec."Document Type"::Invoice);
+                            PMPSLRec.Validate("Document No.", PMPSHRec."No.");
+                            PMPSLRec.Validate("Line No.", LineNo);
+                            PMPSLRec.Validate(Type, SLRec.Type::" ");
+                            PMPSLRec.validate("Location Code", GetWellLocCode());
+                            PMPSLRec.Validate(Description, StrSubstNo('%1 %2', 'Sales Order', SLRec."Document No."));
+                            PMPSLRec.insert(TRUE);
+                            // Insert detail line
+                            LineNo += 10000;
+                            PMPSLRec.reset;
+                            PMPSLRec.init;
+                            PMPSLRec.Validate("Document Type", PMPSLRec."Document Type"::Invoice);
+                            PMPSLRec.Validate("Document No.", PMPSHRec."No.");
+                            PMPSLRec.Validate("Line No.", LineNo);
+                            PMPSLRec.Validate(Type, SLRec.Type);
+                            PMPSLRec.Validate("No.", SLRec."No.");
+                            PMPSLRec.validate("Location Code", GetWellLocCode());
+                            PMPSLRec.validate(Quantity, SLRec.Quantity);
+                            PMPSLRec.Validate("Unit Price", SLRec."Unit Price");
+                            PMPSLRec.insert(TRUE);
+                            CurrDocNo := SLRec."Document No.";
+                        end else begin
+
+                            if CurrDocNo = SLRec."Document No." then begin
+                                PMPSLRec.reset;
+                                PMPSLRec.init;
+                                PMPSLRec.Validate("Document Type", PMPSLRec."Document Type"::Invoice);
+                                PMPSLRec.Validate("Document No.", PMPSHRec."No.");
+                                PMPSLRec.Validate("Line No.", LineNo);
+                                PMPSLRec.Validate(Type, SLRec.Type);
+                                PMPSLRec.Validate("No.", SLRec."No.");
+                                PMPSLRec.validate("Location Code", GetWellLocCode());
+                                PMPSLRec.validate(Quantity, SLRec.Quantity);
+                                PMPSLRec.Validate("Unit Price", SLRec."Unit Price");
+                                PMPSLRec.insert(TRUE);
+                            end else begin
+                                //Insert DO Advice No.
+
+                                PMPSLRec.reset;
+                                PMPSLRec.init;
+                                PMPSLRec.Validate("Document Type", PMPSLRec."Document Type"::Invoice);
+                                PMPSLRec.Validate("Document No.", PMPSHRec."No.");
+                                PMPSLRec.Validate("Line No.", LineNo);
+                                PMPSLRec.Validate(Type, SLRec.Type::" ");
+                                PMPSLRec.validate("Location Code", GetWellLocCode());
+                                PMPSLRec.Validate(Description, StrSubstNo('%1 %2', 'Sales Order', SLRec."Document No."));
+                                PMPSLRec.insert(TRUE);
+                                // Insert detail line
+                                LineNo += 10000;
+                                PMPSLRec.reset;
+                                PMPSLRec.init;
+                                PMPSLRec.Validate("Document Type", PMPSLRec."Document Type"::Invoice);
+                                PMPSLRec.Validate("Document No.", PMPSHRec."No.");
+                                PMPSLRec.Validate("Line No.", LineNo);
+                                PMPSLRec.Validate(Type, SLRec.Type);
+                                PMPSLRec.Validate("No.", SLRec."No.");
+                                PMPSLRec.validate("Location Code", GetWellLocCode());
+                                PMPSLRec.validate(Quantity, SLRec.Quantity);
+                                PMPSLRec.Validate("Unit Price", SLRec."Unit Price");
+                                PMPSLRec.insert(TRUE);
+                                CurrDocNo := SLRec."Document No.";
+                            end;
+                        end;
+                        LineNo += 10000;
+
+
+                    until SLRec.next = 0;
+                WellSHRec.Validate("Order Invoiced in PMP", true);      //Updated sales shipment header to invoiced
+                WellSHRec.Modify(TRUE);
+                WellSORec.reset;
+                WellSORec.ChangeCompany(GetWellawayCompany());
+                WellSORec.SetRange("No.", WellSHRec."Order No.");
+                WellSORec.CalcFields("Completely Shipped");
+                if WellSORec.FindFirst() then begin     //If completed shipped then tagged as invoiced already as SO level
+                    if WellSORec."Completely Shipped" = true then begin
+                        WellSORec."Order Invoiced in PMP" := true;
+                        WellSORec.Modify(FALSE);
+                    end;
+                end;
+            until WellSHRec.next = 0;
+
+
+        Message('Sales Invoice Generated.');
+    end;
+    //DX        11 JUly 2021
+    procedure GetWellStockBalance(SLRec: Record "Sales Line"): Decimal
+    var
+        myInt: Integer;
+        ILERec: Record "Item Ledger Entry";
+        ItemUOM: Record "Item Unit of Measure";
+    begin
+        if IsWellawayCompany() then begin
+            ILERec.reset;
+            ILERec.ChangeCompany(GetWellawayCompany());
+            ILERec.SetRange("Item No.", SLRec."No.");
+            ILERec.SetFilter("Location Code", GetWellLocCode());
+            ILERec.CalcSums("Remaining Quantity");
+            //DX        16 Aug 2021
+            ItemUOM.reset;
+            ItemUOM.SetRange("Item No.", SLRec."No.");
+            ItemUOM.SetRange(Code, SLRec."Unit of Measure Code");
+            if ItemUOM.FindFirst() then begin
+                if ItemUOM."Qty. per Unit of Measure" <> 0 then
+                    exit(ILERec."Remaining Quantity" / ItemUOM."Qty. per Unit of Measure")
+            end;
+            //DX        16 Aug 2021
+            exit(ILERec."Remaining Quantity");
+        end;
+    end;
+    //DX        11 JUly 2021
+
+    //DX        25 July 2021
+    procedure CreateTransferJournal(ItemNo: Code[20]; QtyBase: Decimal)
+    var
+        myInt: Integer;
+        IJRec: Record "Item Journal Line";
+        SSSetup: Record "Sales & Receivables Setup";
+        ItemRec: Record item;
+        CompInfo: Record "Company Information";
+    begin
+        ItemRec.reset;
+        ItemRec.Get(ItemNo);
+        if ItemRec.Type = ItemRec.Type::Inventory then begin
+            CompInfo.reset;
+            CompInfo.get;
+            SSSetup.reset;
+            SSSetup.get;
+            SSSetup.TestField("Def Item. Journal Batch");
+
+            IJRec.reset;
+            IJRec.SetRange("Journal Template Name", 'ITEM');
+            IJRec.SetRange("Journal Batch Name", SSSetup."Def Item. Journal Batch");
+            if IJRec.FindLast() then
+                myInt := IJRec."Line No." + 10000
+            else
+                myInt := 10000;
+
+            IJRec.reset;
+            IJRec.Init();
+            IJRec.Validate("Journal Template Name", 'ITEM');
+            IJRec.Validate("Journal Batch Name", SSSetup."Def Item. Journal Batch");
+            IJRec.validate("Document No.", 'IJ00001');
+            IJRec.Validate("Line No.", myInt);
+            IJRec.Validate("Entry Type", IJRec."Entry Type"::"Positive Adjmt.");
+            IJRec.Validate("Posting Date", Today);
+            IJRec.Validate("Item No.", ItemNo);
+            IJRec.Validate("Location Code", CompInfo."Location Code");
+            IJRec.validate(Quantity, QtyBase);
+            IJRec.Validate("Unit Cost", 0);
+            IJRec.Insert(TRUE);
+        end;
+
+    end;
+
+    procedure UpdateIJDocNoWithTORec(TONo: Code[20])
+    var
+        myInt: Integer;
+        SSSetup: Record "Sales & Receivables Setup";
+        IJRec: record "Item Journal Line";
+    begin
+        SSSetup.reset;
+        SSSetup.get;
+        SSSetup.TestField("Def Item. Journal Batch");
+        IJRec.reset;
+        IJRec.SetRange("Journal Template Name", 'ITEM');
+        IJRec.SetRange("Journal Batch Name", SSSetup."Def Item. Journal Batch");
+        IJRec.SetRange("Document No.", 'IJ00001');
+        IJRec.ModifyAll("Document No.", TONo, true);
+    end;
+
+
+    //DX        25 July 2021
+
+
+    //DX        08 Aug 2021
+    procedure GetFirstExprDate(IJRec: Record "Item Journal Line"): Date
+    var
+        myInt: Integer;
+        ILERec: Record "Item Ledger Entry";
+        ReservEntry: Record "Reservation Entry";
+    begin
+        //DX        18 Aug 2021
+        // ILERec.reset;
+        // ILERec.SetCurrentKey("Expiration Date");
+        // ILERec.SetAscending(ILERec."Expiration Date", FALSE);
+        // ILERec.SetRange("Item No.", ItemNo);
+        // ILERec.SetFilter("Remaining Quantity", '<>0');
+        // if ILERec.FindFirst() then
+        //     exit(ILERec."Expiration Date")
+        // else
+        //     exit(0D);
+        //DX        18 Aug 2021
+        ReservEntry.reset;
+        ReservEntry.SetRange("Item No.", IJRec."Item No.");
+        ReservEntry.SetRange("Source Batch Name", IJRec."Journal Batch Name");
+        ReservEntry.SetRange("Source Ref. No.", IJRec."Line No.");
+        ReservEntry.SetRange("Source Type", 83);
+        ReservEntry.SetRange("Source Subtype", 2);
+        if ReservEntry.FindFirst() then
+            exit(ReservEntry."Expiration Date")
+        else
+            exit(0D);
+    end;
+
+    procedure GetFirstBatch(IJRec: Record "Item Journal Line"): Code[50]
+    var
+        myInt: Integer;
+        ILERec: Record "Item Ledger Entry";
+        ReservEntry: Record "Reservation Entry";
+    begin
+        //DX        18 Aug 2021
+        // ILERec.reset;
+        // ILERec.SetCurrentKey("Expiration Date");
+        // ILERec.SetAscending(ILERec."Expiration Date", FALSE);
+        // ILERec.SetRange("Item No.", ItemNo);
+        // ILERec.SetFilter("Remaining Quantity", '<>0');
+        // if ILERec.FindFirst() then
+        //     exit(ILERec."Lot No.")
+        // else
+        //     exit('');
+
+        //   ResEntry."Entry No." := EntryNo;
+        //                     ResEntry."Item No." := ILERec."Item No.";
+        //                     ResEntry."Location Code" := CompInfo."Location Code";
+        //                     ResEntry."Quantity (Base)" := ILERec.Quantity;
+        //                     ResEntry."Reservation Status" := ResEntry."Reservation Status"::Prospect;
+        //                     ResEntry."Creation Date" := today;
+        //                     ResEntry."Source Type" := 83;
+        //                     ResEntry."Source Subtype" := 2;
+        //                     ResEntry."Source ID" := 'ITEM';
+        //                     ResEntry."Source Batch Name" := SSSetup."Def Item. Journal Batch";
+        //                     ResEntry."Source Ref. No." := GetSourceLineNo(ILERec."Item No.", TransferReceiptHeader."Transfer Order No.");
+        //                     ResEntry."Expected Receipt Date" := Today;
+        //                     ResEntry."Created By" := UserId;
+        //                     ResEntry.Positive := true;
+        //                     ResEntry."Qty. per Unit of Measure" := 1;
+        //                     ResEntry.Quantity := ILERec.Quantity;
+        //                     ResEntry."Expiration Date" := ILERec."Expiration Date";
+        //                     ResEntry."Qty. to Handle (Base)" := ILERec.Quantity;
+        //                     ResEntry."Qty. to Invoice (Base)" := ILERec.Quantity;
+        //                     ResEntry."Lot No." := ILERec."Lot No.";
+        //                     ResEntry."Item Tracking" := ResEntry."Item Tracking"::"Lot No.";
+        //ResEntry.Insert(FALSE);
+
+        ReservEntry.reset;
+        ReservEntry.SetRange("Item No.", IJRec."Item No.");
+        ReservEntry.SetRange("Source Batch Name", IJRec."Journal Batch Name");
+        ReservEntry.SetRange("Source Ref. No.", IJRec."Line No.");
+        ReservEntry.SetRange("Source Type", 83);
+        ReservEntry.SetRange("Source Subtype", 2);
+        if ReservEntry.FindFirst() then
+            exit(ReservEntry."Lot No.")
+        else
+            exit('');
+
+
+        //DX        18 Aug 2021
+    end;
+
+    procedure GetTotalLooseQty(ItemNo: Code[20]): Decimal
+    var
+        myInt: Integer;
+        ILERec: Record "Item Ledger Entry";
+        ItemRec: Record item;
+        ItemUom: Record "Item Unit of Measure";
+        QtyBal: Decimal;
+    begin
+        if ItemNo <> '' then begin
+            ItemRec.reset;
+            ItemRec.get(ItemNo);
+            ItemRec.CalcFields(Inventory);
+            QtyBal := ItemRec.Inventory;
+
+            ItemUom.reset;
+            ItemUom.SetRange("Item No.", ItemRec."No.");
+            ItemUom.SetFilter(Code, '<>%1', ItemRec."Base Unit of Measure");
+            if ItemUom.FindFirst() then begin
+                if ItemUom."Qty. per Unit of Measure" <> 0 then begin
+                    exit(round(QtyBal / ItemUom."Qty. per Unit of Measure", 1, '>'));
+                end;
+            end;
+        end;
+
+    end;
+    //DX        08 Aug 2021
+
+    procedure ImportWellawayPOHeader()
+    var
+        ImportFileName: Text;
+        Buffer: Text;
+        ImportStream: InStream;
+        TempBlobData: Codeunit "Temp Blob";
+        FileCU: Codeunit 419;
+        CSVBuffer: Record "CSV Buffer" temporary;
+        LinesMod: integer;
+        IncomingPOHeader: Record "Incoming Wellaway PO Header";
+        DecimalText: Text;
+        DecimalValue: Decimal;
+        DateText: Text;
+        DateValue: Date;
+    begin
+
+        FileCU.BLOBImport(TempBlobData, ImportFileName);
+        TempBlobData.CreateInStream(ImportStream, TextEncoding::UTF8);
+        LinesMod := 0;
+
+        CSVBuffer.DeleteAll();
+        CSVBuffer.LoadDataFromStream(ImportStream, ',');
+
+        if CSVBuffer.FindSet() then
+            repeat
+                if CSVBuffer."Line No." > 1 then // ignore header line
+                    begin
+                    if Not (DocNoExists(CSVBuffer.GetValueOfLineAt(1))) then begin
+                        // CSVBuffer.GetValue(LineNo, FieldNo); // sample
+                        IncomingPOHeader.Init;
+
+                        case CSVBuffer."Field No." of
+                            1:
+                                IncomingPOHeader."Purchase Order ID" := ReplaceString(CSVBuffer.Value, '"', '');
+                            2:
+                                begin
+                                    DateText := ReplaceString(CSVBuffer.Value, '"', '');
+                                    if DateText = '' then
+                                        DateValue := WorkDate()
+                                    else
+                                        if Not Evaluate(DateValue, DateText) then
+                                            DateValue := WorkDate();
+
+                                    IncomingPOHeader."Transaction Date" := DateValue;
+                                end;
+                            3:
+                                IncomingPOHeader."Physical PO ID" := ReplaceString(CSVBuffer.Value, '"', '');
+                            4:
+                                IncomingPOHeader."Customer Code" := ReplaceString(CSVBuffer.Value, '"', '');
+                            5:
+                                IncomingPOHeader."Customer Name" := ReplaceString(CSVBuffer.Value, '"', '');
+                            6:
+                                IncomingPOHeader."Login ID" := ReplaceString(CSVBuffer.Value, '"', '');
+                            7:
+                                IncomingPOHeader."Order by " := ReplaceString(CSVBuffer.Value, '"', '');
+                            8:
+                                IncomingPOHeader."Currency " := ReplaceString(CSVBuffer.Value, '"', '');
+                            9:
+                                IncomingPOHeader."Terms of Payment " := ReplaceString(CSVBuffer.Value, '"', '');
+                            10:
+                                IncomingPOHeader."Contact Person" := ReplaceString(CSVBuffer.Value, '"', '');
+                            11:
+                                IncomingPOHeader."Street Name" := ReplaceString(CSVBuffer.Value, '"', '');
+                            12:
+                                IncomingPOHeader."Country/Region" := ReplaceString(CSVBuffer.Value, '"', '');
+                            13:
+                                IncomingPOHeader."Zip Code" := ReplaceString(CSVBuffer.Value, '"', '');
+                            14:
+                                IncomingPOHeader.Email := ReplaceString(CSVBuffer.Value, '"', '');
+                            15:
+                                IncomingPOHeader.Telephone := ReplaceString(CSVBuffer.Value, '"', '');
+                            16:
+                                IncomingPOHeader.Fax := ReplaceString(CSVBuffer.Value, '"', '');
+                            17:
+                                begin
+                                    DecimalText := ReplaceString(CSVBuffer.Value, '"', '');
+                                    if DecimalText = '' then
+                                        DecimalValue := 0
+                                    else
+                                        Evaluate(DecimalValue, DecimalText);
+
+                                    IncomingPOHeader."Online Discount Amount" := DecimalValue;
+                                end;
+                            18:
+                                begin
+                                    DecimalText := ReplaceString(CSVBuffer.Value, '"', '');
+                                    if DecimalText = '' then
+                                        DecimalValue := 0
+                                    else
+                                        Evaluate(DecimalValue, DecimalText);
+
+                                    IncomingPOHeader."Online Discount Percent" := DecimalValue;
+                                end;
+                            19:
+                                IncomingPOHeader."Remarks 1 " := ReplaceString(CSVBuffer.Value, '"', '');
+                            20:
+                                begin
+                                    DateText := ReplaceString(CSVBuffer.Value, '"', '');
+                                    if DateText = '' then
+                                        DateValue := 0D
+                                    else
+                                        if Not Evaluate(DateValue, DateText) then
+                                            DateValue := 0D;
+
+                                    IncomingPOHeader."Order Date " := DateValue;
+                                end;
+                            21:
+                                begin
+                                    DateText := ReplaceString(CSVBuffer.Value, '"', '');
+                                    if DateText = '' then
+                                        DateValue := 0D
+                                    else
+                                        if Not Evaluate(DateValue, DateText) then
+                                            DateValue := 0D;
+
+                                    IncomingPOHeader."Patient Date of Birth" := DateValue;
+                                end;
+                            22:
+                                begin
+                                    if UpperCase(ReplaceString(CSVBuffer.Value, '"', '')) = UpperCase('Male') then
+                                        IncomingPOHeader."Patient Gender" := IncomingPOHeader."Patient Gender"::Male
+                                    else
+                                        IncomingPOHeader."Patient Gender" := IncomingPOHeader."Patient Gender"::Female;
+                                end;
+                            23:
+                                IncomingPOHeader."Patient NRIC/FIN/Passport No." := ReplaceString(CSVBuffer.Value, '"', '');
+                            24:
+                                IncomingPOHeader."Drug Allergies " := ReplaceString(CSVBuffer.Value, '"', '');
+                            25:
+                                IncomingPOHeader."Clinic ID" := ReplaceString(CSVBuffer.Value, '"', '');
+                            26:
+                                IncomingPOHeader."Clinic Full Name" := ReplaceString(CSVBuffer.Value, '"', '');
+                            27:
+                                IncomingPOHeader."Clinic Branch" := ReplaceString(CSVBuffer.Value, '"', '');
+                            28:
+                                IncomingPOHeader."Clinic Address Line 1 " := ReplaceString(CSVBuffer.Value, '"', '');
+                            29:
+                                IncomingPOHeader."Clinic Address Line 2" := ReplaceString(CSVBuffer.Value, '"', '');
+                            30:
+                                IncomingPOHeader."Clinic Postal Code" := ReplaceString(CSVBuffer.Value, '"', '');
+                            31:
+                                IncomingPOHeader."Clinic Country " := ReplaceString(CSVBuffer.Value, '"', '');
+                            32:
+                                IncomingPOHeader."Doctor Full Name" := ReplaceString(CSVBuffer.Value, '"', '');
+                            33:
+                                IncomingPOHeader."Doctor Mobile Country Code" := ReplaceString(CSVBuffer.Value, '"', '');
+                            34:
+                                IncomingPOHeader."Doctor Mobile No." := ReplaceString(CSVBuffer.Value, '"', '');
+                            35:
+                                IncomingPOHeader."Remarks 2" := ReplaceString(CSVBuffer.Value, '"', '');
+                        end;
+
+                        if not IncomingPOHeader.Insert() then IncomingPOHeader.Modify();
+                    end;
+                end;
+            until CSVBuffer.Next() = 0;
+
+        /*
+        LastLine := CSVBuffer.GetNumberOfLines();
+
+        for Line := 2 to LastLine do begin
+
+            if Not (DocNoExists(CSVBuffer.GetValue(Line, 1))) then begin
+                IncomingPOHeader.Init;
+                
+
+                DateText := Format(CSVBuffer.GetValue(Line, 2));
+                if DateText = '' then
+                    DateValue := WorkDate()
+                else
+                    if Not Evaluate(DateValue, DateText) then
+                        DateValue := WorkDate();
+
+                IncomingPOHeader."Transaction Date" := DateValue;
+
+                IncomingPOHeader."Physical PO ID" := CSVBuffer.GetValue(Line, 3);
+                IncomingPOHeader."Customer Code" := CSVBuffer.GetValue(Line, 4);
+                IncomingPOHeader."Customer Name" := CSVBuffer.GetValue(Line, 5);
+                IncomingPOHeader."Login ID" := CSVBuffer.GetValue(Line, 6);
+                IncomingPOHeader."Order by " := CSVBuffer.GetValue(Line, 7);
+                IncomingPOHeader."Currency " := CSVBuffer.GetValue(Line, 8);
+                IncomingPOHeader."Terms of Payment " := CSVBuffer.GetValue(Line, 9);
+                IncomingPOHeader."Contact Person" := CSVBuffer.GetValue(Line, 10);
+                IncomingPOHeader."Street Name" := CSVBuffer.GetValue(Line, 11);
+                IncomingPOHeader."Country/Region" := CSVBuffer.GetValue(Line, 12);
+                IncomingPOHeader."Zip Code" := CSVBuffer.GetValue(Line, 13);
+                IncomingPOHeader.Email := CSVBuffer.GetValue(Line, 14);
+                IncomingPOHeader.Telephone := CSVBuffer.GetValue(Line, 15);
+                IncomingPOHeader.Fax := CSVBuffer.GetValue(Line, 16);
+
+                DecimalText := ReplaceString(Format(CSVBuffer.GetValue(Line, 17)), '"', '');
+                if DecimalText = '' then
+                    DecimalValue := 0
+                else
+                    Evaluate(DecimalValue, DecimalText);
+
+                IncomingPOHeader."Online Discount Amount" := DecimalValue;
+
+                DecimalText := Format(CSVBuffer.GetValue(Line, 18));
+                if DecimalText = '' then
+                    DecimalValue := 0
+                else
+                    Evaluate(DecimalValue, DecimalText);
+
+                IncomingPOHeader."Online Discount Percent" := DecimalValue;
+
+                IncomingPOHeader."Remarks 1 " := CSVBuffer.GetValue(Line, 19);
+
+                DateText := Format(CSVBuffer.GetValue(Line, 20));
+                if DateText = '' then
+                    DateValue := 0D
+                else
+                    Evaluate(DateValue, DateText);
+
+                IncomingPOHeader."Order Date " := DateValue;
+
+                DateText := Format(CSVBuffer.GetValue(Line, 21));
+                if DateText = '' then
+                    DateValue := 0D
+                else
+                    Evaluate(DateValue, DateText);
+
+                IncomingPOHeader."Patient Date of Birth" := DateValue;
+
+                if UpperCase(CSVBuffer.GetValue(Line, 22)) = UpperCase('Male') then
+                    IncomingPOHeader."Patient Gender" := IncomingPOHeader."Patient Gender"::Male
+                else
+                    IncomingPOHeader."Patient Gender" := IncomingPOHeader."Patient Gender"::Female;
+
+                IncomingPOHeader."Patient NRIC/FIN/Passport No." := CSVBuffer.GetValue(Line, 23);
+                IncomingPOHeader."Drug Allergies " := CSVBuffer.GetValue(Line, 24);
+                IncomingPOHeader."Clinic ID" := CSVBuffer.GetValue(Line, 25);
+                IncomingPOHeader."Clinic Full Name" := CSVBuffer.GetValue(Line, 26);
+                IncomingPOHeader."Clinic Branch" := CSVBuffer.GetValue(Line, 27);
+                IncomingPOHeader."Clinic Address Line 1 " := CSVBuffer.GetValue(Line, 28);
+                IncomingPOHeader."Clinic Address Line 2" := CSVBuffer.GetValue(Line, 29);
+                IncomingPOHeader."Clinic Postal Code" := CSVBuffer.GetValue(Line, 30);
+                IncomingPOHeader."Clinic Country " := CSVBuffer.GetValue(Line, 31);
+                IncomingPOHeader."Doctor Full Name" := CSVBuffer.GetValue(Line, 32);
+                IncomingPOHeader."Doctor Mobile Country Code" := CSVBuffer.GetValue(Line, 33);
+                IncomingPOHeader."Doctor Mobile No." := CSVBuffer.GetValue(Line, 34);
+                IncomingPOHeader."Remarks 2" := CSVBuffer.GetValue(Line, 35);
+                IncomingPOHeader.Insert(true);
+
+                LinesMod += 1;
+            end;
+
+        end;
+        */
+
+        if LinesMod <> 0 then
+            Message('%1 headers imported.', LinesMod);
+
+    end;
+
+    procedure ImportWellawayPOLine()
+    var
+        ImportFileName: Text;
+        Buffer: Text;
+        ImportStream: InStream;
+        TempBlobData: Codeunit "Temp Blob";
+        FileCU: Codeunit 419;
+        CSVBuffer: Record "CSV Buffer" temporary;
+        LinesMod: integer;
+        IncomingPOLine: Record "Incoming Wellaway PO Line";
+        DecimalText: Text;
+        DecimalValue: Decimal;
+        DateText: Text;
+        DateValue: Date;
+    begin
+
+        FileCU.BLOBImport(TempBlobData, ImportFileName);
+        TempBlobData.CreateInStream(ImportStream, TextEncoding::UTF8);
+        LinesMod := 0;
+
+        CSVBuffer.DeleteAll();
+        CSVBuffer.LoadDataFromStream(ImportStream, ',');
+
+        if CSVBuffer.FindSet() then
+            repeat
+                if CSVBuffer."Line No." > 1 then // ignore header line
+                    begin
+                    if Not (DocNoExists(CSVBuffer.GetValueOfLineAt(1))) then begin
+                        // CSVBuffer.GetValue(LineNo, FieldNo); // sample
+                        IncomingPOLine.Init;
+
+                        case CSVBuffer."Field No." of
+                            1:
+                                begin
+                                    IncomingPOLine."Purchase Order ID" := ReplaceString(CSVBuffer.Value, '"', '');
+                                    IncomingPOLine."Purchase Line No" := CSVBuffer."Line No." * 10000;
+                                end;
+                            2:
+                                IncomingPOLine."Product Code" := ReplaceString(CSVBuffer.Value, '"', '');
+                            3:
+                                IncomingPOLine."Product Name " := ReplaceString(CSVBuffer.Value, '"', '');
+                            4:
+                                begin
+                                    DecimalText := ReplaceString(CSVBuffer.Value, '"', '');
+                                    if DecimalText = '' then
+                                        DecimalValue := 0
+                                    else
+                                        Evaluate(DecimalValue, DecimalText);
+
+                                    IncomingPOLine."Quantity Ordered" := DecimalValue;
+                                end;
+                            5:
+                                begin
+                                    DecimalText := ReplaceString(CSVBuffer.Value, '"', '');
+                                    if DecimalText = '' then
+                                        DecimalValue := 0
+                                    else
+                                        Evaluate(DecimalValue, DecimalText);
+
+                                    IncomingPOLine."Bonus Quantity " := DecimalValue;
+                                end;
+                            6:
+                                begin
+                                    DecimalText := ReplaceString(CSVBuffer.Value, '"', '');
+                                    if DecimalText = '' then
+                                        DecimalValue := 0
+                                    else
+                                        Evaluate(DecimalValue, DecimalText);
+
+                                    IncomingPOLine."Unit Price" := DecimalValue;
+                                end;
+                            7:
+                                IncomingPOLine."UOM Code" := ReplaceString(CSVBuffer.Value, '"', '');
+                            8:
+                                begin
+                                    DateText := ReplaceString(CSVBuffer.Value, '"', '');
+                                    if DateText = '' then
+                                        DateValue := WorkDate()
+                                    else
+                                        if Not Evaluate(DateValue, DateText) then
+                                            DateValue := WorkDate();
+
+                                    IncomingPOLine."Expiry Date" := DateValue;
+                                end;
+                            9:
+                                IncomingPOLine."Instruction of Use" := ReplaceString(CSVBuffer.Value, '"', '');
+                            10:
+                                IncomingPOLine."Precautions " := ReplaceString(CSVBuffer.Value, '"', '');
+                            11:
+                                IncomingPOLine.Remarks := ReplaceString(CSVBuffer.Value, '"', '');
+                        end;
+
+                        if not IncomingPOLine.Insert() then IncomingPOLine.Modify();
+                    end;
+                end;
+            until CSVBuffer.Next() = 0;
+
+        if LinesMod <> 0 then
+            Message('%1 lines imported.', LinesMod);
+
+    end;
+
+    local procedure DocNoExists(DocNo: Code[20]) doesExist: Boolean
+    var
+        IncomingPOHeader: Record "Incoming Wellaway PO Header";
+    begin
+        IncomingPOHeader.reset;
+        IncomingPOHeader.SetRange("Purchase Order ID", DocNo);
+        if IncomingPOHeader.FindFirst() then
+            exit(true)
+        else
+            exit(false);
+    end;
+
+    local procedure ReplaceString(String: Text; FindWhat: Text; ReplaceWith: Text) NewString: Text
+    var
+        FindPos: Integer;
+    begin
+        FindPos := STRPOS(String, FindWhat);
+        WHILE FindPos > 0 DO BEGIN
+            NewString += DELSTR(String, FindPos) + ReplaceWith;
+            String := COPYSTR(String, FindPos + STRLEN(FindWhat));
+            FindPos := STRPOS(String, FindWhat);
+        END;
+        NewString += String;
+    end;
+}

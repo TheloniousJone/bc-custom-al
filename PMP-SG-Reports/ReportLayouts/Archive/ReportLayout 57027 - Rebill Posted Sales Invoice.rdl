@@ -1,0 +1,2952 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>2d463b13-6e78-4c23-8dec-e7ae99395d37</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+      <Fields>
+        <Field Name="No_SalesInvHeader">
+          <DataField>No_SalesInvHeader</DataField>
+        </Field>
+        <Field Name="VATPercentCaption">
+          <DataField>VATPercentCaption</DataField>
+        </Field>
+        <Field Name="VATBaseCaption">
+          <DataField>VATBaseCaption</DataField>
+        </Field>
+        <Field Name="VATAmountCaption">
+          <DataField>VATAmountCaption</DataField>
+        </Field>
+        <Field Name="VATAmountSpecificationCaption">
+          <DataField>VATAmountSpecificationCaption</DataField>
+        </Field>
+        <Field Name="VATIdentifierCaption">
+          <DataField>VATIdentifierCaption</DataField>
+        </Field>
+        <Field Name="InvDiscBaseAmountCaption">
+          <DataField>InvDiscBaseAmountCaption</DataField>
+        </Field>
+        <Field Name="LineAmountCaption">
+          <DataField>LineAmountCaption</DataField>
+        </Field>
+        <Field Name="InvoiceDiscountAmountCaption">
+          <DataField>InvoiceDiscountAmountCaption</DataField>
+        </Field>
+        <Field Name="TotalCaption">
+          <DataField>TotalCaption</DataField>
+        </Field>
+        <Field Name="DisplayAdditionalFeeNote">
+          <DataField>DisplayAdditionalFeeNote</DataField>
+        </Field>
+        <Field Name="WebCaption">
+          <DataField>WebCaption</DataField>
+        </Field>
+        <Field Name="EmailCaption">
+          <DataField>EmailCaption</DataField>
+        </Field>
+        <Field Name="TelCaption">
+          <DataField>TelCaption</DataField>
+        </Field>
+        <Field Name="FaxCaption">
+          <DataField>FaxCaption</DataField>
+        </Field>
+        <Field Name="GSTRegNoCaption">
+          <DataField>GSTRegNoCaption</DataField>
+        </Field>
+        <Field Name="CoRegNoCaption">
+          <DataField>CoRegNoCaption</DataField>
+        </Field>
+        <Field Name="BillToCaption">
+          <DataField>BillToCaption</DataField>
+        </Field>
+        <Field Name="DeliveryToCaption">
+          <DataField>DeliveryToCaption</DataField>
+        </Field>
+        <Field Name="AttnCaption">
+          <DataField>AttnCaption</DataField>
+        </Field>
+        <Field Name="TaxInvoiceNoCaption">
+          <DataField>TaxInvoiceNoCaption</DataField>
+        </Field>
+        <Field Name="DateCaption">
+          <DataField>DateCaption</DataField>
+        </Field>
+        <Field Name="YourPONoCaption">
+          <DataField>YourPONoCaption</DataField>
+        </Field>
+        <Field Name="SalesmanCaption">
+          <DataField>SalesmanCaption</DataField>
+        </Field>
+        <Field Name="TermsCaption">
+          <DataField>TermsCaption</DataField>
+        </Field>
+        <Field Name="DriverAreaCaption">
+          <DataField>DriverAreaCaption</DataField>
+        </Field>
+        <Field Name="PageCaption">
+          <DataField>PageCaption</DataField>
+        </Field>
+        <Field Name="CompCurrCode">
+          <DataField>CompCurrCode</DataField>
+        </Field>
+        <Field Name="BarcodeText">
+          <DataField>BarcodeText</DataField>
+        </Field>
+        <Field Name="BarcodeOrder">
+          <DataField>BarcodeOrder</DataField>
+        </Field>
+        <Field Name="QRCodeImageLink">
+          <DataField>QRCodeImageLink</DataField>
+        </Field>
+        <Field Name="CompInfo3Picture">
+          <DataField>CompInfo3Picture</DataField>
+        </Field>
+        <Field Name="CompInfo2Picture">
+          <DataField>CompInfo2Picture</DataField>
+        </Field>
+        <Field Name="CompInfo1Picture">
+          <DataField>CompInfo1Picture</DataField>
+        </Field>
+        <Field Name="CompInfoPicture">
+          <DataField>CompInfoPicture</DataField>
+        </Field>
+        <Field Name="DocCaptionCopyText">
+          <DataField>DocCaptionCopyText</DataField>
+        </Field>
+        <Field Name="CustAddr1">
+          <DataField>CustAddr1</DataField>
+        </Field>
+        <Field Name="CompAddr1">
+          <DataField>CompAddr1</DataField>
+        </Field>
+        <Field Name="CustAddr2">
+          <DataField>CustAddr2</DataField>
+        </Field>
+        <Field Name="CompAddr2">
+          <DataField>CompAddr2</DataField>
+        </Field>
+        <Field Name="CustAddr3">
+          <DataField>CustAddr3</DataField>
+        </Field>
+        <Field Name="CompAddr3">
+          <DataField>CompAddr3</DataField>
+        </Field>
+        <Field Name="CustAddr4">
+          <DataField>CustAddr4</DataField>
+        </Field>
+        <Field Name="CompAddr4">
+          <DataField>CompAddr4</DataField>
+        </Field>
+        <Field Name="CustAddr5">
+          <DataField>CustAddr5</DataField>
+        </Field>
+        <Field Name="CompInfoPhoneNo">
+          <DataField>CompInfoPhoneNo</DataField>
+        </Field>
+        <Field Name="CompanyInfo_FaxNo">
+          <DataField>CompanyInfo_FaxNo</DataField>
+        </Field>
+        <Field Name="CompanyInfo_CoRegNo">
+          <DataField>CompanyInfo_CoRegNo</DataField>
+        </Field>
+        <Field Name="CustAddr6">
+          <DataField>CustAddr6</DataField>
+        </Field>
+        <Field Name="ShipMethodDesc">
+          <DataField>ShipMethodDesc</DataField>
+        </Field>
+        <Field Name="PaymentTermsDesc">
+          <DataField>PaymentTermsDesc</DataField>
+        </Field>
+        <Field Name="CompInfoVATRegsNo">
+          <DataField>CompInfoVATRegsNo</DataField>
+        </Field>
+        <Field Name="CompInfoHomePage">
+          <DataField>CompInfoHomePage</DataField>
+        </Field>
+        <Field Name="CompInfoEmail">
+          <DataField>CompInfoEmail</DataField>
+        </Field>
+        <Field Name="CompInfoGiroNo">
+          <DataField>CompInfoGiroNo</DataField>
+        </Field>
+        <Field Name="CompInfoBankName">
+          <DataField>CompInfoBankName</DataField>
+        </Field>
+        <Field Name="CompInfoBankAccNo">
+          <DataField>CompInfoBankAccNo</DataField>
+        </Field>
+        <Field Name="BilltoCustNo_SalesInvHeader">
+          <DataField>BilltoCustNo_SalesInvHeader</DataField>
+        </Field>
+        <Field Name="SalesInvHdr_SellToCustNo">
+          <DataField>SalesInvHdr_SellToCustNo</DataField>
+        </Field>
+        <Field Name="PostingDt_SalesInvHeader">
+          <DataField>PostingDt_SalesInvHeader</DataField>
+        </Field>
+        <Field Name="VATNoText">
+          <DataField>VATNoText</DataField>
+        </Field>
+        <Field Name="VATRegsNo_SalesInvHeader">
+          <DataField>VATRegsNo_SalesInvHeader</DataField>
+        </Field>
+        <Field Name="DueDate_SalesInvHeader">
+          <DataField>DueDate_SalesInvHeader</DataField>
+        </Field>
+        <Field Name="SalesPersonText">
+          <DataField>SalesPersonText</DataField>
+        </Field>
+        <Field Name="SalesPurchPersonName">
+          <DataField>SalesPurchPersonName</DataField>
+        </Field>
+        <Field Name="SalesInvHeaderNo1">
+          <DataField>SalesInvHeaderNo1</DataField>
+        </Field>
+        <Field Name="ReferenceText">
+          <DataField>ReferenceText</DataField>
+        </Field>
+        <Field Name="SalesInvHeaderYourReference">
+          <DataField>SalesInvHeaderYourReference</DataField>
+        </Field>
+        <Field Name="OrderNoText">
+          <DataField>OrderNoText</DataField>
+        </Field>
+        <Field Name="OrderNo_SalesInvHdr">
+          <DataField>OrderNo_SalesInvHdr</DataField>
+        </Field>
+        <Field Name="CustAddr7">
+          <DataField>CustAddr7</DataField>
+        </Field>
+        <Field Name="CustAddr8">
+          <DataField>CustAddr8</DataField>
+        </Field>
+        <Field Name="CompAddr5">
+          <DataField>CompAddr5</DataField>
+        </Field>
+        <Field Name="CompAddr6">
+          <DataField>CompAddr6</DataField>
+        </Field>
+        <Field Name="DocumentDate04_SalesInvHeader">
+          <DataField>DocumentDate04_SalesInvHeader</DataField>
+        </Field>
+        <Field Name="PricesIncludVAT_SalesInvHdr">
+          <DataField>PricesIncludVAT_SalesInvHdr</DataField>
+        </Field>
+        <Field Name="OutputNo">
+          <DataField>OutputNo</DataField>
+        </Field>
+        <Field Name="PricesInclVATYesNo">
+          <DataField>PricesInclVATYesNo</DataField>
+        </Field>
+        <Field Name="DocumentDateCaption">
+          <DataField>DocumentDateCaption</DataField>
+        </Field>
+        <Field Name="PhoneNoCaption">
+          <DataField>PhoneNoCaption</DataField>
+        </Field>
+        <Field Name="VATRegNoCaption">
+          <DataField>VATRegNoCaption</DataField>
+        </Field>
+        <Field Name="GiroNoCaption">
+          <DataField>GiroNoCaption</DataField>
+        </Field>
+        <Field Name="BankNameCaption">
+          <DataField>BankNameCaption</DataField>
+        </Field>
+        <Field Name="BankAccountNoCaption">
+          <DataField>BankAccountNoCaption</DataField>
+        </Field>
+        <Field Name="DueDateCaption">
+          <DataField>DueDateCaption</DataField>
+        </Field>
+        <Field Name="InvoiceNoCaption">
+          <DataField>InvoiceNoCaption</DataField>
+        </Field>
+        <Field Name="PostingDateCaption">
+          <DataField>PostingDateCaption</DataField>
+        </Field>
+        <Field Name="ABNCaption">
+          <DataField>ABNCaption</DataField>
+        </Field>
+        <Field Name="DivisionPartNoCaption">
+          <DataField>DivisionPartNoCaption</DataField>
+        </Field>
+        <Field Name="PaymentTermsDescriptionCaption">
+          <DataField>PaymentTermsDescriptionCaption</DataField>
+        </Field>
+        <Field Name="ShipmentMethodDescriptionCaption">
+          <DataField>ShipmentMethodDescriptionCaption</DataField>
+        </Field>
+        <Field Name="HomePageCaption">
+          <DataField>HomePageCaption</DataField>
+        </Field>
+        <Field Name="EmailIdCaption">
+          <DataField>EmailIdCaption</DataField>
+        </Field>
+        <Field Name="BilltoCustNo_SalesInvHeaderCaption">
+          <DataField>BilltoCustNo_SalesInvHeaderCaption</DataField>
+        </Field>
+        <Field Name="PricesIncludVAT_SalesInvHdrCaption">
+          <DataField>PricesIncludVAT_SalesInvHdrCaption</DataField>
+        </Field>
+        <Field Name="PONum">
+          <DataField>PONum</DataField>
+        </Field>
+        <Field Name="CustNo">
+          <DataField>CustNo</DataField>
+        </Field>
+        <Field Name="ShippingAgentCode">
+          <DataField>ShippingAgentCode</DataField>
+        </Field>
+        <Field Name="UserID">
+          <DataField>UserID</DataField>
+        </Field>
+        <Field Name="UENNo">
+          <DataField>UENNo</DataField>
+        </Field>
+        <Field Name="ShipToAddr11">
+          <DataField>ShipToAddr11</DataField>
+        </Field>
+        <Field Name="ShipToAddr22">
+          <DataField>ShipToAddr22</DataField>
+        </Field>
+        <Field Name="ShipToAddr33">
+          <DataField>ShipToAddr33</DataField>
+        </Field>
+        <Field Name="ShipToAddr44">
+          <DataField>ShipToAddr44</DataField>
+        </Field>
+        <Field Name="ShipToAddr55">
+          <DataField>ShipToAddr55</DataField>
+        </Field>
+        <Field Name="ShipToAddr66">
+          <DataField>ShipToAddr66</DataField>
+        </Field>
+        <Field Name="ShipToAddr77">
+          <DataField>ShipToAddr77</DataField>
+        </Field>
+        <Field Name="ShipToAddr88">
+          <DataField>ShipToAddr88</DataField>
+        </Field>
+        <Field Name="Phone2">
+          <DataField>Phone2</DataField>
+        </Field>
+        <Field Name="CompanyFax">
+          <DataField>CompanyFax</DataField>
+        </Field>
+        <Field Name="ShipToPhoneNo">
+          <DataField>ShipToPhoneNo</DataField>
+        </Field>
+        <Field Name="ShipToFaxNo">
+          <DataField>ShipToFaxNo</DataField>
+        </Field>
+        <Field Name="CustPriceGrp">
+          <DataField>CustPriceGrp</DataField>
+        </Field>
+        <Field Name="SellToContactPhoneNum">
+          <DataField>SellToContactPhoneNum</DataField>
+        </Field>
+        <Field Name="ShortcutDim1">
+          <DataField>ShortcutDim1</DataField>
+        </Field>
+        <Field Name="ContactName">
+          <DataField>ContactName</DataField>
+        </Field>
+        <Field Name="ContactName2">
+          <DataField>ContactName2</DataField>
+        </Field>
+        <Field Name="CompanyInfoBankAccountNo">
+          <DataField>CompanyInfoBankAccountNo</DataField>
+        </Field>
+        <Field Name="SwiftCode">
+          <DataField>SwiftCode</DataField>
+        </Field>
+        <Field Name="AccNo">
+          <DataField>AccNo</DataField>
+        </Field>
+        <Field Name="CurrCode">
+          <DataField>CurrCode</DataField>
+        </Field>
+        <Field Name="BillToAddress1">
+          <DataField>BillToAddress1</DataField>
+        </Field>
+        <Field Name="BillToAddress2">
+          <DataField>BillToAddress2</DataField>
+        </Field>
+        <Field Name="SellToAddress1">
+          <DataField>SellToAddress1</DataField>
+        </Field>
+        <Field Name="SellToAddress2">
+          <DataField>SellToAddress2</DataField>
+        </Field>
+        <Field Name="BillToName2">
+          <DataField>BillToName2</DataField>
+        </Field>
+        <Field Name="SellToName2">
+          <DataField>SellToName2</DataField>
+        </Field>
+        <Field Name="DiscAmt">
+          <DataField>DiscAmt</DataField>
+        </Field>
+        <Field Name="DiscAmtFormat">
+          <DataField>DiscAmtFormat</DataField>
+        </Field>
+        <Field Name="DiscPercent">
+          <DataField>DiscPercent</DataField>
+        </Field>
+        <Field Name="Subtotal">
+          <DataField>Subtotal</DataField>
+        </Field>
+        <Field Name="SubtotalFormat">
+          <DataField>SubtotalFormat</DataField>
+        </Field>
+        <Field Name="GSTAmt">
+          <DataField>GSTAmt</DataField>
+        </Field>
+        <Field Name="GSTAmtFormat">
+          <DataField>GSTAmtFormat</DataField>
+        </Field>
+        <Field Name="TotalInclGST">
+          <DataField>TotalInclGST</DataField>
+        </Field>
+        <Field Name="TotalInclGSTFormat">
+          <DataField>TotalInclGSTFormat</DataField>
+        </Field>
+        <Field Name="CreationUser">
+          <DataField>CreationUser</DataField>
+        </Field>
+        <Field Name="AmountInWords">
+          <DataField>AmountInWords</DataField>
+        </Field>
+        <Field Name="SalesLine_VAT">
+          <DataField>SalesLine_VAT</DataField>
+        </Field>
+        <Field Name="Details1">
+          <DataField>Details1</DataField>
+        </Field>
+        <Field Name="SellToContactFaxNum">
+          <DataField>SellToContactFaxNum</DataField>
+        </Field>
+        <Field Name="BillToAddress3">
+          <DataField>BillToAddress3</DataField>
+        </Field>
+        <Field Name="BillToAddress4">
+          <DataField>BillToAddress4</DataField>
+        </Field>
+        <Field Name="SellToAddress3">
+          <DataField>SellToAddress3</DataField>
+        </Field>
+        <Field Name="SellToAddress4">
+          <DataField>SellToAddress4</DataField>
+        </Field>
+        <Field Name="HideDiscount">
+          <DataField>HideDiscount</DataField>
+        </Field>
+        <Field Name="DeliveryZone">
+          <DataField>DeliveryZone</DataField>
+        </Field>
+        <Field Name="DeliveryType">
+          <DataField>DeliveryType</DataField>
+        </Field>
+        <Field Name="CustInstr">
+          <DataField>CustInstr</DataField>
+        </Field>
+        <Field Name="OrderDate">
+          <DataField>OrderDate</DataField>
+        </Field>
+        <Field Name="LCurrCode">
+          <DataField>LCurrCode</DataField>
+        </Field>
+        <Field Name="LineAmt_SalesInvLine">
+          <DataField>LineAmt_SalesInvLine</DataField>
+        </Field>
+        <Field Name="LineAmt_SalesInvLineFormat">
+          <DataField>LineAmt_SalesInvLineFormat</DataField>
+        </Field>
+        <Field Name="Desc_SalesInvLine">
+          <DataField>Desc_SalesInvLine</DataField>
+        </Field>
+        <Field Name="Desc_2SalesInvLine">
+          <DataField>Desc_2SalesInvLine</DataField>
+        </Field>
+        <Field Name="No_SalesInvLine">
+          <DataField>No_SalesInvLine</DataField>
+        </Field>
+        <Field Name="No_SalesInvLineCaption">
+          <DataField>No_SalesInvLineCaption</DataField>
+        </Field>
+        <Field Name="Qty_SalesInvLine">
+          <DataField>Qty_SalesInvLine</DataField>
+        </Field>
+        <Field Name="Qty_SalesInvLineFormat">
+          <DataField>Qty_SalesInvLineFormat</DataField>
+        </Field>
+        <Field Name="UnitMeasure_SalesInvLine">
+          <DataField>UnitMeasure_SalesInvLine</DataField>
+        </Field>
+        <Field Name="UnitPrice_SalesInvLine">
+          <DataField>UnitPrice_SalesInvLine</DataField>
+        </Field>
+        <Field Name="UnitPrice_SalesInvLineFormat">
+          <DataField>UnitPrice_SalesInvLineFormat</DataField>
+        </Field>
+        <Field Name="LineDiscount_SalesInvLine">
+          <DataField>LineDiscount_SalesInvLine</DataField>
+        </Field>
+        <Field Name="LineDiscount_SalesInvLineFormat">
+          <DataField>LineDiscount_SalesInvLineFormat</DataField>
+        </Field>
+        <Field Name="VATIdentifier_SalesInvLine">
+          <DataField>VATIdentifier_SalesInvLine</DataField>
+        </Field>
+        <Field Name="PostedShipDt_SalesInvLine">
+          <DataField>PostedShipDt_SalesInvLine</DataField>
+        </Field>
+        <Field Name="SalesLineType_SalesInvLine">
+          <DataField>SalesLineType_SalesInvLine</DataField>
+        </Field>
+        <Field Name="InvDiscountAmt_SalesInvLine">
+          <DataField>InvDiscountAmt_SalesInvLine</DataField>
+        </Field>
+        <Field Name="InvDiscountAmt_SalesInvLineFormat">
+          <DataField>InvDiscountAmt_SalesInvLineFormat</DataField>
+        </Field>
+        <Field Name="TotalSubTotal_SalesInvLine">
+          <DataField>TotalSubTotal_SalesInvLine</DataField>
+        </Field>
+        <Field Name="TotalSubTotal_SalesInvLineFormat">
+          <DataField>TotalSubTotal_SalesInvLineFormat</DataField>
+        </Field>
+        <Field Name="TotalInvDiscountAmt_SalesInvLine">
+          <DataField>TotalInvDiscountAmt_SalesInvLine</DataField>
+        </Field>
+        <Field Name="TotalInvDiscountAmt_SalesInvLineFormat">
+          <DataField>TotalInvDiscountAmt_SalesInvLineFormat</DataField>
+        </Field>
+        <Field Name="TotalText_SalesInvLine">
+          <DataField>TotalText_SalesInvLine</DataField>
+        </Field>
+        <Field Name="Amount__SalesInvLine">
+          <DataField>Amount__SalesInvLine</DataField>
+        </Field>
+        <Field Name="Amount__SalesInvLineFormat">
+          <DataField>Amount__SalesInvLineFormat</DataField>
+        </Field>
+        <Field Name="TotalAmount__SalesInvLine">
+          <DataField>TotalAmount__SalesInvLine</DataField>
+        </Field>
+        <Field Name="TotalAmount__SalesInvLineFormat">
+          <DataField>TotalAmount__SalesInvLineFormat</DataField>
+        </Field>
+        <Field Name="AmtIncludVATAmt">
+          <DataField>AmtIncludVATAmt</DataField>
+        </Field>
+        <Field Name="AmtIncludVATAmtFormat">
+          <DataField>AmtIncludVATAmtFormat</DataField>
+        </Field>
+        <Field Name="AmtIncludVAT_SalesInvLine">
+          <DataField>AmtIncludVAT_SalesInvLine</DataField>
+        </Field>
+        <Field Name="AmtIncludVAT_SalesInvLineFormat">
+          <DataField>AmtIncludVAT_SalesInvLineFormat</DataField>
+        </Field>
+        <Field Name="VATAmtLineVATAmtText">
+          <DataField>VATAmtLineVATAmtText</DataField>
+        </Field>
+        <Field Name="TotalExclVATText">
+          <DataField>TotalExclVATText</DataField>
+        </Field>
+        <Field Name="TotalInclVATText">
+          <DataField>TotalInclVATText</DataField>
+        </Field>
+        <Field Name="TotalAmtInclVAT">
+          <DataField>TotalAmtInclVAT</DataField>
+        </Field>
+        <Field Name="TotalAmtInclVATFormat">
+          <DataField>TotalAmtInclVATFormat</DataField>
+        </Field>
+        <Field Name="TotalAmtVAT">
+          <DataField>TotalAmtVAT</DataField>
+        </Field>
+        <Field Name="TotalAmtVATFormat">
+          <DataField>TotalAmtVATFormat</DataField>
+        </Field>
+        <Field Name="VATBaseDisc_SalesInvHdr">
+          <DataField>VATBaseDisc_SalesInvHdr</DataField>
+        </Field>
+        <Field Name="VATBaseDisc_SalesInvHdrFormat">
+          <DataField>VATBaseDisc_SalesInvHdrFormat</DataField>
+        </Field>
+        <Field Name="TotalPaymentDisOnVAT">
+          <DataField>TotalPaymentDisOnVAT</DataField>
+        </Field>
+        <Field Name="TotalPaymentDisOnVATFormat">
+          <DataField>TotalPaymentDisOnVATFormat</DataField>
+        </Field>
+        <Field Name="SalesInvHeaderCurrFactor">
+          <DataField>SalesInvHeaderCurrFactor</DataField>
+        </Field>
+        <Field Name="SalesInvHeaderCurrFactorFormat">
+          <DataField>SalesInvHeaderCurrFactorFormat</DataField>
+        </Field>
+        <Field Name="TotalExclVATTextLCY">
+          <DataField>TotalExclVATTextLCY</DataField>
+        </Field>
+        <Field Name="TotalInclVATTextLCY">
+          <DataField>TotalInclVATTextLCY</DataField>
+        </Field>
+        <Field Name="AmtIncLCYAmtLCY">
+          <DataField>AmtIncLCYAmtLCY</DataField>
+        </Field>
+        <Field Name="AmtIncLCYAmtLCYFormat">
+          <DataField>AmtIncLCYAmtLCYFormat</DataField>
+        </Field>
+        <Field Name="AmtIncLCY">
+          <DataField>AmtIncLCY</DataField>
+        </Field>
+        <Field Name="AmtIncLCYFormat">
+          <DataField>AmtIncLCYFormat</DataField>
+        </Field>
+        <Field Name="AmtLCY">
+          <DataField>AmtLCY</DataField>
+        </Field>
+        <Field Name="AmtLCYFormat">
+          <DataField>AmtLCYFormat</DataField>
+        </Field>
+        <Field Name="CurrLCY">
+          <DataField>CurrLCY</DataField>
+        </Field>
+        <Field Name="CurrCode_SalesInvHeader">
+          <DataField>CurrCode_SalesInvHeader</DataField>
+        </Field>
+        <Field Name="AmtLangB1AmtLangB2">
+          <DataField>AmtLangB1AmtLangB2</DataField>
+        </Field>
+        <Field Name="AmtLangA1AmtLangA2">
+          <DataField>AmtLangA1AmtLangA2</DataField>
+        </Field>
+        <Field Name="AmtInWords">
+          <DataField>AmtInWords</DataField>
+        </Field>
+        <Field Name="SalesInvLineLineNo">
+          <DataField>SalesInvLineLineNo</DataField>
+        </Field>
+        <Field Name="UnitPriceCaption">
+          <DataField>UnitPriceCaption</DataField>
+        </Field>
+        <Field Name="DiscountPercentCaption">
+          <DataField>DiscountPercentCaption</DataField>
+        </Field>
+        <Field Name="AmountCaption">
+          <DataField>AmountCaption</DataField>
+        </Field>
+        <Field Name="PostedShipmentDateCaption">
+          <DataField>PostedShipmentDateCaption</DataField>
+        </Field>
+        <Field Name="InvDiscountAmountCaption">
+          <DataField>InvDiscountAmountCaption</DataField>
+        </Field>
+        <Field Name="SubtotalCaption">
+          <DataField>SubtotalCaption</DataField>
+        </Field>
+        <Field Name="PaymentDiscountonVATCaption">
+          <DataField>PaymentDiscountonVATCaption</DataField>
+        </Field>
+        <Field Name="ExchangeRateCaption">
+          <DataField>ExchangeRateCaption</DataField>
+        </Field>
+        <Field Name="Desc_SalesInvLineCaption">
+          <DataField>Desc_SalesInvLineCaption</DataField>
+        </Field>
+        <Field Name="Qty_SalesInvLineCaption">
+          <DataField>Qty_SalesInvLineCaption</DataField>
+        </Field>
+        <Field Name="UnitMeasure_SalesInvLineCaption">
+          <DataField>UnitMeasure_SalesInvLineCaption</DataField>
+        </Field>
+        <Field Name="VATIdentifier_SalesInvLineCaption">
+          <DataField>VATIdentifier_SalesInvLineCaption</DataField>
+        </Field>
+        <Field Name="IsLineWithTotals">
+          <DataField>IsLineWithTotals</DataField>
+        </Field>
+        <Field Name="SalesShipBufferPostingDt">
+          <DataField>SalesShipBufferPostingDt</DataField>
+        </Field>
+        <Field Name="SalesShipBufferQty">
+          <DataField>SalesShipBufferQty</DataField>
+        </Field>
+        <Field Name="SalesShipBufferQtyFormat">
+          <DataField>SalesShipBufferQtyFormat</DataField>
+        </Field>
+        <Field Name="ShipmentCaption">
+          <DataField>ShipmentCaption</DataField>
+        </Field>
+        <Field Name="TempNo">
+          <DataField>TempNo</DataField>
+        </Field>
+        <Field Name="TempDesc">
+          <DataField>TempDesc</DataField>
+        </Field>
+        <Field Name="TempLineNO">
+          <DataField>TempLineNO</DataField>
+        </Field>
+        <Field Name="TempType">
+          <DataField>TempType</DataField>
+        </Field>
+        <Field Name="TempUOM">
+          <DataField>TempUOM</DataField>
+        </Field>
+        <Field Name="SerialNoText">
+          <DataField>SerialNoText</DataField>
+        </Field>
+        <Field Name="ExpirationDate">
+          <DataField>ExpirationDate</DataField>
+        </Field>
+        <Field Name="Batch">
+          <DataField>Batch</DataField>
+        </Field>
+        <Field Name="ILEQty">
+          <DataField>ILEQty</DataField>
+        </Field>
+        <Field Name="OrderQty">
+          <DataField>OrderQty</DataField>
+        </Field>
+        <Field Name="OrderQtyFormat">
+          <DataField>OrderQtyFormat</DataField>
+        </Field>
+        <Field Name="Selling_Price">
+          <DataField>Selling_Price</DataField>
+        </Field>
+        <Field Name="Selling_PriceFormat">
+          <DataField>Selling_PriceFormat</DataField>
+        </Field>
+        <Field Name="FOC_Qty">
+          <DataField>FOC_Qty</DataField>
+        </Field>
+        <Field Name="FOC_QtyFormat">
+          <DataField>FOC_QtyFormat</DataField>
+        </Field>
+        <Field Name="LineRemark">
+          <DataField>LineRemark</DataField>
+        </Field>
+        <Field Name="Qty_To_Deliver">
+          <DataField>Qty_To_Deliver</DataField>
+        </Field>
+        <Field Name="Qty_To_DeliverFormat">
+          <DataField>Qty_To_DeliverFormat</DataField>
+        </Field>
+        <Field Name="FOC_Qty_To_Deliver">
+          <DataField>FOC_Qty_To_Deliver</DataField>
+        </Field>
+        <Field Name="FOC_Qty_To_DeliverFormat">
+          <DataField>FOC_Qty_To_DeliverFormat</DataField>
+        </Field>
+        <Field Name="CrossRefNo">
+          <DataField>CrossRefNo</DataField>
+        </Field>
+        <Field Name="SelltoCustomerNo_SalesInvHeader">
+          <DataField>SelltoCustomerNo_SalesInvHeader</DataField>
+        </Field>
+        <Field Name="ShipToAddr1">
+          <DataField>ShipToAddr1</DataField>
+        </Field>
+        <Field Name="ShipToAddr2">
+          <DataField>ShipToAddr2</DataField>
+        </Field>
+        <Field Name="ShipToAddr3">
+          <DataField>ShipToAddr3</DataField>
+        </Field>
+        <Field Name="ShipToAddr4">
+          <DataField>ShipToAddr4</DataField>
+        </Field>
+        <Field Name="ShipToAddr5">
+          <DataField>ShipToAddr5</DataField>
+        </Field>
+        <Field Name="ShipToAddr6">
+          <DataField>ShipToAddr6</DataField>
+        </Field>
+        <Field Name="ShipToAddr7">
+          <DataField>ShipToAddr7</DataField>
+        </Field>
+        <Field Name="ShipToAddr8">
+          <DataField>ShipToAddr8</DataField>
+        </Field>
+        <Field Name="ShiptoAddressCaption">
+          <DataField>ShiptoAddressCaption</DataField>
+        </Field>
+        <Field Name="SelltoCustomerNo_SalesInvHeaderCaption">
+          <DataField>SelltoCustomerNo_SalesInvHeaderCaption</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="Tablix1">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>11.13554in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>1in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Rectangle Name="Rectangle1">
+                          <ReportItems>
+                            <Tablix Name="Tablix2">
+                              <TablixBody>
+                                <TablixColumns>
+                                  <TablixColumn>
+                                    <Width>1in</Width>
+                                  </TablixColumn>
+                                  <TablixColumn>
+                                    <Width>1in</Width>
+                                  </TablixColumn>
+                                  <TablixColumn>
+                                    <Width>1in</Width>
+                                  </TablixColumn>
+                                </TablixColumns>
+                                <TablixRows>
+                                  <TablixRow>
+                                    <Height>0.25in</Height>
+                                    <TablixCells>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox1">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value />
+                                                    <Style />
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style />
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox1</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Color>LightGrey</Color>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox3">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value />
+                                                    <Style />
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style />
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox3</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Color>LightGrey</Color>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox5">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value />
+                                                    <Style />
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style />
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox5</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Color>LightGrey</Color>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                    </TablixCells>
+                                  </TablixRow>
+                                  <TablixRow>
+                                    <Height>0.25in</Height>
+                                    <TablixCells>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox2">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!TempNo.Value</Value>
+                                                    <Style />
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style />
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox2</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Color>LightGrey</Color>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox4">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!TempDesc.Value</Value>
+                                                    <Style />
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style />
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox4</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Color>LightGrey</Color>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                      <TablixCell>
+                                        <CellContents>
+                                          <Textbox Name="Textbox6">
+                                            <CanGrow>true</CanGrow>
+                                            <KeepTogether>true</KeepTogether>
+                                            <Paragraphs>
+                                              <Paragraph>
+                                                <TextRuns>
+                                                  <TextRun>
+                                                    <Value>=Fields!TempUOM.Value</Value>
+                                                    <Style />
+                                                  </TextRun>
+                                                </TextRuns>
+                                                <Style />
+                                              </Paragraph>
+                                            </Paragraphs>
+                                            <rd:DefaultName>Textbox6</rd:DefaultName>
+                                            <Style>
+                                              <Border>
+                                                <Color>LightGrey</Color>
+                                                <Style>Solid</Style>
+                                              </Border>
+                                              <PaddingLeft>2pt</PaddingLeft>
+                                              <PaddingRight>2pt</PaddingRight>
+                                              <PaddingTop>2pt</PaddingTop>
+                                              <PaddingBottom>2pt</PaddingBottom>
+                                            </Style>
+                                          </Textbox>
+                                        </CellContents>
+                                      </TablixCell>
+                                    </TablixCells>
+                                  </TablixRow>
+                                </TablixRows>
+                              </TablixBody>
+                              <TablixColumnHierarchy>
+                                <TablixMembers>
+                                  <TablixMember />
+                                  <TablixMember />
+                                  <TablixMember />
+                                </TablixMembers>
+                              </TablixColumnHierarchy>
+                              <TablixRowHierarchy>
+                                <TablixMembers>
+                                  <TablixMember>
+                                    <KeepWithGroup>After</KeepWithGroup>
+                                  </TablixMember>
+                                  <TablixMember>
+                                    <Group Name="Details1" />
+                                  </TablixMember>
+                                </TablixMembers>
+                              </TablixRowHierarchy>
+                              <Top>0.13542in</Top>
+                              <Left>0in</Left>
+                              <Height>0.5in</Height>
+                              <Width>3in</Width>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Tablix>
+                            <Textbox Name="Textbox7">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Code.SetData(Cstr(Fields!CustAddr1.Value) + Chr(177) + 
+Cstr(Fields!CustAddr2.Value) + Chr(177) + 
+Cstr(Fields!CustAddr3.Value) + Chr(177) + 
+Cstr(Fields!CustAddr4.Value) + Chr(177) + 
+Cstr(Fields!CustAddr5.Value) + Chr(177) + 
+Cstr(Fields!CustAddr6.Value) + Chr(177) + 
+Cstr(Fields!CustAddr7.Value) + Chr(177) + 
+Cstr(Fields!CustAddr8.Value) + Chr(177) + 
+Cstr(Fields!CompInfoPhoneNo.Value) + Chr(177) + 
+Cstr(Fields!CompInfoHomePage.Value) + Chr(177) + 
+Cstr(Fields!CompInfoEmail.Value) + Chr(177) + 
+Cstr(Fields!CompInfoVATRegsNo.Value) + Chr(177) + 
+Cstr(Fields!CompInfoGiroNo.Value) + Chr(177) + 
+Cstr(Fields!CompInfoBankName.Value) + Chr(177) + 
+Cstr(Fields!CompInfoBankAccNo.Value) + Chr(177) + 
+" " + Chr(177) +
+" " + Chr(177) +
+Cstr(Fields!BilltoCustNo_SalesInvHeader.Value) + Chr(177) + 
+Cstr(Fields!VATRegsNo_SalesInvHeader.Value) + Chr(177) + 
+Cstr(Fields!SalesPurchPersonName.Value) + Chr(177) + 
+Cstr(Fields!SalesInvHeaderYourReference.Value) + Chr(177) + 
+Cstr(Fields!PostingDt_SalesInvHeader.Value) + Chr(177) + 
+Cstr(Fields!DueDate_SalesInvHeader.Value) + Chr(177) + 
+Cstr(Fields!DocumentDate04_SalesInvHeader.Value) + Chr(177) + 
+Cstr(Fields!SalesInvHeaderNo1.Value) + Chr(177) + 
+Cstr(Fields!PaymentTermsDesc.Value) + Chr(177) + 
+Cstr(Fields!ShipMethodDesc.Value) + Chr(177) + 
+Cstr(Fields!PricesInclVATYesNo.Value) + Chr(177) + 
+Cstr(Fields!DocCaptionCopyText.Value) + Chr(177) + 
+Cstr(Fields!OrderNoText.Value) + Chr(177) + 
+Cstr(Fields!OrderNo_SalesInvHdr.Value) + Chr(177) + 
+Cstr(Fields!CompAddr1.Value) + Chr(177) + 
+Cstr(Fields!CompAddr2.Value) + Chr(177) + 
+Cstr(Fields!CompAddr3.Value) + Chr(177) + 
+Cstr(Fields!CompAddr4.Value) + Chr(177) + 
+Cstr(Fields!CompAddr5.Value) + Chr(177) + 
+Cstr(Fields!CompAddr6.Value) + Chr(177) + 
+Cstr(Fields!DocCaptionCopyText.Value) + Chr(177) + 
+" " + Chr(177) + 
+Cstr(Fields!PricesIncludVAT_SalesInvHdrCaption.Value) + Chr(177) + 
+Cstr(Fields!InvoiceNoCaption.Value) + Chr(177) + 
+Cstr(Fields!PostingDateCaption.Value) + Chr(177) + 
+Cstr(Fields!BilltoCustNo_SalesInvHeaderCaption.Value) + Chr(177) + 
+Cstr(Fields!BankAccountNoCaption.Value) + Chr(177) + 
+Cstr(Fields!BankNameCaption.Value) + Chr(177) + 
+Cstr(Fields!GiroNoCaption.Value) + Chr(177) + 
+Cstr(Fields!VATRegNoCaption.Value) + Chr(177) + 
+Cstr(Fields!HomePageCaption.Value) + Chr(177) + 
+Cstr(Fields!PhoneNoCaption.Value) + Chr(177) + 
+Cstr(Fields!PageCaption.Value) + Chr(177) + 
+Cstr(Fields!SalesPersonText.Value) + Chr(177) + 
+Cstr(Fields!VATNoText.Value) + Chr(177) + 
+Cstr(Fields!ReferenceText.Value) + Chr(177) + 
+Cstr(Fields!DueDateCaption.Value) + Chr(177) + 
+Cstr(Fields!DivisionPartNoCaption.Value) + Chr(177) + 
+Cstr(Fields!ABNCaption.Value) + Chr(177) + 
+Cstr(Fields!EmailIdCaption.Value) + Chr(177) + 
+Cstr(Fields!DocumentDateCaption.Value) + Chr(177) + 
+Cstr(Fields!PaymentTermsDescriptionCaption.Value) + Chr(177) + 
+Cstr(Fields!ShipmentMethodDescriptionCaption.Value) + Chr(177) +
+Cstr(Fields!PONum.Value) + Chr(177) +
+Cstr(Fields!CustNo.Value) + Chr(177) +
+Cstr(Fields!ShippingAgentCode.Value) + Chr(177) +
+Cstr(Fields!UserID.Value) + Chr(177) +
+Cstr(Fields!UENNo.Value) + Chr(177) +
+Cstr(Fields!ShipToAddr11.Value) + Chr(177) +
+Cstr(Fields!ShipToAddr22.Value) + Chr(177) +
+Cstr(Fields!ShipToAddr33.Value) + Chr(177) +
+Cstr(Fields!ShipToAddr44.Value) + Chr(177) +
+Cstr(Fields!ShipToAddr55.Value) + Chr(177) +
+Cstr(Fields!ShipToAddr66.Value) + Chr(177) +
+Cstr(Fields!ShipToAddr77.Value) + Chr(177) +
+Cstr(Fields!ShipToAddr88.Value) + Chr(177) +
+Cstr(Fields!Phone2.Value) + Chr(177) +
+Cstr(Fields!CompanyFax.Value) + Chr(177) +
+Cstr(Fields!ShipToPhoneNo.Value) + Chr(177) +
+Cstr(Fields!SellToContactPhoneNum.Value) + Chr(177) +
+" " + Chr(177) +
+Cstr(Fields!ShortcutDim1.Value) + Chr(177) +
+" " + Chr(177) +
+" " + Chr(177) +
+Cstr(Fields!ContactName.Value) + Chr(177) +
+Cstr(Fields!ContactName2.Value) + Chr(177) +
+Cstr(Fields!SwiftCode.Value) + Chr(177) +
+Cstr(Fields!AccNo.Value) + Chr(177) +
+Cstr(Fields!BillToAddress1.Value) + Chr(177) +
+Cstr(Fields!BillToAddress2.Value) + Chr(177) +
+Cstr(Fields!SellToAddress1.Value) + Chr(177) +
+Cstr(Fields!SellToAddress2.Value) + Chr(177) +
+Cstr(Fields!SellToName2.Value) + Chr(177) +
+Cstr(Fields!BillToName2.Value) + Chr(177) +
+Cstr(Fields!DiscAmt.Value) + Chr(177) +
+Cstr(Fields!DiscPercent.Value) + Chr(177) +
+Cstr(Fields!Subtotal.Value) + Chr(177) +
+Cstr(Fields!GSTAmt.Value) + Chr(177) + 
+Cstr(Fields!TotalInclGST.Value) + Chr(177) + 
+Cstr(Fields!WebCaption.Value) + Chr(177) + 
+Cstr(Fields!TelCaption.Value) + Chr(177) + 
+Cstr(Fields!FaxCaption.Value) + Chr(177) + 
+Cstr(Fields!GSTRegNoCaption.Value) + Chr(177) + 
+Cstr(Fields!CoRegNoCaption.Value) + Chr(177) + 
+Cstr(Fields!BillToCaption.Value) + Chr(177) + 
+Cstr(Fields!DeliveryToCaption.Value) + Chr(177) + 
+Cstr(Fields!AttnCaption.Value) + Chr(177) + 
+Cstr(Fields!TaxInvoiceNoCaption.Value) + Chr(177) + 
+Cstr(Fields!DateCaption.Value) + Chr(177) + 
+Cstr(Fields!YourPONoCaption.Value) + Chr(177) + 
+Cstr(Fields!SalesmanCaption.Value) + Chr(177) + 
+Cstr(Fields!TermsCaption.Value) + Chr(177) + 
+Cstr(Fields!DriverAreaCaption.Value) + Chr(177) + 
+Cstr(Fields!CompanyInfo_FaxNo.Value) + Chr(177) + 
+Cstr(Fields!CompanyInfo_CoRegNo.Value) + Chr(177) + 
+Cstr(Fields!EmailCaption.Value) + Chr(177) + 
+Cstr(Fields!SalesInvHdr_SellToCustNo.Value) + Chr(177) + 
+Cstr(Fields!ShipToFaxNo.Value) + Chr(177) + 
+Cstr(Fields!AmountInWords.Value) + Chr(177) +
+Cstr(Fields!CreationUser.Value) + Chr(177) +
+Cstr(Fields!SalesLine_VAT.Value) + Chr(177) +
+Cstr(Fields!Details1.Value) + Chr(177) +
+Cstr(Fields!SellToContactFaxNum.Value) + Chr(177) +
+Cstr(Fields!BillToAddress3.Value) + Chr(177) +
+Cstr(Fields!BillToAddress4.Value) + Chr(177) +
+Cstr(Fields!SellToAddress3.Value) + Chr(177) +
+Cstr(Fields!SellToAddress4.Value) + Chr(177) +
+Cstr(Fields!HideDiscount.Value) + Chr(177) +
+Cstr(Fields!CurrCode.Value) + Chr(177) +
+Cstr(Fields!CompCurrCode.Value)+Chr(177)+
+Cstr(Fields!BarcodeText.Value)+Chr(177)+
+Cstr(Fields!BarcodeOrder.Value)+Chr(177)+
+Cstr(Fields!DeliveryZone.Value)+Chr(177)+
+Cstr(Fields!DeliveryType.Value)+Chr(177)+
+Cstr(Fields!CustInstr.Value)+Chr(177)+
+Cstr(Fields!OrderDate.Value)+Chr(177)+
+Cstr(Fields!QRCodeImageLink.Value)
+, 1)</Value>
+                                      <Style>
+                                        <Color>Red</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox7</rd:DefaultName>
+                              <Top>0.02646cm</Top>
+                              <Left>2.88397cm</Left>
+                              <Height>0.24695cm</Height>
+                              <Width>2.19603cm</Width>
+                              <ZIndex>1</ZIndex>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </ReportItems>
+                          <KeepTogether>true</KeepTogether>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                          </Style>
+                        </Rectangle>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Details">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!No_SalesInvHeader.Value</GroupExpression>
+                      <GroupExpression>=Fields!OutputNo.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet_Result</DataSetName>
+            <Top>0in</Top>
+            <Left>0.01958in</Left>
+            <Height>1in</Height>
+            <Width>11.13554in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+        </ReportItems>
+        <Height>5.08cm</Height>
+        <Style />
+      </Body>
+      <Width>28.33401cm</Width>
+      <Page>
+        <PageHeader>
+          <Height>6.22234cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Image Name="CompanyInfo_Picture">
+              <Source>Database</Source>
+              <Value>=System.Convert.ToBase64String(Fields!CompInfoPicture.Value)</Value>
+              <MIMEType>image/bmp</MIMEType>
+              <Sizing>FitProportional</Sizing>
+              <Top>0.14522cm</Top>
+              <Left>0.06719cm</Left>
+              <Height>2.32454cm</Height>
+              <Width>9.39827cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+            <Textbox Name="Textbox501">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=UCase(Code.GetData)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>0.02911cm</Top>
+              <Left>12.26583cm</Left>
+              <Height>17.63209pt</Height>
+              <Width>1.43808cm</Width>
+              <ZIndex>1</ZIndex>
+              <Visibility>
+                <Hidden>true</Hidden>
+              </Visibility>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <BackgroundColor>Red</BackgroundColor>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox502">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.GetData + " " + Code.GetData + " " + Code.GetData + " " + Code.GetData + " " + Code.GetData</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>0.5203cm</Top>
+              <Left>12.26583cm</Left>
+              <Height>15pt</Height>
+              <Width>1.43808cm</Width>
+              <ZIndex>2</ZIndex>
+              <Visibility>
+                <Hidden>true</Hidden>
+              </Visibility>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <BackgroundColor>Red</BackgroundColor>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox503">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="&lt;b&gt;" + Code.GetData + ": " + "&lt;/b&gt;" + Code.GetData + "     " + "&lt;b&gt;" + Code.GetData + ": " + "&lt;/b&gt;" + Code.GetData</Value>
+                      <MarkupType>HTML</MarkupType>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>1.57863cm</Top>
+              <Left>12.26583cm</Left>
+              <Height>15pt</Height>
+              <Width>1.43808cm</Width>
+              <ZIndex>3</ZIndex>
+              <Visibility>
+                <Hidden>true</Hidden>
+              </Visibility>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <BackgroundColor>Red</BackgroundColor>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox504">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="&lt;b&gt;" + Code.GetData + ": " + "&lt;/b&gt;" + Code.GetData + "     " + "&lt;b&gt;" + Code.GetData + ": " + "&lt;/b&gt;" + Code.GetData</Value>
+                      <MarkupType>HTML</MarkupType>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>1.04947cm</Top>
+              <Left>12.26583cm</Left>
+              <Height>15pt</Height>
+              <Width>1.43808cm</Width>
+              <ZIndex>4</ZIndex>
+              <Visibility>
+                <Hidden>true</Hidden>
+              </Visibility>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <BackgroundColor>Red</BackgroundColor>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox505">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="&lt;b&gt;" + Code.GetData + ": " + "&lt;/b&gt;" + Code.GetData + "     " + "&lt;b&gt;" + Code.GetData + ": " + "&lt;/b&gt;" + Code.GetData</Value>
+                      <MarkupType>HTML</MarkupType>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>2.1078cm</Top>
+              <Left>12.26583cm</Left>
+              <Height>15pt</Height>
+              <Width>1.43808cm</Width>
+              <ZIndex>5</ZIndex>
+              <Visibility>
+                <Hidden>true</Hidden>
+              </Visibility>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <BackgroundColor>Red</BackgroundColor>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox517">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Invoice Date</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>0.80252cm</Top>
+              <Left>22.77044cm</Left>
+              <Height>12.92854pt</Height>
+              <Width>2.2914cm</Width>
+              <ZIndex>6</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox518">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Delivery Team</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>4.8668cm</Top>
+              <Left>14.99027cm</Left>
+              <Height>12.62889pt</Height>
+              <Width>2.45712cm</Width>
+              <ZIndex>7</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox523">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=" : " + Microsoft.ReportingServices.RdlObjectModel.ExpressionParser.VBFunctions.CDate(Code.GetData).ToString</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>0.80252cm</Top>
+              <Left>25.09712cm</Left>
+              <Height>12.92854pt</Height>
+              <Width>3.19953cm</Width>
+              <ZIndex>8</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox68">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Invoice No.</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox68</rd:DefaultName>
+              <Top>1.25861cm</Top>
+              <Left>8.96474in</Left>
+              <Height>12.92889pt</Height>
+              <Width>2.2914cm</Width>
+              <ZIndex>9</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox69">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=" : " + Code.GetData</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox69</rd:DefaultName>
+              <Top>1.25861cm</Top>
+              <Left>25.09712cm</Left>
+              <Height>12.92854pt</Height>
+              <Width>3.19953cm</Width>
+              <ZIndex>10</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox32">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=" : " + Code.GetData</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox32</rd:DefaultName>
+              <Top>5.34555cm</Top>
+              <Left>17.44739cm</Left>
+              <Height>12.62889pt</Height>
+              <Width>3.24088cm</Width>
+              <ZIndex>11</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox14">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Constant">TAX INVOICE</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>16pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <TextDecoration>None</TextDecoration>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox14</rd:DefaultName>
+              <Top>0.14522cm</Top>
+              <Left>14.37643cm</Left>
+              <Height>1.11339cm</Height>
+              <Width>7.0931cm</Width>
+              <ZIndex>12</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Top</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox528">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=" : " + Globals!PageNumber.ToString()+" of "+Globals!TotalPages.ToString()</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>1.72528cm</Top>
+              <Left>25.09712cm</Left>
+              <Height>0.4561cm</Height>
+              <Width>3.19953cm</Width>
+              <ZIndex>13</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Top</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Rectangle Name="Rectangle2">
+              <ReportItems>
+                <Textbox Name="Textbox508">
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>  Bill To :</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <FontWeight>Bold</FontWeight>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <Height>13.65131pt</Height>
+                  <Width>6.15855cm</Width>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <VerticalAlign>Middle</VerticalAlign>
+                  </Style>
+                </Textbox>
+                <Textbox Name="Textbox510">
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>=UCase(Code.GetData(1,1))</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <FontWeight>Bold</FontWeight>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <Top>0.60506cm</Top>
+                  <Left>0.30443cm</Left>
+                  <Height>11.59997pt</Height>
+                  <Width>6.20417cm</Width>
+                  <ZIndex>1</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <VerticalAlign>Middle</VerticalAlign>
+                  </Style>
+                </Textbox>
+                <Textbox Name="Textbox511">
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>=Code.GetData(86,1</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <Top>1.01428cm</Top>
+                  <Left>0.30443cm</Left>
+                  <Height>13.00003pt</Height>
+                  <Width>6.20417cm</Width>
+                  <ZIndex>2</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <VerticalAlign>Top</VerticalAlign>
+                  </Style>
+                </Textbox>
+                <Textbox Name="Textbox33">
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>=Code.GetData + ": " + Code.GetData + "     " + Code.GetData + ": " + Code.GetData</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <Color>=IIF(Code.GetData(69, 1)="","White","Black")</Color>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>Textbox33</rd:DefaultName>
+                  <Top>2.8336cm</Top>
+                  <Left>0.30443cm</Left>
+                  <Height>10.20016pt</Height>
+                  <Width>6.20417cm</Width>
+                  <ZIndex>3</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                </Textbox>
+                <Textbox Name="Textbox81">
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>=Code.GetData</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>Textbox81</rd:DefaultName>
+                  <Top>2.41027cm</Top>
+                  <Left>0.30443cm</Left>
+                  <Height>11.99984pt</Height>
+                  <Width>6.20417cm</Width>
+                  <ZIndex>4</ZIndex>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                  </Visibility>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                </Textbox>
+                <Textbox Name="Textbox96">
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>=Code.GetData(87,1)</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>Textbox96</rd:DefaultName>
+                  <Top>1.47289cm</Top>
+                  <Left>0.30443cm</Left>
+                  <Height>13.00003pt</Height>
+                  <Width>6.20417cm</Width>
+                  <ZIndex>5</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                </Textbox>
+                <Textbox Name="Textbox118">
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>=Code.GetData</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>Textbox118</rd:DefaultName>
+                  <Top>1.93151cm</Top>
+                  <Left>0.30443cm</Left>
+                  <Height>13.57137pt</Height>
+                  <Width>6.20417cm</Width>
+                  <ZIndex>6</ZIndex>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                  </Visibility>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                </Textbox>
+              </ReportItems>
+              <KeepTogether>true</KeepTogether>
+              <Top>2.64701cm</Top>
+              <Left>0.02487cm</Left>
+              <Height>3.21108cm</Height>
+              <Width>6.5086cm</Width>
+              <ZIndex>14</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Rectangle>
+            <Rectangle Name="Rectangle3">
+              <ReportItems>
+                <Textbox Name="Textbox500">
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value> Deliver To :</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <FontWeight>Bold</FontWeight>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <Height>13.65126pt</Height>
+                  <Width>5.1652cm</Width>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <VerticalAlign>Middle</VerticalAlign>
+                  </Style>
+                </Textbox>
+                <Textbox Name="Textbox513">
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>=Code.GetData</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <FontWeight>Bold</FontWeight>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <Top>0.58742cm</Top>
+                  <Left>0.26456cm</Left>
+                  <Height>11.59997pt</Height>
+                  <Width>6.13803cm</Width>
+                  <ZIndex>1</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <VerticalAlign>Middle</VerticalAlign>
+                  </Style>
+                </Textbox>
+                <Textbox Name="Textbox514">
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>=Code.GetData</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <Top>0.99664cm</Top>
+                  <Left>0.26456cm</Left>
+                  <Height>13.00003pt</Height>
+                  <Width>6.13803cm</Width>
+                  <ZIndex>2</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <VerticalAlign>Top</VerticalAlign>
+                  </Style>
+                </Textbox>
+                <Textbox Name="Textbox40">
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>=Code.GetData</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>Textbox40</rd:DefaultName>
+                  <Top>1.45525cm</Top>
+                  <Left>0.26456cm</Left>
+                  <Height>13.00003pt</Height>
+                  <Width>6.13803cm</Width>
+                  <ZIndex>3</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                </Textbox>
+                <Textbox Name="Textbox45">
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>=Code.GetData</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>Textbox45</rd:DefaultName>
+                  <Top>1.91387cm</Top>
+                  <Left>0.26456cm</Left>
+                  <Height>13.57137pt</Height>
+                  <Width>6.13803cm</Width>
+                  <ZIndex>4</ZIndex>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                  </Visibility>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                </Textbox>
+                <Textbox Name="Textbox95">
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>=Code.GetData</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>Textbox95</rd:DefaultName>
+                  <Top>2.39263cm</Top>
+                  <Left>0.26456cm</Left>
+                  <Height>11.99984pt</Height>
+                  <Width>6.13803cm</Width>
+                  <ZIndex>5</ZIndex>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                  </Visibility>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                </Textbox>
+                <Textbox Name="Textbox125">
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value />
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <Color>=IIF(Code.GetData(69, 1)="","White","Black")</Color>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>Textbox125</rd:DefaultName>
+                  <Top>2.85124cm</Top>
+                  <Left>0.26456cm</Left>
+                  <Height>10.20016pt</Height>
+                  <Width>6.13803cm</Width>
+                  <ZIndex>6</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                </Textbox>
+              </ReportItems>
+              <KeepTogether>true</KeepTogether>
+              <Top>2.66465cm</Top>
+              <Left>7.30132cm</Left>
+              <Height>3.21108cm</Height>
+              <Width>6.40259cm</Width>
+              <ZIndex>15</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Rectangle>
+            <Textbox Name="Textbox522">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value EvaluationMode="Constant">Customer's Instructions</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>4.89602cm</Top>
+              <Left>21.85323cm</Left>
+              <Height>12.62889pt</Height>
+              <Width>4.75099cm</Width>
+              <ZIndex>16</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingLeft>1pt</PaddingLeft>
+                <PaddingRight>1pt</PaddingRight>
+                <PaddingTop>1pt</PaddingTop>
+                <PaddingBottom>1pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox34">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.GetData</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox32</rd:DefaultName>
+              <Top>5.37682cm</Top>
+              <Left>21.81795cm</Left>
+              <Height>23.14233pt</Height>
+              <Width>6.34549cm</Width>
+              <ZIndex>17</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Top</VerticalAlign>
+                <PaddingLeft>1pt</PaddingLeft>
+                <PaddingRight>1pt</PaddingRight>
+                <PaddingTop>1pt</PaddingTop>
+                <PaddingBottom>1pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox524">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Payment Term </Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>4.386cm</Top>
+              <Left>14.99027cm</Left>
+              <Height>12.62889pt</Height>
+              <Width>2.45712cm</Width>
+              <ZIndex>18</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox35">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=" : " + Code.GetData</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox32</rd:DefaultName>
+              <Top>4.38498cm</Top>
+              <Left>17.44739cm</Left>
+              <Height>12.62889pt</Height>
+              <Width>3.24088cm</Width>
+              <ZIndex>19</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox529">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Date of Order</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>3.04707cm</Top>
+              <Left>14.99027cm</Left>
+              <Height>12.62889pt</Height>
+              <Width>2.45712cm</Width>
+              <ZIndex>20</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox37">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=" : " + code.GetData</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox32</rd:DefaultName>
+              <Top>3.04707cm</Top>
+              <Left>17.44739cm</Left>
+              <Height>12.62889pt</Height>
+              <Width>3.24088cm</Width>
+              <ZIndex>21</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox530">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Currency</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>3.4936cm</Top>
+              <Left>14.99027cm</Left>
+              <Height>12.62889pt</Height>
+              <Width>2.45712cm</Width>
+              <ZIndex>22</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox38">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=" : " + iif(Code.GetData = "", Code.GetData, Code.GetData)</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox32</rd:DefaultName>
+              <Top>3.49258cm</Top>
+              <Left>17.44739cm</Left>
+              <Height>12.62889pt</Height>
+              <Width>3.24088cm</Width>
+              <ZIndex>23</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox531">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Delivery Type </Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>3.93912cm</Top>
+              <Left>14.99027cm</Left>
+              <Height>12.62889pt</Height>
+              <Width>2.45712cm</Width>
+              <ZIndex>24</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox41">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=" : " + Code.GetData</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox32</rd:DefaultName>
+              <Top>3.9381cm</Top>
+              <Left>17.44739cm</Left>
+              <Height>12.62889pt</Height>
+              <Width>3.24088cm</Width>
+              <ZIndex>25</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox532">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Sales Order </Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>3.05654cm</Top>
+              <Left>21.83044cm</Left>
+              <Height>12.62889pt</Height>
+              <Width>2.45712cm</Width>
+              <ZIndex>26</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox42">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=" : " + Code.GetData</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox32</rd:DefaultName>
+              <Top>3.0444cm</Top>
+              <Left>24.32284cm</Left>
+              <Height>12.62889pt</Height>
+              <Width>3.03381cm</Width>
+              <ZIndex>27</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox533">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Order account </Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>3.48992cm</Top>
+              <Left>21.83044cm</Left>
+              <Height>12.62889pt</Height>
+              <Width>2.45712cm</Width>
+              <ZIndex>28</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox44">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=" : " + Code.GetData</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox32</rd:DefaultName>
+              <Top>3.5252cm</Top>
+              <Left>24.32284cm</Left>
+              <Height>11.6pt</Height>
+              <Width>3.03381cm</Width>
+              <ZIndex>29</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox70">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Page</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox68</rd:DefaultName>
+              <Top>1.72528cm</Top>
+              <Left>8.96474in</Left>
+              <Height>12.92889pt</Height>
+              <Width>2.2914cm</Width>
+              <ZIndex>30</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox519">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Purchase Order</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>5.32228cm</Top>
+              <Left>14.99027cm</Left>
+              <Height>12.62889pt</Height>
+              <Width>2.45712cm</Width>
+              <ZIndex>31</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox55">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=" : " + Code.GetData</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox32</rd:DefaultName>
+              <Top>4.86476cm</Top>
+              <Left>17.44739cm</Left>
+              <Height>12.62889pt</Height>
+              <Width>3.24088cm</Width>
+              <ZIndex>32</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox11">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.GetData</Value>
+                      <Style>
+                        <FontFamily>IDAutomationHC39M</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox11</rd:DefaultName>
+              <Top>0.02911cm</Top>
+              <Left>22.78294cm</Left>
+              <Height>0.77341cm</Height>
+              <Width>5.52621cm</Width>
+              <ZIndex>33</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox12">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Code.GetData</Value>
+                      <Style>
+                        <FontFamily>IDAutomationHC39M</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox11</rd:DefaultName>
+              <Top>2.18138cm</Top>
+              <Left>22.77044cm</Left>
+              <Height>0.82082cm</Height>
+              <Width>5.53871cm</Width>
+              <ZIndex>34</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox534">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Order Placed By</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>3.97072cm</Top>
+              <Left>21.83044cm</Left>
+              <Height>12.62889pt</Height>
+              <Width>2.45712cm</Width>
+              <ZIndex>35</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox535">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Order Taken By</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>4.41624cm</Top>
+              <Left>21.83044cm</Left>
+              <Height>12.62889pt</Height>
+              <Width>2.45712cm</Width>
+              <ZIndex>36</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox59">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=" : "</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox32</rd:DefaultName>
+              <Top>3.9697cm</Top>
+              <Left>24.32284cm</Left>
+              <Height>12.62889pt</Height>
+              <Width>3.03381cm</Width>
+              <ZIndex>37</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox60">
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=" : "</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>9pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox32</rd:DefaultName>
+              <Top>4.41522cm</Top>
+              <Left>24.32284cm</Left>
+              <Height>12.62889pt</Height>
+              <Width>3.03381cm</Width>
+              <ZIndex>38</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+              </Style>
+            </Textbox>
+            <Image Name="Image1">
+              <Source>External</Source>
+              <Value>=Code.GetData</Value>
+              <Sizing>FitProportional</Sizing>
+              <Top>1.32917cm</Top>
+              <Left>17.17986cm</Left>
+              <Height>1.54152cm</Height>
+              <Width>1.5cm</Width>
+              <ZIndex>39</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageFooter>
+          <Height>2.54cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <PageHeight>21cm</PageHeight>
+        <PageWidth>29.7cm</PageWidth>
+        <LeftMargin>0.25cm</LeftMargin>
+        <RightMargin>0.25cm</RightMargin>
+        <TopMargin>0.25cm</TopMargin>
+        <BottomMargin>0.25cm</BottomMargin>
+        <ColumnSpacing>1.27cm</ColumnSpacing>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+</Report>

@@ -1,0 +1,25 @@
+query 50001 "Limited Group List Query"
+{
+    QueryType = Normal;
+
+    elements
+    {
+        dataitem(User_Group_Member; "User Group Member")
+        {
+            filter(User_Name_Filter; "User Name") { }
+            column(User_Name; "User Name") { }
+            column(Company_Name; "Company Name") { }
+
+            dataitem(User_Group; "User Group")
+            {
+                DataItemLink = "Code" = User_Group_Member."User Group Code";
+                SqlJoinType = InnerJoin;
+
+                filter(HPPL_Limit_Access_Filter; "HPPL Limit Access") { }
+                column(Group_Code; Code) { }
+                column(Group_Name; Name) { }
+                column(HPPL_Limit_Access; "HPPL Limit Access") { }
+            }
+        }
+    }
+}

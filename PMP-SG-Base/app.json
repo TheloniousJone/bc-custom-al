@@ -1,0 +1,30 @@
+{
+  "id": "7ed8c7a6-21f7-4aa9-b3d5-7051f2f29d3c",
+  "name": "PMP-SG-Base",
+  "publisher": "Illum (9) Pte Ltd",
+  "version": "1.0.1.33",
+  "brief": "Base Extension for Pan Malayan SG",
+  "description": "Extension with the base fields and table structures for PMP-SG",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "20.0.0.0",
+  "idRanges": [
+    {
+      "from": 55000,
+      "to": 55999
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "propagateDependencies": true,
+  "runtime": "9.0"
+}

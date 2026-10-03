@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>f6354088-da4b-4366-8913-c20c998b7e29</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Rectangle Name="Rectangle1">
+            <ReportItems>
+              <Textbox Name="Textbox4">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Courier's Copy</Value>
+                        <Style>
+                          <FontFamily>Segoe UI</FontFamily>
+                          <FontSize>7pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                          <TextDecoration>Underline</TextDecoration>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox4</rd:DefaultName>
+                <Left>0.05533cm</Left>
+                <Height>0.50593cm</Height>
+                <Width>2.60834cm</Width>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox5">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Scan here for RX number.</Value>
+                        <Style>
+                          <FontFamily>Segoe UI</FontFamily>
+                          <FontSize>7pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                          <TextDecoration>None</TextDecoration>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox4</rd:DefaultName>
+                <Top>0.56851cm</Top>
+                <Left>0.219cm</Left>
+                <Height>0.50593cm</Height>
+                <Width>3.5432cm</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox1">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Fields!QRCodeImageLink.Value</Value>
+                        <Style>
+                          <FontFamily>IDAutomation2D</FontFamily>
+                          <FontSize>12pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox1</rd:DefaultName>
+                <Top>1.23319cm</Top>
+                <Left>0.219cm</Left>
+                <Height>2.5cm</Height>
+                <Width>2.5cm</Width>
+                <ZIndex>2</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <PageBreak>
+              <BreakLocation>Start</BreakLocation>
+            </PageBreak>
+            <KeepTogether>true</KeepTogether>
+            <Height>3.75083cm</Height>
+            <Width>6.73516cm</Width>
+            <Style>
+              <Border>
+                <Color>White</Color>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Rectangle>
+        </ReportItems>
+        <Height>3.75083cm</Height>
+        <Style />
+      </Body>
+      <Width>6.79049cm</Width>
+      <Page>
+        <PageHeader>
+          <Height>0.02646cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageFooter>
+          <Height>0.6234cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox7">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=First(Fields!External_Document_No_.Value, "DataSet_Result")</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <TextDecoration>Underline</TextDecoration>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox7</rd:DefaultName>
+              <Top>0.12924cm</Top>
+              <Left>4.00799cm</Left>
+              <Height>0.49416cm</Height>
+              <Width>2.7825cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox8">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="BKT - " + Fields!Well__Basket_No_.Value</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <TextDecoration>Underline</TextDecoration>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox7</rd:DefaultName>
+              <Top>0.11512cm</Top>
+              <Left>0.05533cm</Left>
+              <Height>0.49416cm</Height>
+              <Width>2.66367cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <PageHeight>5cm</PageHeight>
+        <PageWidth>7cm</PageWidth>
+        <ColumnSpacing>1.27cm</ColumnSpacing>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="No_">
+          <DataField>No_</DataField>
+        </Field>
+        <Field Name="Document_Date">
+          <DataField>Document_Date</DataField>
+        </Field>
+        <Field Name="Well__Basket_No_">
+          <DataField>Well__Basket_No_</DataField>
+        </Field>
+        <Field Name="Patient_Name">
+          <DataField>Patient_Name</DataField>
+        </Field>
+        <Field Name="Sell_to_Customer_Name">
+          <DataField>Sell_to_Customer_Name</DataField>
+        </Field>
+        <Field Name="PatientAddress">
+          <DataField>PatientAddress</DataField>
+        </Field>
+        <Field Name="PatientContact">
+          <DataField>PatientContact</DataField>
+        </Field>
+        <Field Name="QRCodeImageLink">
+          <DataField>QRCodeImageLink</DataField>
+        </Field>
+        <Field Name="External_Document_No_">
+          <DataField>External_Document_No_</DataField>
+        </Field>
+        <Field Name="Description">
+          <DataField>Description</DataField>
+        </Field>
+        <Field Name="QtytoShip">
+          <DataField>QtytoShip</DataField>
+        </Field>
+        <Field Name="QtytoShipFormat">
+          <DataField>QtytoShipFormat</DataField>
+        </Field>
+        <Field Name="OrderQty">
+          <DataField>OrderQty</DataField>
+        </Field>
+        <Field Name="OrderQtyFormat">
+          <DataField>OrderQtyFormat</DataField>
+        </Field>
+        <Field Name="Bal">
+          <DataField>Bal</DataField>
+        </Field>
+        <Field Name="BalFormat">
+          <DataField>BalFormat</DataField>
+        </Field>
+        <Field Name="Line_No_">
+          <DataField>Line_No_</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

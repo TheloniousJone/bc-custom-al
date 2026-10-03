@@ -1,0 +1,123 @@
+report 90000 "Chain Pharma SO Creation"
+{
+
+    Caption = 'Chain Pharma SO Creation';
+    ProcessingOnly = true;
+    dataset
+    {
+        dataitem(CpoheaderRec; "Chain PO Header")
+        {
+            trigger OnAfterGetRecord()
+            begin
+                CpoheaderRec.Reset();
+                CpoheaderRec.SetRange("SO Created", false);
+                if CpoheaderRec.FindFirst() then begin
+                    SHrec.Init();
+                    SHrec.Validate("Document Type", SHrec."Document Type"::Order);
+                    SHrec.Validate("External Document No.", CpoheaderRec."PO Number");
+                    //Enry No.
+                    //Chain
+                    //Document Type
+                    //Invoice Number 
+                    //Invoice Date
+                    SHrec.Validate("Document Date", CpoheaderRec."PO Date");
+                    //DO Number 
+                    //DO Date
+                    SHrec.Validate("Shipment Date", CpoheaderRec."Delivery Start Date");
+                    //Delivery End Date
+                    SHrec.Validate("Sell-to Customer No.", CpoheaderRec."Buyer Code");
+                    SHrec.Validate("Sell-to Customer Name", CpoheaderRec."Buyer Name");
+                    //Supplier Code
+                    //Supplier Name
+                    //Line Item Count 
+                    //Invoice Amount Without Tax
+                    //Invoice Amount With Tax 
+                    //Tax Amount
+                    //Tax Percent
+                    //Store Name 
+                    //Store Delivery Quantity 
+                    //Store FOC Quantity
+                    SHrec.Insert(true);
+
+                    CPoLineRec.Reset();
+                    Clear(Totalquantity);
+                    SHrec.SetRange("External Document No.", CpoheaderRec."PO Number");
+                    CPoLineRec.SetRange("PO Entry No.", CpoheaderRec."Entry No.");
+                    CPoLineRec.SetRange("SO Created ", false);
+                    if CPoLineRec.FindSet() then begin
+                        repeat
+                            SLrec.init();
+                            SLrec.Validate("Document Type", SHrec."Document Type");
+                            SLrec.Validate("Document No.", SHrec."No.");
+                            SLrec."Line No." := CPoLineRec."Item Line No.";
+                            SLrec.type := SLrec.Type::Item;
+                            //Buyer Item Code
+                            SLrec.Validate("No.", CPoLineRec."Supplier Item Code ");
+                            //BarCode
+                            SLrec.Validate(Description, CPoLineRec."Item Description ");
+                            ;
+                            SLrec.Validate("Unit of Measure Code", CPoLineRec.UOM);
+                            //Pack Size
+                            SLrec.Validate("Unit Price", CPoLineRec."Unit Price");
+                            Totalquantity := CPoLineRec."Order Quantity " + CPoLineRec."FOC Quantity";
+                            SLrec.Validate(Quantity, Totalquantity);
+                            SLrec.Validate("Qty To Deliver", CPoLineRec."Order Quantity ");
+                            SLrec.Validate("FOC (Qty) To Deliver", CPoLineRec."FOC Quantity");
+                            SLrec."Order Qty" := CPoLineRec."Order Quantity ";
+                            SLrec.Validate("Qty. to Invoice", CPoLineRec."Invoice Quantity ");
+                            SLrec."FOC Qty" := CPoLineRec."FOC Quantity";
+                            SLrec.Validate("Line Amount", CPoLineRec."Line Item Total ");
+                            SLrec.Validate("Line Discount Amount", CPoLineRec."Total Discount Amount");
+                            SLrec.Validate("Line Discount %", CPoLineRec."Total Discount Percentage");
+                            SLrec.Insert();
+
+                            CPoLineRec."Sales Order No." := SHrec."No.";
+                            CPoLineRec."Sales Line No." := SLrec."Line No.";
+                            CPoLineRec."SO Created " := true;
+                            CPoLineRec."SO Error" := false;
+                            CPoLineRec.Modify();
+
+                        until CPoLineRec.Next() = 0;
+                    end
+                    else begin
+                        //Update Staging PO Line Status (Failed)
+                        CPoLineRec."Sales Order No." := ' ';
+                        CPoLineRec."Sales Line No." := ' ';
+                        CPoLineRec."SO Created " := false;
+                        CPoLineRec."SO Error" := true;
+                        CPoLineRec.Modify();
+                    end;
+
+                    //Update Staging PO Header Status (Success)
+                    Clear(SHrec);
+                    SHrec.SetRange("External Document No.", CpoheaderRec."PO Number");
+                    if SHrec.FindFirst() then begin
+                        CpoheaderRec."Sales Order No." := SHrec."No.";
+                        CpoheaderRec."SO Created" := true;
+                        CpoheaderRec."SO Error" := false;
+                        CpoheaderRec.Modify();
+
+                    end
+                    else begin
+                        //Update Staging PO Header Status (Failed)
+                        CpoheaderRec."Sales Order No." := '';
+                        CpoheaderRec."SO Created" := false;
+                        CpoheaderRec."SO Error" := true;
+                        CpoheaderRec.Modify();
+                    end;
+
+                end;
+            end;
+        }
+    }
+
+    var
+
+
+        CPoLineRec: Record "Chain PO Line";
+        SHrec: Record "Sales Header";
+        SLrec: Record "Sales Line";
+        LineNo: Integer;
+        Totalquantity: Decimal;
+
+}
